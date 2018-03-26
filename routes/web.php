@@ -15,9 +15,3 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/test', function () {
-    return response()->json([
-        'name' => 'Hello',
-        'state' => 'OK'
-    ]);
-});

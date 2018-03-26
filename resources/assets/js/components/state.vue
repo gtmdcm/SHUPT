@@ -17,7 +17,7 @@
         },
         created: function () {
             var self = this
-            axios.get('./test').then(function (response) {
+            axios.get('./api/test').then(function (response) {
                 console.log(response.data)
                 self.name = response.data.name;
                 self.state = response.data.state;
