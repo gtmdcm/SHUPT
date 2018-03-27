@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/','PageController@mainpage')->name('main');
+Route::get('/','PageController@mainpage')->name('mainpage');
+
+Route::get('/testpage', function () {return view('welcome');});
 
 Route::get('/upload','PageController@upload')->name('upload');
 

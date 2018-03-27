@@ -6,7 +6,7 @@
 </head>
 <body>
     @yield('content')
-    <a href="{{route('main')}}">MainPage </a>
+    <a href="{{route('mainpage')}}">MainPage </a>
     <a href="{{route('upload')}}">Upload </a>
     <a href="{{route('torrent')}}">Torrent </a>
     <a href="{{route('viewrequests')}}">ViewRequests </a>
