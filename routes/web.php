@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/','PageController@mainpage')->name('main');
+
+Route::get('/upload','PageController@upload')->name('upload');
+
+Route::get('/torrent','PageController@torrent')->name('torrent');
+
+Route::get('/forums','PageController@forums')->name('forums');
+
+Route::get('/viewrequests','PageController@viewrequests')->name('viewrequests');
+
+Route::get('/main',function(){
+    return view('welcome');
 });
 
-Route::get('/testlogin', function () {
-    return view('login');
-});
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');

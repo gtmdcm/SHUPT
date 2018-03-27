@@ -6,6 +6,7 @@
 </head>
 <body>
 <div id="app"></div>
+<a href="{{ route('main') }}">MainPage</a>
 
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
