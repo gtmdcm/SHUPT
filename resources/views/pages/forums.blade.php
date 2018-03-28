@@ -3,5 +3,5 @@
 @section('title','Forums')
 
 @section('content')
-    <h1>Forums</h1>
+    敬请期待
 @stop

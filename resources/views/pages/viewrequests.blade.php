@@ -3,5 +3,5 @@
 @section('title','ViewRequests')
 
 @section('content')
-<h1>ViewRequests</h1>
+    <h1>求种</h1>
 @stop
