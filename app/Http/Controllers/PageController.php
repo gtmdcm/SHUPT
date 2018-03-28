@@ -25,4 +25,13 @@ class PageController extends Controller
     public function forums(){
         return view('pages/forums');
     }
+//zs test
+    public function app(){
+        return view('layouts/app');
+    }
+
+    public function child(){
+        return view('child');
+    }
+
 }

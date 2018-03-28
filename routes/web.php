@@ -13,8 +13,6 @@
 
 Route::get('/','PageController@mainpage')->name('mainpage');
 
-Route::get('/testpage', function () {return view('welcome');});
-
 Route::get('/upload','PageController@upload')->name('upload');
 
 Route::get('/torrent','PageController@torrent')->name('torrent');
@@ -31,4 +29,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//
+//zd test
+Route::get('/testapp', 'PageController@app')->name('app');
+
+Route::get('/testchild', 'PageController@child')->name('child');
