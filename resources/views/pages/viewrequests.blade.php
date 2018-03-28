@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('title','ViewRequests')
 
 @section('content')
-    <p-nav></p-nav>
+    <h1>求种</h1>
 @stop

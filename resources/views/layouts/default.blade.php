@@ -9,14 +9,8 @@
 </head>
 <body>
     <div id="app">
-        <p-nav></p-nav>
         @yield('content')
-        <a href="{{route('mainpage')}}">MainPage </a>
-        <a href="{{route('upload')}}">Upload </a>
-        <a href="{{route('torrent')}}">Torrent </a>
-        <a href="{{route('viewrequests')}}">ViewRequests </a>
-        <a href="{{route('forums')}}">Forums</a>
-        <br/>
+        <p-nav></p-nav>
         @auth
             <a href="{{ url('/home') }}">Home</a>
         @else

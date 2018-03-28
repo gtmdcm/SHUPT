@@ -47806,15 +47806,13 @@ var staticRenderFns = [
     return _c("div", [
       _c("a", { attrs: { href: "/" } }, [_vm._v("主页")]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "forums" } }, [_vm._v("论坛")]),
+      _c("a", { attrs: { href: "forums" } }, [_vm._v("敬请期待")]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "views/pages/upload" } }, [_vm._v("发布")]),
+      _c("a", { attrs: { href: "upload" } }, [_vm._v("发布")]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "views/pages/viewrequests" } }, [
-        _vm._v("求种")
-      ]),
+      _c("a", { attrs: { href: "viewrequests" } }, [_vm._v("求种")]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "views/pages/torrent" } }, [_vm._v("种子")])
+      _c("a", { attrs: { href: "torrent" } }, [_vm._v("种子")])
     ])
   }
 ]

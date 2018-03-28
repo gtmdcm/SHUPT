@@ -3,16 +3,16 @@
         a(href="/") 主页
         |
         |
-        a(href="forums") 论坛
+        a(href="forums") 敬请期待
         |
         |
-        a(href="views/pages/upload") 发布
+        a(href="upload") 发布
         |
         |
-        a(href="views/pages/viewrequests") 求种
+        a(href="viewrequests") 求种
         |
         |
-        a(href="views/pages/torrent") 种子
+        a(href="torrent") 种子
 </template>
 
 <script>
