@@ -13,6 +13,7 @@
         <p-nav></p-nav>
         @auth
             <a href="{{ url('/home') }}">Home</a>
+            {{auth()->user()}}
         @else
             <a href="{{ route('login') }}">Login</a>
             <a href="{{ route('register') }}">Register</a>
