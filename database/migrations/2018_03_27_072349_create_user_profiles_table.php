@@ -19,8 +19,9 @@ class CreateUserProfilesTable extends Migration
             $table->string('figure');
             $table->double('up_quant');
             $table->double('down_quant');
+            $table->double('contribute');
             $table->integer('rank');
-            $table->integer('net_condition');
+            $table->integer('authority');
             $table->timestamps();
         });
     }

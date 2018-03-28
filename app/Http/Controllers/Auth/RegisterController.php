@@ -67,14 +67,26 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
+
         $prof=new Profile;
         $prof->username=$data['name'];
         $prof->figure='';
         $prof->up_quant=10.0;
         $prof->down_quant=0.0;
+        $prof->contribute=0.0;
         $prof->rank=0;
-        $prof->net_condition=0;
+        $prof->authority=0;
         $prof->save();
+
+
+        /*Profile::create([
+            'username' => $data['name'],
+            'figure' => '',
+            'up_quant' => 10.0,
+            'down_quant' => 0.0,
+            'rank' => 0,
+            'net_condition'=> 0,
+        ]);*/
 
         $docu=new Document;
         $docu->username=$data['name'];

@@ -15,7 +15,9 @@ class CreateSeedsTable extends Migration
     {
         Schema::create('seeds', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('seedname');
             $table->string('seed');
+            $table->string('category');
             $table->string('contributor');
             $table->timestamps();
         });
