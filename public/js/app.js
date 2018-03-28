@@ -47796,19 +47796,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("a", { attrs: { href: _vm.pages / _vm.mainpage } }, [_vm._v("主页")]),
-    _vm._v(" "),
-    _c("a", { attrs: { href: "pages/forums" } }, [_vm._v("论坛")]),
-    _vm._v(" "),
-    _c("a", { attrs: { href: "pages/upload" } }, [_vm._v("发布")]),
-    _vm._v(" "),
-    _c("a", { attrs: { href: "pages/viewrequests" } }, [_vm._v("求种")]),
-    _vm._v(" "),
-    _c("a", { attrs: { href: "pages/torrent" } }, [_vm._v("种子")])
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("a", { attrs: { href: "/" } }, [_vm._v("主页")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "forums" } }, [_vm._v("论坛")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "views/pages/upload" } }, [_vm._v("发布")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "views/pages/viewrequests" } }, [
+        _vm._v("求种")
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "views/pages/torrent" } }, [_vm._v("种子")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

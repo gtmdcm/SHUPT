@@ -1,7 +1,7 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('title','Forums')
 
 @section('content')
-    <h1>Forums</h1>
+    <p-nav></p-nav>
 @stop
