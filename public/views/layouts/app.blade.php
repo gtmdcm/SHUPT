@@ -45,14 +45,16 @@
     </div>
     <div>
         @yield('content')
-        @guest
-            请先
-            <a href="{{ route('login') }}">登录</a>
-            或
-            <a href="{{ route('register') }}">注册</a>
-        @else
+        @section('iflogin')
+            @guest
+                请先
+                <a href="{{ route('login') }}">登录</a>
+                或
+                <a href="{{ route('register') }}">注册</a>
+            @else
 
-        @endguest
+            @endguest
+        @show
     </div>
     <div>
         ©2018 SHUPT.net

@@ -5,3 +5,8 @@
 @section('content')
     敬请期待
 @stop
+
+
+@section('iflogin')
+    @parent
+@endsection

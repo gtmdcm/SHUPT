@@ -5,3 +5,7 @@
 @section('content')
     <h1>MainPage</h1>
 @stop
+
+@section('iflogin')
+    @parent
+@endsection
