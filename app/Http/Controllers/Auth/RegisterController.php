@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Profile;
+use App\Document;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -67,20 +68,26 @@ class RegisterController extends Controller
     {
 
         $prof=new Profile;
-
         $prof->username=$data['name'];
-
         $prof->figure='';
-
         $prof->up_quant=10.0;
-
         $prof->down_quant=0.0;
-
         $prof->rank=0;
-
         $prof->net_condition=0;
-
         $prof->save();
+
+        $docu=new Document;
+        $docu->username=$data['name'];
+        $docu->nick_name='';
+        $docu->gender=0;
+        $docu->age=0;
+        $docu->birthday='';
+        $docu->city='';
+        $docu->email='';
+        $docu->qq='';
+        $docu->tel='';
+        $docu->self_introduce='';
+        $docu->save();
 
         return User::create([
             'name' => $data['name'],

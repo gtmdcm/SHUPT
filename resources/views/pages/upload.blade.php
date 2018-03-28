@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('Upload')
+@section('title','Upload')
 
 @section('content')
     <h1>Upload</h1>
