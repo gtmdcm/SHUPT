@@ -35,3 +35,8 @@ Route::resource('users','UserController');
 Route::get('/testapp', 'PageController@app')->name('app');
 
 Route::get('/testchild', 'PageController@child')->name('child');
+
+//szy test
+Route::get('log',function (){
+    return view('login');
+});
