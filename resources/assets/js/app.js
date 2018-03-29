@@ -19,6 +19,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 
 Vue.component('p-nav', require('./components/nav.vue'));
 
+Vue.component('edit_profile', require('./components/edit_profile.vue'))
 const app = new Vue({
     el: '#app'
 });

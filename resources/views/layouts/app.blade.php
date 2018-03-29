@@ -34,6 +34,9 @@
                         @csrf
                     </form>
                 </div>
+                <div>
+                    <a href="edit_profile">编辑资料</a>
+                </div>
             </li>
         @endguest
     </div>

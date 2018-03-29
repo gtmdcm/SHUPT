@@ -11,17 +11,19 @@
 |
 */
 
-Route::get('/','PageController@mainpage')->name('mainpage');
+Route::get('/', 'PageController@mainpage')->name('mainpage');
 
-Route::get('upload','PageController@upload')->name('upload');
+Route::get('upload', 'PageController@upload')->name('upload');
 
-Route::get('torrent','PageController@torrent')->name('torrent');
+Route::get('torrent', 'PageController@torrent')->name('torrent');
 
-Route::get('forums','PageController@forums')->name('forums');
+Route::get('forums', 'PageController@forums')->name('forums');
 
-Route::get('viewrequests','PageController@viewrequests')->name('viewrequests');
+Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests');
 
-Route::get('main',function(){
+Route::get('/edit_profile', 'PageController@edit_profile')->name('edit_profile');
+
+Route::get('main', function () {
     return view('welcome');
 });
 
@@ -29,7 +31,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('users','UserController');
+Route::resource('users', 'UserController');
 
 //zd test
 Route::get('/testapp', 'PageController@app')->name('app');
@@ -37,6 +39,6 @@ Route::get('/testapp', 'PageController@app')->name('app');
 Route::get('/testchild', 'PageController@child')->name('child');
 
 //szy test
-Route::get('log',function (){
+Route::get('log', function () {
     return view('login');
 });

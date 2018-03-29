@@ -51,7 +51,7 @@
 
 <script>
     export default {
-        name: "profile"
+        name: "edit_profile"
     }
 </script>
 

@@ -34,4 +34,7 @@ class PageController extends Controller
         return view('child');
     }
 
+    public function edit_profile(){
+        return view('pages/edit_profile');
+    }
 }
