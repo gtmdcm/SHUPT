@@ -13,21 +13,23 @@
 
 Route::get('/','PageController@mainpage')->name('mainpage');
 
-Route::get('/upload','PageController@upload')->name('upload');
+Route::get('upload','PageController@upload')->name('upload');
 
-Route::get('/torrent','PageController@torrent')->name('torrent');
+Route::get('torrent','PageController@torrent')->name('torrent');
 
-Route::get('/forums','PageController@forums')->name('forums');
+Route::get('forums','PageController@forums')->name('forums');
 
-Route::get('/viewrequests','PageController@viewrequests')->name('viewrequests');
+Route::get('viewrequests','PageController@viewrequests')->name('viewrequests');
 
-Route::get('/main',function(){
+Route::get('main',function(){
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users','UserController');
 
 //zd test
 Route::get('/testapp', 'PageController@app')->name('app');
