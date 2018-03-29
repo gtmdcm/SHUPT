@@ -3,7 +3,7 @@
 @section('title','Torrent')
 
 @section('content')
-    <h1>Torrent</h1>
+    <h1>种子</h1>
 @stop
 
 @section('iflogin')
