@@ -47912,7 +47912,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47923,6 +47923,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -47994,7 +47995,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("form", [
+    return _c("form", { attrs: { action: "test", method: "post" } }, [
       _vm._v("\n    昵称:"),
       _c("br"),
       _vm._v(" "),
@@ -48090,6 +48091,8 @@ var staticRenderFns = [
       _c("input", {
         attrs: { type: "string", name: "nick_name", size: "200" }
       }),
+      _vm._v(" "),
+      _c("button", { attrs: { type: "submit" } }, [_vm._v("确定")]),
       _vm._v(" "),
       _c("br")
     ])

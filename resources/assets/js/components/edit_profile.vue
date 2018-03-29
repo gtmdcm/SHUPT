@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form action="test" method="post">
         昵称:<br>
         <input type="string" name="nick_name">
         <br>
@@ -45,6 +45,7 @@
         自我介绍:<br>
         <input type="string" name="nick_name"
                size="200">
+        <button type="submit">确定</button>
         <br>
     </form>
 </template>
