@@ -15,8 +15,9 @@ class CreateUserDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
+            $table->string('user');
             $table->string('nick_name');
+            $table->string('figure');
             $table->integer('gender');
             $table->integer('age');
             $table->string('birthday');

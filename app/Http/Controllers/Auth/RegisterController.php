@@ -69,8 +69,8 @@ class RegisterController extends Controller
 
 
         $prof=new Profile;
-        $prof->username=$data['name'];
-        $prof->figure='';
+        $prof->user=$data['name'];
+        //$prof->figure='';
         $prof->up_quant=10.0;
         $prof->down_quant=0.0;
         $prof->contribute=0.0;
@@ -89,8 +89,9 @@ class RegisterController extends Controller
         ]);*/
 
         $docu=new Document;
-        $docu->username=$data['name'];
+        $docu->user=$data['name'];
         $docu->nick_name='';
+        $docu->figure='';
         $docu->gender=0;
         $docu->age=0;
         $docu->birthday='';
