@@ -1,8 +1,8 @@
-<html>
-<head>
+@extends('layouts.app')
 
-</head>
-<body>
+@section('title', 'register')
+
+@section('content')
 <h2>
     <span>
         <img src="./images/testsierra.png" alt="sierra">
@@ -59,5 +59,3 @@
         </div>
     </div>
 </form>
-</body>
-</html>
