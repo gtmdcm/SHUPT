@@ -47844,21 +47844,17 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(52)
-}
 var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(54)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(71)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-256b2fea"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -47891,46 +47887,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(53);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(13)("2707a9d6", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-256b2fea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./edit_profile.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-256b2fea\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./edit_profile.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 52 */,
+/* 53 */,
 /* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -47988,139 +47946,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "edit_profile"
+    data: function data() {
+        return {
+            formItem: {
+                input: '',
+                select: '',
+                radio: 'male',
+                checkbox: [],
+                switch: true,
+                date: '',
+                time: '',
+                slider: [20, 50],
+                textarea: ''
+            }
+        };
+    }
 });
 
 /***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", { attrs: { action: "test", method: "post" } }, [
-      _vm._v("\n    昵称:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "string", name: "nick_name" } }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    性别:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "radio", name: "gender", value: "male", checked: "" }
-      }),
-      _vm._v("男\n    "),
-      _c("input", {
-        attrs: { type: "radio", name: "gender", value: "female" }
-      }),
-      _vm._v("女\n    "),
-      _c("br"),
-      _vm._v("\n    生日:\n    "),
-      _c(
-        "select",
-        {
-          attrs: {
-            name: "month",
-            onChange: "changeDate(this.options[selectedIndex].value);"
-          }
-        },
-        [
-          _c("option", { attrs: { value: "na" } }, [_vm._v("Month")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "1" } }, [_vm._v("January")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "2" } }, [_vm._v("February")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "3" } }, [_vm._v("March")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "4" } }, [_vm._v("April")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "5" } }, [_vm._v("May")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "6" } }, [_vm._v("June")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "7" } }, [_vm._v("July")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "8" } }, [_vm._v("August")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "9" } }, [_vm._v("September")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "10" } }, [_vm._v("October")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "11" } }, [_vm._v("November")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "12" } }, [_vm._v("December")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("select", { attrs: { name: "day", id: "day" } }, [
-        _c("option", { attrs: { value: "na" } }, [_vm._v("日")])
-      ]),
-      _vm._v(" "),
-      _c("select", { attrs: { name: "year", id: "year" } }, [
-        _c("option", { attrs: { value: "na" } }, [_vm._v("年")])
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    地区:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "string", name: "city" } }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    邮箱:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "string", name: "email" } }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    QQ:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "string", name: "qq" } }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    电话:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "string", name: "tel" } }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v("\n    自我介绍:"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "string", name: "nick_name", size: "200" }
-      }),
-      _vm._v(" "),
-      _c("button", { attrs: { type: "submit" } }, [_vm._v("确定")]),
-      _vm._v(" "),
-      _c("br")
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-256b2fea", module.exports)
-  }
-}
-
-/***/ }),
+/* 55 */,
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -84080,6 +83929,279 @@ module.exports = "/fonts/vendor/iview/dist/styles/ionicons.woff?05acfdb568b3df49
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/vendor/iview/dist/styles/ionicons.svg?621bd386841f74e0053cb8e67f8a0604";
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "Form",
+    { attrs: { model: _vm.formItem, "label-width": 80 } },
+    [
+      _c(
+        "FormItem",
+        { attrs: { label: "昵称" } },
+        [
+          _c("Input", {
+            attrs: { placeholder: "请输入昵称" },
+            model: {
+              value: _vm.formItem.user,
+              callback: function($$v) {
+                _vm.$set(_vm.formItem, "user", $$v)
+              },
+              expression: "formItem.user"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "Select" } },
+        [
+          _c(
+            "Select",
+            {
+              model: {
+                value: _vm.formItem.select,
+                callback: function($$v) {
+                  _vm.$set(_vm.formItem, "select", $$v)
+                },
+                expression: "formItem.select"
+              }
+            },
+            [
+              _c("Option", { attrs: { value: "beijing" } }, [
+                _vm._v("New York")
+              ]),
+              _vm._v(" "),
+              _c("Option", { attrs: { value: "shanghai" } }, [
+                _vm._v("London")
+              ]),
+              _vm._v(" "),
+              _c("Option", { attrs: { value: "shenzhen" } }, [_vm._v("Sydney")])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "DatePicker" } },
+        [
+          _c(
+            "Row",
+            [
+              _c(
+                "Col",
+                { attrs: { span: "11" } },
+                [
+                  _c("DatePicker", {
+                    attrs: { type: "date", placeholder: "Select date" },
+                    model: {
+                      value: _vm.formItem.date,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formItem, "date", $$v)
+                      },
+                      expression: "formItem.date"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "Col",
+                {
+                  staticStyle: { "text-align": "center" },
+                  attrs: { span: "2" }
+                },
+                [_vm._v("-")]
+              ),
+              _vm._v(" "),
+              _c(
+                "Col",
+                { attrs: { span: "11" } },
+                [
+                  _c("TimePicker", {
+                    attrs: { type: "time", placeholder: "Select time" },
+                    model: {
+                      value: _vm.formItem.time,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formItem, "time", $$v)
+                      },
+                      expression: "formItem.time"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "Radio" } },
+        [
+          _c(
+            "RadioGroup",
+            {
+              model: {
+                value: _vm.formItem.radio,
+                callback: function($$v) {
+                  _vm.$set(_vm.formItem, "radio", $$v)
+                },
+                expression: "formItem.radio"
+              }
+            },
+            [
+              _c("Radio", { attrs: { label: "male" } }, [_vm._v("Male")]),
+              _vm._v(" "),
+              _c("Radio", { attrs: { label: "female" } }, [_vm._v("Female")])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "Checkbox" } },
+        [
+          _c(
+            "CheckboxGroup",
+            {
+              model: {
+                value: _vm.formItem.checkbox,
+                callback: function($$v) {
+                  _vm.$set(_vm.formItem, "checkbox", $$v)
+                },
+                expression: "formItem.checkbox"
+              }
+            },
+            [
+              _c("Checkbox", { attrs: { label: "Eat" } }),
+              _vm._v(" "),
+              _c("Checkbox", { attrs: { label: "Sleep" } }),
+              _vm._v(" "),
+              _c("Checkbox", { attrs: { label: "Run" } }),
+              _vm._v(" "),
+              _c("Checkbox", { attrs: { label: "Movie" } })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "Switch" } },
+        [
+          _c(
+            "i-switch",
+            {
+              attrs: { size: "large" },
+              model: {
+                value: _vm.formItem.switch,
+                callback: function($$v) {
+                  _vm.$set(_vm.formItem, "switch", $$v)
+                },
+                expression: "formItem.switch"
+              }
+            },
+            [
+              _c("span", { attrs: { slot: "open" }, slot: "open" }, [
+                _vm._v("On")
+              ]),
+              _vm._v(" "),
+              _c("span", { attrs: { slot: "close" }, slot: "close" }, [
+                _vm._v("Off")
+              ])
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "Slider" } },
+        [
+          _c("Slider", {
+            attrs: { range: "" },
+            model: {
+              value: _vm.formItem.slider,
+              callback: function($$v) {
+                _vm.$set(_vm.formItem, "slider", $$v)
+              },
+              expression: "formItem.slider"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "Text" } },
+        [
+          _c("Input", {
+            attrs: {
+              type: "textarea",
+              autosize: { minRows: 2, maxRows: 5 },
+              placeholder: "Enter something..."
+            },
+            model: {
+              value: _vm.formItem.textarea,
+              callback: function($$v) {
+                _vm.$set(_vm.formItem, "textarea", $$v)
+              },
+              expression: "formItem.textarea"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        [
+          _c("Button", { attrs: { type: "primary" } }, [_vm._v("Submit")]),
+          _vm._v(" "),
+          _c(
+            "Button",
+            { staticStyle: { "margin-left": "8px" }, attrs: { type: "ghost" } },
+            [_vm._v("Cancel")]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-256b2fea", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
