@@ -5,7 +5,7 @@
 @section('title', 'Laravel学院')
 
 @section('content')
-    <p>这里是主体内容，完善中...</p>
+    <date></date>
 @endsection
 
 
