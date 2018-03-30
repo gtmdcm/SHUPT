@@ -18,7 +18,9 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
         "vue": "^2.5.7",
-        "pug":"^2.0.3",
-        "pug-loader":"^2.3.0"
+        "pug": "^2.0.3",
+        "pug-loader": "^2.3.0",
+        "iview": "^2.11.0",
+        "vue-calendar-component": "^2.4.3"
     }
 }
