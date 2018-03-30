@@ -83944,10 +83944,10 @@ var render = function() {
     [
       _c(
         "FormItem",
-        { attrs: { label: "用户名" } },
+        { attrs: { label: "昵称" } },
         [
           _c("Input", {
-            attrs: { placeholder: "请输入用户名" },
+            attrs: { placeholder: "请输入昵称" },
             model: {
               value: _vm.formItem.user,
               callback: function($$v) {
