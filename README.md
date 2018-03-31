@@ -2,6 +2,8 @@
 
 现在有像样的路由了！
 
+js版本:ECMAScript6
+
 安装步骤：
 - composer install
 - npm install (base64-js@0.0.8安装过程较漫长)

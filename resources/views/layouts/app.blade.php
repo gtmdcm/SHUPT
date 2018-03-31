@@ -43,7 +43,7 @@
     <div>
         @guest
         @else
-            <p-nav></p-nav>
+            <z-nav></z-nav>
         @endguest
     </div>
     <div>
