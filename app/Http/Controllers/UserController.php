@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\OSS;
 use Aws\S3\S3Client;
+use App\Services\S3;
 
 class UserController extends Controller
 {
@@ -13,7 +14,7 @@ class UserController extends Controller
 
         //OSS::publicUpload('shupt-picture','sample1','/Users/jackysong/Documents/PHP Storm/SHUPT/.osstest');
 
-        $s3 = new S3Client([
+        /*$s3 = new S3Client([
             'version' => 'latest',
             'region'  => 'us-east-1',
             'endpoint' => 'http://localhost:9000',
@@ -28,7 +29,13 @@ class UserController extends Controller
             'Bucket' => 'shupt-picture',
             'Key'    => 'sample0009',
             'SourceFile'   => '/Users/jackysong/Documents/PHP Storm/SHUPT/.osstest'
-        ]);
+        ]);*/
+
+        $s3c = new S3;
+
+        $s3c->putObject('shupt-picture','sample004','/Users/jackysong/Documents/PHP Storm/SHUPT/.osstest');
+
+        $s3c->getObject('shupt-picture','sample004','/Users/jackysong/Documents/PHP Storm/SHUPT/.getosstest');
 
         return view('home');
 
