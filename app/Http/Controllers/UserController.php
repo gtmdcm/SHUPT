@@ -33,9 +33,9 @@ class UserController extends Controller
 
         $s3c = new S3;
 
-        $s3c->putObject('shupt-picture','sample004','/Users/jackysong/Documents/PHP Storm/SHUPT/.osstest');
+        $s3c->putObject('shupt-picture','sample0010','/Users/jackysong/Documents/PHP Storm/SHUPT/.osstest');
 
-        $s3c->getObject('shupt-picture','sample004','/Users/jackysong/Documents/PHP Storm/SHUPT/.getosstest');
+        $s3c->getObject('shupt-picture','sample0010','/Users/jackysong/Documents/PHP Storm/SHUPT/.getosstest');
 
         return view('home');
 
