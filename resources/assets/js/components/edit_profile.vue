@@ -15,7 +15,8 @@
                 <Col span="11">
                 <DatePicker type="date" placeholder="Select date" v-model="formItem.date"></DatePicker>
                 </Col>
-                <Col span="2" style="text-align: center">-</Col>
+                <Col span="2" style="text-align: center">
+                -</Col>
                 <Col span="11">
                 <TimePicker type="time" placeholder="Select time" v-model="formItem.time"></TimePicker>
                 </Col>
@@ -45,7 +46,8 @@
             <Slider v-model="formItem.slider" range></Slider>
         </FormItem>
         <FormItem label="Text">
-            <Input v-model="formItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
+            <Input v-model="formItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
+                   placeholder="Enter something..."></Input>
         </FormItem>
         <FormItem>
             <Button type="primary">Submit</Button>
@@ -55,7 +57,7 @@
 </template>
 <script>
     export default {
-        data () {
+        data() {
             return {
                 formItem: {
                     input: '',

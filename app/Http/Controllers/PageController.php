@@ -37,4 +37,8 @@ class PageController extends Controller
     public function edit_profile(){
         return view('pages/edit_profile');
     }
+
+    public function todo(){
+        return view('pages/todo');
+    }
 }
