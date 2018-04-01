@@ -3,13 +3,12 @@ npm install
 cp .env.example .env
 php artisan key:generate >> key
 str=$(cat key | cut -b 18-68)
-sed -e '4d' ./.env
 echo APP_KEY=$str >> ./.env
 read -p "输入要使用的数据库(默认mysql)" dbc
 if [ -z "${dbc}" ];then
     dbc=mysql
 fi
-sed -i "" "s/examplesql/$dbc/" .env
+sed -i "" "s/mysql/$dbc/" .env
 read -p "输入数据库ip地址(默认127.0.0.1)" dbh
 if [ -z "${dbh}" ];then
     dbh='127.0.0.1'
@@ -30,10 +29,9 @@ if [ -z "${dbu}" ];then
     dbu=root
 fi
 sed -i "" "s/exampleusername/$dbu/" .env
-echo
 read -p "输入用户密码" dbp
-sed -e '14d' ./.env
-php artisan migrate:fresh
+echo DB_PASSWORD=$dbp >> .env
 rm key
+php artisan migrate:fresh
 npm run dev
 php artisan serve
