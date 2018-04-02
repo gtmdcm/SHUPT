@@ -68,7 +68,7 @@ class RegisterController extends Controller
     {
 
 
-        $prof=new Profile;
+        /*$prof=new Profile;
         $prof->user=$data['name'];
         //$prof->figure='';
         $prof->up_quant=10.0;
@@ -78,15 +78,6 @@ class RegisterController extends Controller
         $prof->authority=0;
         $prof->save();
 
-
-        /*Profile::create([
-            'username' => $data['name'],
-            'figure' => '',
-            'up_quant' => 10.0,
-            'down_quant' => 0.0,
-            'rank' => 0,
-            'net_condition'=> 0,
-        ]);*/
 
         $docu=new Document;
         $docu->user=$data['name'];
@@ -100,7 +91,7 @@ class RegisterController extends Controller
         $docu->qq='';
         $docu->tel='';
         $docu->self_introduce='';
-        $docu->save();
+        $docu->save();*/
 
         return User::create([
             'name' => $data['name'],

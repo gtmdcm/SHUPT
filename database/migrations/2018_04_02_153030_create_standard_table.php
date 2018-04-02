@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeedsTable extends Migration
+class CreateStandardTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateSeedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('seeds', function (Blueprint $table) {
+        Schema::create('standard', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('seedname');
-            $table->string('seed');
-            $table->string('category');
-            $table->string('contributor');
+            $table->char('standardid',4);
+            $table->string('name',20);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateSeedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seeds');
+        Schema::dropIfExists('standard');
     }
 }

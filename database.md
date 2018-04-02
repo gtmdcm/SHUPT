@@ -17,23 +17,24 @@
    | up            | double           | 8    | 上传量     |
    | down          | double           | 8    | 下载量     |
    | contribute    | double           | 8    | 贡献度     |
-   | rank          | integer          | 4    | 排名       |
-   | register_date | date             |      | 注册日期   |
-   | last_login    | date             |      | 上次登陆   |
-   | last_upload   | date             |      | 上一次上传 |
-   | last_download | date             |      | 上一次下载 |
+   | rank          | integer          | 8    | 排名       |
+   | register_date | datetime         |      | 注册日期   |
+   | last_login    | datetime         |      | 上次登陆   |
+   | last_upload   | datetime         |      | 上一次上传 |
+   | last_download | datetime         |      | 上一次下载 |
    | banned        | enum('yes','no') | 1    | 是否被封禁 |
+   | character     | char             | 4    | 用户角色   |
 
 3. 用户档案(documents)
 
-   | 字段名    | 类型      | 长度 | 备注     |
-   | --------- | --------- | ---- | -------- |
-   | id        | increment |      | 表自增id |
-   | uid       | char      | 8    | 用户id   |
-   | figure    | char      | 16   | 头像     |
-   | gender    | integer   | 2    | 性别     |
-   | school    | char      | 4    | 学校     |
-   | signature | varchar   | 100  | 个人签名 |
+   | 字段名    | 类型                  | 长度 | 备注     |
+   | --------- | --------------------- | ---- | -------- |
+   | id        | increment             |      | 表自增id |
+   | uid       | char                  | 8    | 用户id   |
+   | figure    | char                  | 16   | 头像     |
+   | gender    | enum('male','female') | 2    | 性别     |
+   | school    | char                  | 4    | 学校     |
+   | signature | varchar               | 100  | 个人签名 |
 
 4. 资源(resources)
 
@@ -54,7 +55,8 @@
    | owner         | varchar          | 20   | 资源拥有者               |
    | catagory      | char             | 4    | 分类                     |
    | stadard       | char             | 4    | 清晰度                   |
-   | last_action   | date             |      | 上一次被下载             |
+   | last_action   | datetime         |      | 上一次被下载             |
+   | upload_time   | datetime         |      | 资源上传时间             |
 
 5. 权限(auths)
 
@@ -81,7 +83,7 @@
    | id        | increment |      | 表自增id |
    | operation | varchar   | 20   | 操作     |
    | operator  | varchar   | 20   | 操作者   |
-   | date      | date      |      | 操作日期 |
+   | date      | datetime  |      | 操作日期 |
 
 8. 角色权限(charauth)
 
@@ -91,14 +93,6 @@
    | cid    | char      | 4    | 角色id   |
    | aid    | char      | 4    | 权限id   |
 
-9. 角色用户(charuser)
-
-   | 字段名 | 类型      | 长度 | 备注     |
-   | ------ | --------- | ---- | -------- |
-   | id     | increment |      | 表自增id |
-   | cid    | char      | 4    | 角色id   |
-   | uid    | char      | 4    | 用户id   |
-
 10. 学校(schools)
 
    | 字段名   | 类型      | 长度 | 备注     |
@@ -107,13 +101,14 @@
    | schoolid | char      | 4    | 学校id   |
    | name     | varchar   | 30   | 学校名   |
 
-11. 资源种类(catagory)
+10. 资源种类(catagory)
 
-    | 字段名 | 类型      | 长度 | 备注       |
-    | ------ | --------- | ---- | ---------- |
-    | id     | increment |      | 表自增id   |
-    | cataid | char      | 4    | 资源种类id |
-    | name   | varchar   | 20   | 资源种类名 |
+   | 字段名   | 类型      | 长度 | 备注       |
+   | -------- | --------- | ---- | ---------- |
+   | id       | increment |      | 表自增id   |
+   | cataid   | char      | 4    | 资源种类id |
+   | name     | varchar   | 20   | 资源种类名 |
+   | parentid | char      | 4    | 父种类id   |
 
 12. 清晰度(standard)
 
