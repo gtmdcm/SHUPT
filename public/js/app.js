@@ -25249,7 +25249,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(17);
-module.exports = __webpack_require__(72);
+module.exports = __webpack_require__(69);
 
 
 /***/ }),
@@ -25290,9 +25290,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('p-nav', __webpack_require
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('edit_profile', __webpack_require__(61));
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('date', __webpack_require__(64));
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('z-nav', __webpack_require__(67));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('z-nav', __webpack_require__(64));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app'
@@ -83489,37 +83487,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             formItem: {
-                input: '',
-                select: '',
-                radio: 'male',
-                checkbox: [],
-                switch: true,
-                date: '',
-                time: '',
-                slider: [20, 50],
-                textarea: ''
+                user: '',
+                nick_name: '',
+                gender: 'male',
+                birthday: '',
+                email: '',
+                qq: '',
+                tel: '',
+                self_introduce: ''
             }
         };
     }
@@ -83544,6 +83524,24 @@ var render = function() {
           _c("Input", {
             attrs: { placeholder: "请输入昵称" },
             model: {
+              value: _vm.formItem.nick_name,
+              callback: function($$v) {
+                _vm.$set(_vm.formItem, "nick_name", $$v)
+              },
+              expression: "formItem.nick_name"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "用户名" } },
+        [
+          _c("Input", {
+            attrs: { placeholder: "请输入昵称" },
+            model: {
               value: _vm.formItem.user,
               callback: function($$v) {
                 _vm.$set(_vm.formItem, "user", $$v)
@@ -83557,39 +83555,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "FormItem",
-        { attrs: { label: "Select" } },
-        [
-          _c(
-            "Select",
-            {
-              model: {
-                value: _vm.formItem.select,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "select", $$v)
-                },
-                expression: "formItem.select"
-              }
-            },
-            [
-              _c("Option", { attrs: { value: "beijing" } }, [
-                _vm._v("New York")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "shanghai" } }, [
-                _vm._v("London")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "shenzhen" } }, [_vm._v("Sydney")])
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "DatePicker" } },
+        { attrs: { label: "生日" } },
         [
           _c(
             "Row",
@@ -83599,40 +83565,13 @@ var render = function() {
                 { attrs: { span: "11" } },
                 [
                   _c("DatePicker", {
-                    attrs: { type: "date", placeholder: "Select date" },
+                    attrs: { type: "date", placeholder: "选择日期" },
                     model: {
-                      value: _vm.formItem.date,
+                      value: _vm.formItem.birthday,
                       callback: function($$v) {
-                        _vm.$set(_vm.formItem, "date", $$v)
+                        _vm.$set(_vm.formItem, "birthday", $$v)
                       },
-                      expression: "formItem.date"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "Col",
-                {
-                  staticStyle: { "text-align": "center" },
-                  attrs: { span: "2" }
-                },
-                [_vm._v("\n            -")]
-              ),
-              _vm._v(" "),
-              _c(
-                "Col",
-                { attrs: { span: "11" } },
-                [
-                  _c("TimePicker", {
-                    attrs: { type: "time", placeholder: "Select time" },
-                    model: {
-                      value: _vm.formItem.time,
-                      callback: function($$v) {
-                        _vm.$set(_vm.formItem, "time", $$v)
-                      },
-                      expression: "formItem.time"
+                      expression: "formItem.birthday"
                     }
                   })
                 ],
@@ -83647,23 +83586,23 @@ var render = function() {
       _vm._v(" "),
       _c(
         "FormItem",
-        { attrs: { label: "Radio" } },
+        { attrs: { label: "性别" } },
         [
           _c(
             "RadioGroup",
             {
               model: {
-                value: _vm.formItem.radio,
+                value: _vm.formItem.gender,
                 callback: function($$v) {
-                  _vm.$set(_vm.formItem, "radio", $$v)
+                  _vm.$set(_vm.formItem, "gender", $$v)
                 },
-                expression: "formItem.radio"
+                expression: "formItem.gender"
               }
             },
             [
-              _c("Radio", { attrs: { label: "male" } }, [_vm._v("Male")]),
+              _c("Radio", { attrs: { label: "male" } }, [_vm._v("男")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "female" } }, [_vm._v("Female")])
+              _c("Radio", { attrs: { label: "female" } }, [_vm._v("女")])
             ],
             1
           )
@@ -83673,76 +83612,16 @@ var render = function() {
       _vm._v(" "),
       _c(
         "FormItem",
-        { attrs: { label: "Checkbox" } },
+        { attrs: { label: "email" } },
         [
-          _c(
-            "CheckboxGroup",
-            {
-              model: {
-                value: _vm.formItem.checkbox,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "checkbox", $$v)
-                },
-                expression: "formItem.checkbox"
-              }
-            },
-            [
-              _c("Checkbox", { attrs: { label: "Eat" } }),
-              _vm._v(" "),
-              _c("Checkbox", { attrs: { label: "Sleep" } }),
-              _vm._v(" "),
-              _c("Checkbox", { attrs: { label: "Run" } }),
-              _vm._v(" "),
-              _c("Checkbox", { attrs: { label: "Movie" } })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Switch" } },
-        [
-          _c(
-            "i-switch",
-            {
-              attrs: { size: "large" },
-              model: {
-                value: _vm.formItem.switch,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "switch", $$v)
-                },
-                expression: "formItem.switch"
-              }
-            },
-            [
-              _c("span", { attrs: { slot: "open" }, slot: "open" }, [
-                _vm._v("On")
-              ]),
-              _vm._v(" "),
-              _c("span", { attrs: { slot: "close" }, slot: "close" }, [
-                _vm._v("Off")
-              ])
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Slider" } },
-        [
-          _c("Slider", {
-            attrs: { range: "" },
+          _c("Input", {
+            attrs: { placeholder: "请输入邮箱" },
             model: {
-              value: _vm.formItem.slider,
+              value: _vm.formItem.email,
               callback: function($$v) {
-                _vm.$set(_vm.formItem, "slider", $$v)
+                _vm.$set(_vm.formItem, "email", $$v)
               },
-              expression: "formItem.slider"
+              expression: "formItem.email"
             }
           })
         ],
@@ -83751,20 +83630,56 @@ var render = function() {
       _vm._v(" "),
       _c(
         "FormItem",
-        { attrs: { label: "Text" } },
+        { attrs: { label: "qq" } },
+        [
+          _c("Input", {
+            attrs: { placeholder: "请输入qq" },
+            model: {
+              value: _vm.formItem.qq,
+              callback: function($$v) {
+                _vm.$set(_vm.formItem, "qq", $$v)
+              },
+              expression: "formItem.qq"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "电话" } },
+        [
+          _c("Input", {
+            attrs: { placeholder: "请输入电话" },
+            model: {
+              value: _vm.formItem.tel,
+              callback: function($$v) {
+                _vm.$set(_vm.formItem, "tel", $$v)
+              },
+              expression: "formItem.tel"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        { attrs: { label: "自我介绍" } },
         [
           _c("Input", {
             attrs: {
               type: "textarea",
               autosize: { minRows: 2, maxRows: 5 },
-              placeholder: "Enter something..."
+              placeholder: "请输入自我介绍"
             },
             model: {
-              value: _vm.formItem.textarea,
+              value: _vm.formItem.self_introduce,
               callback: function($$v) {
-                _vm.$set(_vm.formItem, "textarea", $$v)
+                _vm.$set(_vm.formItem, "self_introduce", $$v)
               },
-              expression: "formItem.textarea"
+              expression: "formItem.self_introduce"
             }
           })
         ],
@@ -83803,415 +83718,15 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(65)
-/* template */
-var __vue_template__ = __webpack_require__(66)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/date.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5077a545", Component.options)
-  } else {
-    hotAPI.reload("data-v-5077a545", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 65 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            formItem: {
-                input: '',
-                select: '',
-                radio: 'male',
-                checkbox: [],
-                switch: true,
-                date: '',
-                time: '',
-                slider: [20, 50],
-                textarea: ''
-            }
-        };
-    }
-});
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "Form",
-    { attrs: { model: _vm.formItem, "label-width": 80 } },
-    [
-      _c(
-        "FormItem",
-        { attrs: { label: "Input" } },
-        [
-          _c("Input", {
-            attrs: { placeholder: "Enter something..." },
-            model: {
-              value: _vm.formItem.input,
-              callback: function($$v) {
-                _vm.$set(_vm.formItem, "input", $$v)
-              },
-              expression: "formItem.input"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Select" } },
-        [
-          _c(
-            "Select",
-            {
-              model: {
-                value: _vm.formItem.select,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "select", $$v)
-                },
-                expression: "formItem.select"
-              }
-            },
-            [
-              _c("Option", { attrs: { value: "beijing" } }, [
-                _vm._v("New York")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "shanghai" } }, [
-                _vm._v("London")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "shenzhen" } }, [_vm._v("Sydney")])
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "DatePicker" } },
-        [
-          _c(
-            "Row",
-            [
-              _c(
-                "Col",
-                { attrs: { span: "11" } },
-                [
-                  _c("DatePicker", {
-                    attrs: { type: "date", placeholder: "Select date" },
-                    model: {
-                      value: _vm.formItem.date,
-                      callback: function($$v) {
-                        _vm.$set(_vm.formItem, "date", $$v)
-                      },
-                      expression: "formItem.date"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "Col",
-                {
-                  staticStyle: { "text-align": "center" },
-                  attrs: { span: "2" }
-                },
-                [_vm._v("-")]
-              ),
-              _vm._v(" "),
-              _c(
-                "Col",
-                { attrs: { span: "11" } },
-                [
-                  _c("TimePicker", {
-                    attrs: { type: "time", placeholder: "Select time" },
-                    model: {
-                      value: _vm.formItem.time,
-                      callback: function($$v) {
-                        _vm.$set(_vm.formItem, "time", $$v)
-                      },
-                      expression: "formItem.time"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Radio" } },
-        [
-          _c(
-            "RadioGroup",
-            {
-              model: {
-                value: _vm.formItem.radio,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "radio", $$v)
-                },
-                expression: "formItem.radio"
-              }
-            },
-            [
-              _c("Radio", { attrs: { label: "male" } }, [_vm._v("Male")]),
-              _vm._v(" "),
-              _c("Radio", { attrs: { label: "female" } }, [_vm._v("Female")])
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Checkbox" } },
-        [
-          _c(
-            "CheckboxGroup",
-            {
-              model: {
-                value: _vm.formItem.checkbox,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "checkbox", $$v)
-                },
-                expression: "formItem.checkbox"
-              }
-            },
-            [
-              _c("Checkbox", { attrs: { label: "Eat" } }),
-              _vm._v(" "),
-              _c("Checkbox", { attrs: { label: "Sleep" } }),
-              _vm._v(" "),
-              _c("Checkbox", { attrs: { label: "Run" } }),
-              _vm._v(" "),
-              _c("Checkbox", { attrs: { label: "Movie" } })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Switch" } },
-        [
-          _c(
-            "i-switch",
-            {
-              attrs: { size: "large" },
-              model: {
-                value: _vm.formItem.switch,
-                callback: function($$v) {
-                  _vm.$set(_vm.formItem, "switch", $$v)
-                },
-                expression: "formItem.switch"
-              }
-            },
-            [
-              _c("span", { attrs: { slot: "open" }, slot: "open" }, [
-                _vm._v("On")
-              ]),
-              _vm._v(" "),
-              _c("span", { attrs: { slot: "close" }, slot: "close" }, [
-                _vm._v("Off")
-              ])
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Slider" } },
-        [
-          _c("Slider", {
-            attrs: { range: "" },
-            model: {
-              value: _vm.formItem.slider,
-              callback: function($$v) {
-                _vm.$set(_vm.formItem, "slider", $$v)
-              },
-              expression: "formItem.slider"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "Text" } },
-        [
-          _c("Input", {
-            attrs: {
-              type: "textarea",
-              autosize: { minRows: 2, maxRows: 5 },
-              placeholder: "Enter something..."
-            },
-            model: {
-              value: _vm.formItem.textarea,
-              callback: function($$v) {
-                _vm.$set(_vm.formItem, "textarea", $$v)
-              },
-              expression: "formItem.textarea"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        [
-          _c("Button", { attrs: { type: "primary" } }, [_vm._v("Submit")]),
-          _vm._v(" "),
-          _c(
-            "Button",
-            { staticStyle: { "margin-left": "8px" }, attrs: { type: "ghost" } },
-            [_vm._v("Cancel")]
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5077a545", module.exports)
-  }
-}
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(65)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(67)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(68)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -84250,13 +83765,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(66);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -84276,7 +83791,7 @@ if(false) {
 }
 
 /***/ }),
-/* 69 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -84290,7 +83805,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 
 /***/ }),
-/* 70 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -84315,7 +83830,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 71 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -84350,7 +83865,7 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */
+/* 69 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

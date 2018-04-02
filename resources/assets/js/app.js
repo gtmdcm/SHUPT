@@ -24,8 +24,6 @@ Vue.component('p-nav', require('./components/nav.vue'));
 
 Vue.component('edit_profile', require('./components/edit_profile.vue'));
 
-Vue.component('date', require('./components/date.vue'));
-
 Vue.component('z-nav', require('./components/z-nav'))
 
 const app = new Vue({
