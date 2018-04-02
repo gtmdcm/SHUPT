@@ -24,8 +24,8 @@ class S3
             'endpoint' => 'http://localhost:9000',
             'use_path_style_endpoint' => true,
             'credentials' => [
-                'key'    => '0SDK2DBIRCL31F6DAHZB',
-                'secret' => 'fjwSwZZ5hUNjcs78jo0GSYTl4B91rqPif5fbExr6',
+                'key'    => $this->key,
+                'secret' => $this->secret,
             ],
         ]);
     }
