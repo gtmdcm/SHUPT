@@ -1,4 +1,5 @@
 <template>
+
     <Form :model="formItem" :label-width="80">
         <FormItem label="昵称">
             <Input v-model="formItem.nick_name" placeholder="请输入昵称"></Input>
