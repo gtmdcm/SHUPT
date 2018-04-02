@@ -15,7 +15,7 @@ class CreateCharactersTable extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('cid',4);
+            $table->char('cid',4)->unique();
             $table->string('character',15);
             $table->string('description',50);
             $table->timestamps();
