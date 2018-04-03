@@ -17,7 +17,6 @@ class CreateSchoolsTable extends Migration
             $table->increments('id');
             $table->char('schoolid',4)->unique();
             $table->string('name',50);
-            $table->timestamps();
         });
     }
 

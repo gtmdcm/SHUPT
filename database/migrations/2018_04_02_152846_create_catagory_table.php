@@ -18,7 +18,6 @@ class CreateCatagoryTable extends Migration
             $table->char('cataid',4)->unique();
             $table->string('name',30);
             $table->char('parentid',4)->nullable();
-            $table->timestamps();
         });
     }
 

@@ -27,8 +27,8 @@ class CreateResourcesTable extends Migration
             $table->enum('up200down50',['yes','no']);
             $table->enum('up200downfree',['yes','no']);
             $table->string('owner',20);
-            $table->char('cataid',4);
-            $table->char('standardid',4);
+            $table->char('catagory',4);
+            $table->char('standard',4);
             $table->dateTime('last_action');
             $table->dateTime('upload_time');
             $table->timestamps();

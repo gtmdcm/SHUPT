@@ -93,10 +93,13 @@ class RegisterController extends Controller
         $docu->self_introduce='';
         $docu->save();*/
 
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $user=new User;
+        $user->name=$data['name'];
+        $user->email=$data['email'];
+        $user->password=Hash::make($data['password']);
+        $user->uid='00000000';
+        $user->save();
+
+        return $user;
     }
 }

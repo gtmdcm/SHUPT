@@ -18,7 +18,7 @@ class CreateDocumentsTable extends Migration
             $table->char('uid',8);
             $table->char('figure');
             $table->enum('gender',['male','female']);
-            $table->char('schoolid',4);
+            $table->char('school',4);
             $table->string('signature',100);
             $table->timestamps();
         });

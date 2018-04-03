@@ -17,7 +17,6 @@ class CreateStandardTable extends Migration
             $table->increments('id');
             $table->char('standardid',4)->unique();
             $table->string('name',20);
-            $table->timestamps();
         });
     }
 
