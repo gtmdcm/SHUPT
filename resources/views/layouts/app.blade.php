@@ -4,11 +4,12 @@
 <head>
     <title>SHUPT - @yield('title')</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
+    {{--走马灯--}}
+    {{--logo栏--}}
     <div>
         @section('logo')
             <a href="/">logos</a>
@@ -40,12 +41,14 @@
             </li>
         @endguest
     </div>
+    {{--nav--}}
     <div>
         @guest
         @else
             <z-nav></z-nav>
         @endguest
     </div>
+    {{--内容--}}
     <div>
         @yield('content')
         @section('iflogin')
@@ -59,6 +62,7 @@
             @endguest
         @show
     </div>
+    {{--脚注--}}
     <div>
         ©2018 SHUPT.net
     </div>

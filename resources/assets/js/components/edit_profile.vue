@@ -1,6 +1,6 @@
 <template>
 
-    <Form :model="formItem" :label-width="80">
+    <Form :model="formItem" :label-width="80" method="post" action="/profile">
         <FormItem label="昵称">
             <Input v-model="formItem.nick_name" placeholder="请输入昵称"></Input>
         </FormItem>
@@ -40,6 +40,7 @@
     </Form>
 </template>
 <script>
+    Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name=csrf-token]').getAttribute('content')
     export default {
         data() {
             return {
