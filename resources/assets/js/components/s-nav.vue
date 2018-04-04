@@ -24,18 +24,18 @@
                 <MenuItem name="3-5">foo</MenuItem>
             </MenuGroup>
         </Submenu>
-        <MenuItem name="4">
-            <Icon type="settings"></Icon>
-            bar
-        </MenuItem>
+        <Submenu name="4">
+            <template slot="title">
+                <Icon type="settings"></Icon>
+                <a href="torrent">设置</a>
+            </template>
+            <MenuGroup>
+                <MenuItem name="4-1"><a href="edit_profile">编辑个人资料</a> </MenuItem>
+                <MenuItem name="4-2">temp</MenuItem>
+            </MenuGroup>
+        </Submenu>
     </Menu>
     <br>
-    <p>Change theme</p>
-    <RadioGroup v-model="theme1">
-        <Radio label="light"></Radio>
-        <Radio label="dark"></Radio>
-        <Radio label="primary"></Radio>
-    </RadioGroup>
     </div>
 </template>
 <script>

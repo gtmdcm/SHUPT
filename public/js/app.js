@@ -84069,42 +84069,41 @@ var render = function() {
           ),
           _vm._v(" "),
           _c(
-            "MenuItem",
+            "Submenu",
             { attrs: { name: "4" } },
             [
-              _c("Icon", { attrs: { type: "settings" } }),
-              _vm._v("\n        bar\n    ")
+              _c(
+                "template",
+                { slot: "title" },
+                [
+                  _c("Icon", { attrs: { type: "settings" } }),
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "torrent" } }, [_vm._v("设置")])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "MenuGroup",
+                [
+                  _c("MenuItem", { attrs: { name: "4-1" } }, [
+                    _c("a", { attrs: { href: "edit_profile" } }, [
+                      _vm._v("编辑个人资料")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("MenuItem", { attrs: { name: "4-2" } }, [_vm._v("temp")])
+                ],
+                1
+              )
             ],
-            1
+            2
           )
         ],
         1
       ),
       _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", [_vm._v("Change theme")]),
-      _vm._v(" "),
-      _c(
-        "RadioGroup",
-        {
-          model: {
-            value: _vm.theme1,
-            callback: function($$v) {
-              _vm.theme1 = $$v
-            },
-            expression: "theme1"
-          }
-        },
-        [
-          _c("Radio", { attrs: { label: "light" } }),
-          _vm._v(" "),
-          _c("Radio", { attrs: { label: "dark" } }),
-          _vm._v(" "),
-          _c("Radio", { attrs: { label: "primary" } })
-        ],
-        1
-      )
+      _c("br")
     ],
     1
   )

@@ -35,9 +35,6 @@
                         @csrf
                     </form>
                 </div>
-                <div>
-                    <a href="edit_profile">编辑资料</a>
-                </div>
             </li>
         @endguest
     </div>
@@ -45,7 +42,6 @@
     <div>
         @guest
         @else
-            <z-nav></z-nav>
             <s-nav></s-nav>
         @endguest
     </div>
