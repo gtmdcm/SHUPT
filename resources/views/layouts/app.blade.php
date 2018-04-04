@@ -46,6 +46,7 @@
         @guest
         @else
             <z-nav></z-nav>
+            <s-nav></s-nav>
         @endguest
     </div>
     {{--内容--}}

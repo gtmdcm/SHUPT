@@ -44,3 +44,7 @@ Route::get('/testchild', 'PageController@child')->name('child');
 Route::get('log', function () {
     return view('login');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

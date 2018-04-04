@@ -1,0 +1,49 @@
+<template>
+    <div>
+    <Menu mode="horizontal" :theme="theme1" active-name="1">
+        <MenuItem name="1">
+            <Icon type="ios-paper"></Icon>
+            <a href="/">主页</a>
+        </MenuItem>
+        <MenuItem name="2">
+            <Icon type="ios-people"></Icon>
+            <a href="upload">发布</a>
+        </MenuItem>
+        <Submenu name="3">
+            <template slot="title">
+                <Icon type="stats-bars"></Icon>
+                <a href="torrent">种子</a>
+            </template>
+            <MenuGroup title="种子发布">
+                <MenuItem name="3-1">temp</MenuItem>
+                <MenuItem name="3-2">temp</MenuItem>
+                <MenuItem name="3-3">temp</MenuItem>
+            </MenuGroup>
+            <MenuGroup title="查看种子">
+                <MenuItem name="3-4">foo</MenuItem>
+                <MenuItem name="3-5">foo</MenuItem>
+            </MenuGroup>
+        </Submenu>
+        <MenuItem name="4">
+            <Icon type="settings"></Icon>
+            bar
+        </MenuItem>
+    </Menu>
+    <br>
+    <p>Change theme</p>
+    <RadioGroup v-model="theme1">
+        <Radio label="light"></Radio>
+        <Radio label="dark"></Radio>
+        <Radio label="primary"></Radio>
+    </RadioGroup>
+    </div>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                theme1: 'light'
+            }
+        }
+    }
+</script>
