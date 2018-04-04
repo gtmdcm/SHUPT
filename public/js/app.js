@@ -83984,19 +83984,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             theme1: 'light'
         };
-    },
-    methods: {
-        handleSelect: function handleSelect(type) {
-            console.log("Hello?");
-            if (type === 'mainpage') {
-                // this.$router.push('/')
-                window.location.href = '/';
-            } else if (type === 'upload') {
-                window.location.href = 'upload';
-            } else if (type === 'torrent') {
-                window.location.href = 'torrent';
-            }
-        }
     }
 });
 
@@ -84014,79 +84001,66 @@ var render = function() {
       _c(
         "Menu",
         {
-          attrs: {
-            mode: "horizontal",
-            theme: _vm.theme1,
-            width: "auto",
-            "active-name": "1"
-          },
-          on: { "on-select": _vm.handleSelect }
+          attrs: { mode: "horizontal", theme: _vm.theme1, "active-name": "1" }
         },
         [
           _c(
             "MenuItem",
-            { attrs: { name: "mainpage" } },
+            { attrs: { name: "1" } },
             [
               _c("Icon", { attrs: { type: "ios-paper" } }),
-              _vm._v("\n        主页\n    ")
+              _vm._v(" "),
+              _c("a", { attrs: { href: "/" } }, [_vm._v("主页")])
             ],
             1
           ),
           _vm._v(" "),
           _c(
             "MenuItem",
-            { attrs: { name: "upload" } },
+            { attrs: { name: "2" } },
             [
               _c("Icon", { attrs: { type: "ios-people" } }),
-              _vm._v("\n        发布\n    ")
+              _vm._v(" "),
+              _c("a", { attrs: { href: "upload" } }, [_vm._v("发布")])
             ],
             1
           ),
           _vm._v(" "),
           _c(
             "Submenu",
-            { attrs: { name: "torrent" } },
+            { attrs: { name: "3" } },
             [
               _c(
                 "template",
                 { slot: "title" },
                 [
                   _c("Icon", { attrs: { type: "stats-bars" } }),
-                  _vm._v("\n            种子\n        ")
+                  _vm._v(" "),
+                  _c("a", { attrs: { href: "torrent" } }, [_vm._v("种子")])
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
                 "MenuGroup",
-                { attrs: { title: "使用" } },
+                { attrs: { title: "种子发布" } },
                 [
-                  _c("MenuItem", { attrs: { name: "3-1" } }, [
-                    _c("a", { attrs: { href: "/" } }, [_vm._v("asdffadsf")])
-                  ]),
+                  _c("MenuItem", { attrs: { name: "3-1" } }, [_vm._v("temp")]),
                   _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "3-2" } }, [
-                    _vm._v("活跃分析")
-                  ]),
+                  _c("MenuItem", { attrs: { name: "3-2" } }, [_vm._v("temp")]),
                   _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "3-3" } }, [
-                    _vm._v("时段分析")
-                  ])
+                  _c("MenuItem", { attrs: { name: "3-3" } }, [_vm._v("temp")])
                 ],
                 1
               ),
               _vm._v(" "),
               _c(
                 "MenuGroup",
-                { attrs: { title: "留存" } },
+                { attrs: { title: "查看种子" } },
                 [
-                  _c("MenuItem", { attrs: { name: "3-4" } }, [
-                    _vm._v("用户留存")
-                  ]),
+                  _c("MenuItem", { attrs: { name: "3-4" } }, [_vm._v("foo")]),
                   _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "3-5" } }, [
-                    _vm._v("流失用户")
-                  ])
+                  _c("MenuItem", { attrs: { name: "3-5" } }, [_vm._v("foo")])
                 ],
                 1
               )
@@ -84099,7 +84073,7 @@ var render = function() {
             { attrs: { name: "4" } },
             [
               _c("Icon", { attrs: { type: "settings" } }),
-              _vm._v("\n        综合设置\n    ")
+              _vm._v("\n        bar\n    ")
             ],
             1
           )
