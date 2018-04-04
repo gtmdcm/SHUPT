@@ -83605,6 +83605,8 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -83647,8 +83649,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name=csrf-token]').getAttribute('content');
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    name: "edit_profile",
     data: function data() {
         return {
             formItem: {
@@ -83662,6 +83665,13 @@ Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name=csrf
                 self_introduce: ''
             }
         };
+    },
+    created: function created() {
+        var self = this;
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/documents').then(function (response) {
+            console.log(response.data);
+            self.nick_name = response.data.formItem.nick_namedo;
+        });
     }
 });
 
@@ -83680,7 +83690,7 @@ var render = function() {
         model: _vm.formItem,
         "label-width": 80,
         method: "post",
-        action: "/profile"
+        action: "/api/documents"
       }
     },
     [

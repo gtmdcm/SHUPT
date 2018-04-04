@@ -24,3 +24,8 @@ Route::get('/getinfo',function(){
 Route::post('test',function () {
     print(Input::all());
 });
+
+Route::post('/documents',function(){
+
+});
+

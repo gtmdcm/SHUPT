@@ -1,6 +1,6 @@
 <template>
 
-    <Form :model="formItem" :label-width="80" method="post" action="/profile">
+    <Form :model="formItem" :label-width="80" method="post" action="/api/documents">
         <FormItem label="昵称">
             <Input v-model="formItem.nick_name" placeholder="请输入昵称"></Input>
         </FormItem>
@@ -34,15 +34,16 @@
                    placeholder="请输入自我介绍"></Input>
         </FormItem>
         <FormItem>
-            <Button type="primary">Submit</Button>
+                    <Button type="primary">Submit</Button>
             <Button type="ghost" style="margin-left: 8px">Cancel</Button>
         </FormItem>
     </Form>
 </template>
 <script>
-    Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name=csrf-token]').getAttribute('content')
+    import axios from 'axios'
     export default {
-        data() {
+        name:"edit_profile",
+        data: function() {
             return {
                 formItem: {
                     user: '',
@@ -55,6 +56,15 @@
                     self_introduce: '',
                 }
             }
+        },
+        created:function () {
+            var self = this
+            axios.post('/api/documents').then(function (response) {
+                console.log(response.data);
+                self.nick_name = response.data.formItem.nick_namedo;
+
+
+            })
         }
     }
 </script>
