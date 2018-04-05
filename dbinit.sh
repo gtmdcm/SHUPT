@@ -10,4 +10,6 @@ php artisan migrate:fresh
 php artisan db:seed --class=CatagoryTableSeeder
 php artisan db:seed --class=StandardTableSeeder
 php artisan db:seed --class=SchoolsTableSeeder
-
+php artisan db:seed --class=AuthTableSeeder
+php artisan db:seed --class=CharacterTableSeeder
+php artisan db:seed --class=CharAuthTableSeeder

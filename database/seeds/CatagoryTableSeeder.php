@@ -12,10 +12,10 @@ class CatagoryTableSeeder extends Seeder
      */
 
     private $catafirst = [
-        '0001' => '电影',
-        '0002' => '动漫',
-        '0003' => '电视剧',
-        '0004' => '纪录片',
+        '电影',
+        '动漫',
+        '电视剧',
+        '纪录片',
     ];
 
     private $catasecond = [
