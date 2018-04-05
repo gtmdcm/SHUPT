@@ -75,33 +75,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-
-        /*$prof=new Profile;
-        $prof->user=$data['name'];
-        //$prof->figure='';
-        $prof->up_quant=10.0;
-        $prof->down_quant=0.0;
-        $prof->contribute=0.0;
-        $prof->rank=0;
-        $prof->authority=0;
-        $prof->save();
-
-
-        $docu=new Document;
-        $docu->user=$data['name'];
-        $docu->nick_name='';
-        $docu->figure='';
-        $docu->gender=0;
-        $docu->age=0;
-        $docu->birthday='';
-        $docu->city='';
-        $docu->email='';
-        $docu->qq='';
-        $docu->tel='';
-        $docu->self_introduce='';
-        $docu->save();*/
-
         $this->newId=Id::find(1);
 
         $this->id=sprintf("%08d",$this->newId->uid);
@@ -118,6 +91,28 @@ class RegisterController extends Controller
         $user->save();
 
         $this->newId->uid=$this->newId->uid+1;
+
+        $prof=new Profile;
+        $prof->uid=$this->id;
+        $prof->up=10.0;
+        $prof->down=0.0;
+        $prof->contribute=0.0;
+        $prof->rank=0;
+        $prof->register_date=date('Y-m-d H:i:s');
+        $prof->last_login=date('Y-m-d H:i:s');
+        $prof->last_upload=date('Y-m-d H:i:s');
+        $prof->last_download=date('Y-m-d H:i:s');
+        $prof->banned='no';
+        $prof->character='0000';
+        $prof->save();
+
+        $docu=new Document;
+        $docu->uid=$this->id;
+        $docu->figure='';
+        $docu->gender='secret';
+        $docu->school='0000';
+        $docu->signature='';
+        $docu->save();
 
         //DB::update("update idcontroller set uid = {$this->newId->uid}");
         /*$this->newUid=Id::find(1);
