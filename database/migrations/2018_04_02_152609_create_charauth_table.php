@@ -17,6 +17,7 @@ class CreateCharauthTable extends Migration
             $table->increments('id');
             $table->char('cid',4);
             $table->char('aid',4);
+            $table->timestamps();
         });
     }
 

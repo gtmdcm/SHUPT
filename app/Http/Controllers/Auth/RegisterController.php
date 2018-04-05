@@ -106,6 +106,10 @@ class RegisterController extends Controller
 
         $this->id=sprintf("%08d",$this->newId->uid);
 
+        $this->newId->uid=$this->newId->uid+1;
+
+        $this->newId->save();
+
         $user=new User;
         $user->name=$data['name'];
         $user->email=$data['email'];
@@ -115,7 +119,7 @@ class RegisterController extends Controller
 
         $this->newId->uid=$this->newId->uid+1;
 
-        DB::update("update idcontroller set uid = {$this->newId->uid}");
+        //DB::update("update idcontroller set uid = {$this->newId->uid}");
         /*$this->newUid=Id::find(1);
         $this->newUid->uid=$this->newId->uid+1;*/
 

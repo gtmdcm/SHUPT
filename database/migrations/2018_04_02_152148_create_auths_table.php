@@ -18,6 +18,7 @@ class CreateAuthsTable extends Migration
             $table->char('aid',4)->unique();
             $table->string('auth',20);
             $table->string('description',50);
+            $table->timestamps();
         });
     }
 

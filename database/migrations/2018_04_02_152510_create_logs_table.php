@@ -19,6 +19,7 @@ class CreateLogsTable extends Migration
             $table->string('operation',20);
             $table->string('operator',20);
             $table->dateTime('date');
+            $table->timestamps();
         });
     }
 

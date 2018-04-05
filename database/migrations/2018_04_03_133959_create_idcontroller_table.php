@@ -18,6 +18,7 @@ class CreateIdcontrollerTable extends Migration
             $table->integer('uid');
             $table->integer('rid');
             $table->integer('oid');
+            $table->timestamps();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateCharactersTable extends Migration
             $table->char('cid',4)->unique();
             $table->string('character',15);
             $table->string('description',50);
+            $table->timestamps();
         });
     }
 
