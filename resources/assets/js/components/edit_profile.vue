@@ -69,7 +69,7 @@
                 },
 
                 created: function () {
-                    var self = this
+                    var self = this;
                     axios.post('/api/documents').then(function (response) {
                         console.log(response.data);
                         self.nick_name = response.data.formItem.nick_namedo;
