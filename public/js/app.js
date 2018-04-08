@@ -83491,7 +83491,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -83510,12 +83510,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         };
     },
-    created: function created() {
-        var self = this;
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/documents').then(function (response) {
-            console.log(response.data);
-            self.nick_name = response.data.formItem.nick_namedo;
-        });
+    methods: {
+
+        temp: function temp() {
+            console.log(this.formItem);
+        },
+
+        temp1: function temp1() {
+            var foo = "hi!!!!";
+            return foo;
+        },
+        created: function created() {
+            var self = this;
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/documents').then(function (response) {
+                console.log(response.data);
+                self.nick_name = response.data.formItem.nick_namedo;
+            });
+        }
     }
 });
 
@@ -83529,14 +83540,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "Form",
-    {
-      attrs: {
-        model: _vm.formItem,
-        "label-width": 80,
-        method: "post",
-        action: "/api/documents"
-      }
-    },
+    { attrs: { model: _vm.formItem, "label-width": 80 } },
     [
       _c(
         "FormItem",
@@ -83710,7 +83714,11 @@ var render = function() {
       _c(
         "FormItem",
         [
-          _c("Button", { attrs: { type: "primary" } }, [_vm._v("Submit")]),
+          _c(
+            "Button",
+            { attrs: { type: "primary" }, on: { click: _vm.temp } },
+            [_vm._v("Submit")]
+          ),
           _vm._v(" "),
           _c(
             "Button",

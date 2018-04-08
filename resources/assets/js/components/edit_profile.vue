@@ -1,6 +1,5 @@
 <template>
-
-    <Form :model="formItem" :label-width="80" method="post" action="/api/documents">
+    <Form :model="formItem" :label-width="80">
         <FormItem label="昵称">
             <Input v-model="formItem.nick_name" placeholder="请输入昵称"></Input>
         </FormItem>
@@ -34,16 +33,17 @@
                    placeholder="请输入自我介绍"></Input>
         </FormItem>
         <FormItem>
-                    <Button type="primary">Submit</Button>
+            <Button type="primary" @click="temp">Submit</Button>
             <Button type="ghost" style="margin-left: 8px">Cancel</Button>
         </FormItem>
     </Form>
 </template>
 <script>
     import axios from 'axios'
+
     export default {
-        name:"edit_profile",
-        data: function() {
+        name: "edit_profile",
+        data: function () {
             return {
                 formItem: {
                     user: '',
@@ -57,14 +57,27 @@
                 }
             }
         },
-        created:function () {
-            var self = this
-            axios.post('/api/documents').then(function (response) {
-                console.log(response.data);
-                self.nick_name = response.data.formItem.nick_namedo;
+        methods:
+            {
+
+                temp: function () {
+                    console.log(this.formItem)
+                },
+
+                temp1: function () {
+                    var foo = "hi!!!!";
+                    return foo;
+
+                },
+                created: function () {
+                    var self = this
+                    axios.post('/api/documents').then(function (response) {
+                        console.log(response.data);
+                        self.nick_name = response.data.formItem.nick_namedo;
 
 
-            })
-        }
+                    })
+                }
+            }
     }
 </script>
