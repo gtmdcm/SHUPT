@@ -62,10 +62,14 @@
 
                 temp: function () {
                     var self=this;
-                    axios.post('doc').then(function (response) {
+                    axios.post('edit_profile').then(function (response) {
                         console.log('hi');
                         self =response.formItem;
                     })
+                },
+
+                returnToMain: function () {
+
                 },
 
                 created: function () {
