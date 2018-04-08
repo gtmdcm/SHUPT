@@ -61,14 +61,13 @@
             {
 
                 temp: function () {
-                    console.log(this.formItem)
+                    var self=this;
+                    axios.post('doc').then(function (response) {
+                        console.log('hi');
+                        self =response.formItem;
+                    })
                 },
 
-                temp1: function () {
-                    var foo = "hi!!!!";
-                    return foo;
-
-                },
                 created: function () {
                     var self = this
                     axios.post('/api/documents').then(function (response) {

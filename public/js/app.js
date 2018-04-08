@@ -83513,13 +83513,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
 
         temp: function temp() {
-            console.log(this.formItem);
+            var self = this;
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('doc').then(function (response) {
+                console.log('hi');
+                self = response.formItem;
+            });
         },
 
-        temp1: function temp1() {
-            var foo = "hi!!!!";
-            return foo;
-        },
         created: function created() {
             var self = this;
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/documents').then(function (response) {
