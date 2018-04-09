@@ -28,6 +28,8 @@ Vue.component('z-nav', require('./components/z-nav.vue'));
 
 Vue.component('s-nav', require('./components/s-nav.vue'));
 
+Vue.component('Carousel',require('./components/Carousel.vue'));
+
 const app = new Vue({
     el: '#app'
 });
