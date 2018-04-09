@@ -62,8 +62,10 @@
 
                 temp: function () {
                     var self=this;
-                    axios.post('edit_profile').then(function (response) {
-                        console.log('hi');
+                    var params = new URLSearchParams();
+                    params.append('self_introduce', this.formItem.self_introduce);
+                    console.log(this.formItem);
+                    axios.post('edit_profile',params).then(function (response) {
                         self =response.formItem;
                     })
                 },

@@ -9,38 +9,20 @@ use App\Document;
 
 class ProfileController extends Controller
 {
-
-    protected $id;
-
-    protected $uid;
-
-    protected $u;
-
     public function createUserProfile(){
 
     }
 
-    public function handle(){
+    public function handle(Request $request){
 
-        $this->id=Auth::id();
+        $id=Auth::id();
 
-        $input=Request::all();
+        $docu=Document::find($id);
 
-        /*$this->uid=DB::table('users')
-            ->select('uid')
-            ->where('id','==',"{$this->id}")
-            ->get();
+        $signature=$request->input('self_introduce');
 
-        $this->uid=(array)($this->uid);
+        $docu->signature=$signature;
 
-        foreach($this->uid as $this->Uid){
-            $this->u=$this->Uid;
-        }*/
-
-        $document=Document::find($this->id);
-
-        $document->signature=$request;
-
-        $document->save();
+        $docu->save();
     }
 }
