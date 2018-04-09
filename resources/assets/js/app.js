@@ -24,7 +24,7 @@ Vue.component('p-nav', require('./components/nav.vue'));
 
 Vue.component('edit_profile', require('./components/edit_profile.vue'));
 
-Vue.component('z-nav', require('./components/z-nav.vue'));
+Vue.component('h-nav', require('./components/nav.vue'));
 
 Vue.component('s-nav', require('./components/s-nav.vue'));
 

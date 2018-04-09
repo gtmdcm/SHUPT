@@ -63,7 +63,7 @@
     </div>
     {{--脚注--}}
     <div>
-        ©2018 SHUPT.net
+        ©2018 SHUPT
     </div>
 </div>
 </body>
