@@ -83604,7 +83604,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         temp: function temp() {
             var self = this;
             var params = new URLSearchParams();
-            params.append('self_introduce', this.formItem.self_introduce);
+            params.append('gender', this.formItem.gender);
+            params.append('school', this.formItem.school);
+            params.append('signature', this.formItem.signature);
             console.log(this.formItem);
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('edit_profile', params).then(function (response) {
                 self = response.formItem;

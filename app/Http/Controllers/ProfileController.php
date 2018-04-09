@@ -19,7 +19,15 @@ class ProfileController extends Controller
 
         $docu=Document::find($id);
 
-        $signature=$request->input('self_introduce');
+        $signature=$request->input('signature');
+
+        $school=$request->input('school');
+
+        $gender=$request->input('gender');
+
+        $docu->gender=$gender;
+
+        $docu->school=$school;
 
         $docu->signature=$signature;
 
