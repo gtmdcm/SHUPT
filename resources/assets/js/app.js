@@ -30,6 +30,8 @@ Vue.component('s-nav', require('./components/s-nav.vue'));
 
 Vue.component('s-carousel',require('./components/s-carousel.vue'));
 
+Vue.component('upload_torrent',require('./components/upload_torrent.vue'));
+
 const app = new Vue({
     el: '#app'
 });
