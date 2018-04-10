@@ -84568,7 +84568,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84579,15 +84579,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -84730,22 +84721,6 @@ var render = function() {
         ],
         1
       ),
-      _vm._v(" "),
-      _c("Upload", { attrs: { multiple: "", type: "drag", action: "" } }, [
-        _c(
-          "div",
-          { staticStyle: { padding: "20px 0" } },
-          [
-            _c("Icon", {
-              staticStyle: { color: "#3399ff" },
-              attrs: { type: "ios-cloud-upload", size: "32" }
-            }),
-            _vm._v(" "),
-            _c("p", [_vm._v("点击或拖拽上传种子")])
-          ],
-          1
-        )
-      ]),
       _vm._v(" "),
       _c(
         "FormItem",

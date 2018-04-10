@@ -23,15 +23,6 @@
                 <Option value="12">其他</Option>
             </Select>
         </FormItem>
-        <Upload
-                multiple
-                type="drag"
-                action="">
-            <div style="padding: 20px 0">
-                <Icon type="ios-cloud-upload" size="32" style="color: #3399ff"></Icon>
-                <p>点击或拖拽上传种子</p>
-            </div>
-        </Upload>
         <FormItem label="简介">
             <Input v-model="uploadItem.brief_introduction" clearable type="textarea" :autosize="{minRows: 1,maxRows: 5}"
                    placeholder="请输入简介"></Input>
