@@ -23,7 +23,7 @@ Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests');
 
 Route::get('edit_profile', 'PageController@edit_profile')->name('edit_profile');
 
-Route::post('edit_profile', 'ProfileController@handle')->name('edit_profile');
+Route::post('edit_profile', 'UserController@editProfile')->name('edit_profile');
 
 Route::get('todo', 'PageController@todo')->name('todo');
 

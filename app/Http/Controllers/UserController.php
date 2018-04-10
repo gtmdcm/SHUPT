@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 use App\Services\OSS;
 use Aws\S3\S3Client;
 use App\Services\S3;
@@ -39,6 +41,30 @@ class UserController extends Controller
 
         return view('home');
 
+    }
+
+    public function editProfile(Request $request){
+        $id=Auth::id();
+
+        $user=User::find($id);
+
+        $signature=$request->input('signature');
+
+        $school=$request->input('school');
+
+        $gender=$request->input('gender');
+
+        $birthday=$request->input('birthday');
+
+        $user->birthday=$birthday;
+
+        $user->gender=$gender;
+
+        $user->school=$school;
+
+        $user->signature=$signature;
+
+        $user->save();
     }
 
     //

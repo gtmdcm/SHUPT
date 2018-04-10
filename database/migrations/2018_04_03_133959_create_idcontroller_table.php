@@ -15,7 +15,6 @@ class CreateIdcontrollerTable extends Migration
     {
         Schema::create('idcontroller', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uid');
             $table->integer('rid');
             $table->integer('oid');
             $table->timestamps();

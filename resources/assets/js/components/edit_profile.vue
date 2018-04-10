@@ -153,6 +153,7 @@
                     params.append('gender', this.formItem.gender);
                     params.append('school', this.formItem.school);
                     params.append('signature', this.formItem.signature);
+                    params.append('birthday', this.formItem.birthday.toLocaleDateString());
                     console.log(this.formItem);
                     axios.post('edit_profile',params).then(function (response) {
                         self =response.formItem;

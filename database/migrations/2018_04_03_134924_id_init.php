@@ -14,8 +14,8 @@ class IdInit extends Migration
      */
     public function up()
     {
-        DB::insert('insert into idcontroller (uid, rid, oid) values (?,?,?)',
-            [0,0,0]);
+        DB::insert('insert into idcontroller (rid, oid) values (?,?)',
+            [0,0]);
     }
 
     /**

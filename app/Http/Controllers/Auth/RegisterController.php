@@ -75,44 +75,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $this->newId=Id::find(1);
-
-        $this->id=sprintf("%08d",$this->newId->uid);
-
-        $this->newId->uid=$this->newId->uid+1;
-
-        $this->newId->save();
-
         $user=new User;
         $user->name=$data['name'];
         $user->email=$data['email'];
         $user->password=Hash::make($data['password']);
-        $user->uid=$this->id;
+
+        $user->up=10.0;
+        $user->down=0.0;
+        $user->contribute=0.0;
+        $user->rank=0;
+        $user->register_date=date('Y-m-d H:i:s');
+        $user->last_login=date('Y-m-d H:i:s');
+        $user->last_upload=date('Y-m-d H:i:s');
+        $user->last_download=date('Y-m-d H:i:s');
+        $user->banned='no';
+        $user->character='0000';
+
+        $user->figure='';
+        $user->gender='secret';
+        $user->school='0000';
+        $user->signature='';
         $user->save();
-
-        $this->newId->uid=$this->newId->uid+1;
-
-        $prof=new Profile;
-        $prof->uid=$this->id;
-        $prof->up=10.0;
-        $prof->down=0.0;
-        $prof->contribute=0.0;
-        $prof->rank=0;
-        $prof->register_date=date('Y-m-d H:i:s');
-        $prof->last_login=date('Y-m-d H:i:s');
-        $prof->last_upload=date('Y-m-d H:i:s');
-        $prof->last_download=date('Y-m-d H:i:s');
-        $prof->banned='no';
-        $prof->character='0000';
-        $prof->save();
-
-        $docu=new Document;
-        $docu->uid=$this->id;
-        $docu->figure='';
-        $docu->gender='secret';
-        $docu->school='0000';
-        $docu->signature='';
-        $docu->save();
 
         //DB::update("update idcontroller set uid = {$this->newId->uid}");
         /*$this->newUid=Id::find(1);
