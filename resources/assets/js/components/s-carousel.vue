@@ -1,5 +1,5 @@
 <template>
-    <Carousel v-model="value1" loop>
+    <Carousel autoplay v-model="value2" loop>
         <CarouselItem>
             <div class="demo-carousel">1</div>
         </CarouselItem>
@@ -16,9 +16,10 @@
 </template>
 <script>
     export default {
-        data () {
+        name:"s-carousel",
+        data: function() {
             return {
-                value1: 0
+                value2: 0
             }
         }
     }

@@ -25123,7 +25123,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('h-nav', __webpack_require
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('s-nav', __webpack_require__(64));
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('Carousel', __webpack_require__(67));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('s-carousel', __webpack_require__(67));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app'
@@ -83583,7 +83583,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -83702,8 +83701,9 @@ var render = function() {
         { attrs: { label: "学校" } },
         [
           _c(
-            "RadioGroup",
+            "Select",
             {
+              staticStyle: { width: "200px" },
               model: {
                 value: _vm.formItem.school,
                 callback: function($$v) {
@@ -83713,331 +83713,329 @@ var render = function() {
               }
             },
             [
-              _c("Radio", { attrs: { label: "0000" } }, [_vm._v("上海大学")]),
+              _c("Option", { attrs: { value: "0000" } }, [_vm._v("上海大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0001" } }, [
+              _c("Option", { attrs: { value: "0001" } }, [
                 _vm._v("南京农业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0002" } }, [_vm._v("中山大学")]),
+              _c("Option", { attrs: { value: "0002" } }, [_vm._v("中山大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0003" } }, [
+              _c("Option", { attrs: { value: "0003" } }, [
                 _vm._v("中国石油大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0004" } }, [_vm._v("云南大学")]),
+              _c("Option", { attrs: { value: "0004" } }, [_vm._v("云南大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0005" } }, [_vm._v("河海大学")]),
+              _c("Option", { attrs: { value: "0005" } }, [_vm._v("河海大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0006" } }, [_vm._v("南开大学")]),
+              _c("Option", { attrs: { value: "0006" } }, [_vm._v("南开大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0007" } }, [_vm._v("兰州大学")]),
+              _c("Option", { attrs: { value: "0007" } }, [_vm._v("兰州大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0008" } }, [
+              _c("Option", { attrs: { value: "0008" } }, [
                 _vm._v("合肥工业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0009" } }, [_vm._v("安徽大学")]),
+              _c("Option", { attrs: { value: "0009" } }, [_vm._v("安徽大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0010" } }, [
+              _c("Option", { attrs: { value: "0010" } }, [
                 _vm._v("中国海洋大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0011" } }, [_vm._v("复旦大学")]),
+              _c("Option", { attrs: { value: "0011" } }, [_vm._v("复旦大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0012" } }, [_vm._v("西北大学")]),
+              _c("Option", { attrs: { value: "0012" } }, [_vm._v("西北大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0013" } }, [_vm._v("郑州大学")]),
+              _c("Option", { attrs: { value: "0013" } }, [_vm._v("郑州大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0014" } }, [_vm._v("四川大学")]),
+              _c("Option", { attrs: { value: "0014" } }, [_vm._v("四川大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0015" } }, [
+              _c("Option", { attrs: { value: "0015" } }, [
                 _vm._v("华中科技大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0016" } }, [_vm._v("天津大学")]),
+              _c("Option", { attrs: { value: "0016" } }, [_vm._v("天津大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0017" } }, [_vm._v("山东大学")]),
+              _c("Option", { attrs: { value: "0017" } }, [_vm._v("山东大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0018" } }, [
+              _c("Option", { attrs: { value: "0018" } }, [
                 _vm._v("中央民族大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0019" } }, [_vm._v("苏州大学")]),
+              _c("Option", { attrs: { value: "0019" } }, [_vm._v("苏州大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0020" } }, [_vm._v("重庆大学")]),
+              _c("Option", { attrs: { value: "0020" } }, [_vm._v("重庆大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0021" } }, [
+              _c("Option", { attrs: { value: "0021" } }, [
                 _vm._v("东北农业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0022" } }, [
+              _c("Option", { attrs: { value: "0022" } }, [
                 _vm._v("北京工业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0023" } }, [
+              _c("Option", { attrs: { value: "0023" } }, [
                 _vm._v("湖南师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0024" } }, [_vm._v("东北大学")]),
+              _c("Option", { attrs: { value: "0024" } }, [_vm._v("东北大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0025" } }, [
+              _c("Option", { attrs: { value: "0025" } }, [
                 _vm._v("电子科技大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0026" } }, [
+              _c("Option", { attrs: { value: "0026" } }, [
                 _vm._v("西安电子科技大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0027" } }, [
+              _c("Option", { attrs: { value: "0027" } }, [
                 _vm._v("北京化工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0028" } }, [
+              _c("Option", { attrs: { value: "0028" } }, [
                 _vm._v("南京航空航天大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0029" } }, [
+              _c("Option", { attrs: { value: "0029" } }, [
                 _vm._v("南京理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0030" } }, [
+              _c("Option", { attrs: { value: "0030" } }, [
                 _vm._v("西北工业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0031" } }, [
+              _c("Option", { attrs: { value: "0031" } }, [
                 _vm._v("天津医科大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0032" } }, [
+              _c("Option", { attrs: { value: "0032" } }, [
                 _vm._v("北京林业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0033" } }, [
+              _c("Option", { attrs: { value: "0033" } }, [
                 _vm._v("华南师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0034" } }, [_vm._v("浙江大学")]),
+              _c("Option", { attrs: { value: "0034" } }, [_vm._v("浙江大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0035" } }, [_vm._v("长安大学")]),
+              _c("Option", { attrs: { value: "0035" } }, [_vm._v("长安大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0036" } }, [
+              _c("Option", { attrs: { value: "0036" } }, [
                 _vm._v("武汉理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0037" } }, [
+              _c("Option", { attrs: { value: "0037" } }, [
                 _vm._v("河北工业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0038" } }, [
+              _c("Option", { attrs: { value: "0038" } }, [
                 _vm._v("南京师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0039" } }, [
+              _c("Option", { attrs: { value: "0039" } }, [
                 _vm._v("中国农业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0040" } }, [_vm._v("厦门大学")]),
+              _c("Option", { attrs: { value: "0040" } }, [_vm._v("厦门大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0041" } }, [
+              _c("Option", { attrs: { value: "0041" } }, [
                 _vm._v("第二军医大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0042" } }, [
+              _c("Option", { attrs: { value: "0042" } }, [
                 _vm._v("北京理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0043" } }, [_vm._v("北京大学")]),
+              _c("Option", { attrs: { value: "0043" } }, [_vm._v("北京大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0044" } }, [
+              _c("Option", { attrs: { value: "0044" } }, [
                 _vm._v("上海外国语大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0045" } }, [
+              _c("Option", { attrs: { value: "0045" } }, [
                 _vm._v("北京科技大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0046" } }, [
+              _c("Option", { attrs: { value: "0046" } }, [
                 _vm._v("西北农林科技大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0047" } }, [_vm._v("中南大学")]),
+              _c("Option", { attrs: { value: "0047" } }, [_vm._v("中南大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0048" } }, [
+              _c("Option", { attrs: { value: "0048" } }, [
                 _vm._v("华南理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0049" } }, [_vm._v("武汉大学")]),
+              _c("Option", { attrs: { value: "0049" } }, [_vm._v("武汉大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0050" } }, [_vm._v("福州大学")]),
+              _c("Option", { attrs: { value: "0050" } }, [_vm._v("福州大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0051" } }, [_vm._v("同济大学")]),
+              _c("Option", { attrs: { value: "0051" } }, [_vm._v("同济大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0052" } }, [
+              _c("Option", { attrs: { value: "0052" } }, [
                 _vm._v("中国传媒大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0053" } }, [_vm._v("湖南大学")]),
+              _c("Option", { attrs: { value: "0053" } }, [_vm._v("湖南大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0054" } }, [
+              _c("Option", { attrs: { value: "0054" } }, [
                 _vm._v("上海财经大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0055" } }, [
+              _c("Option", { attrs: { value: "0055" } }, [
                 _vm._v("国防科学技术大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0056" } }, [_vm._v("吉林大学")]),
+              _c("Option", { attrs: { value: "0056" } }, [_vm._v("吉林大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0057" } }, [
+              _c("Option", { attrs: { value: "0057" } }, [
                 _vm._v("大连理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0058" } }, [
+              _c("Option", { attrs: { value: "0058" } }, [
                 _vm._v("中国人民大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0059" } }, [
+              _c("Option", { attrs: { value: "0059" } }, [
                 _vm._v("上海交通大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0060" } }, [
+              _c("Option", { attrs: { value: "0060" } }, [
                 _vm._v("西安交通大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0061" } }, [_vm._v("江南大学")]),
+              _c("Option", { attrs: { value: "0061" } }, [_vm._v("江南大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0062" } }, [_vm._v("南京大学")]),
+              _c("Option", { attrs: { value: "0062" } }, [_vm._v("南京大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0063" } }, [_vm._v("南昌大学")]),
+              _c("Option", { attrs: { value: "0063" } }, [_vm._v("南昌大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0064" } }, [
+              _c("Option", { attrs: { value: "0064" } }, [
                 _vm._v("太原理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0065" } }, [
+              _c("Option", { attrs: { value: "0065" } }, [
                 _vm._v("中国地质大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0066" } }, [_vm._v("清华大学")]),
+              _c("Option", { attrs: { value: "0066" } }, [_vm._v("清华大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0067" } }, [_vm._v("广西大学")]),
+              _c("Option", { attrs: { value: "0067" } }, [_vm._v("广西大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0068" } }, [
+              _c("Option", { attrs: { value: "0068" } }, [
                 _vm._v("中国矿业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0069" } }, [
+              _c("Option", { attrs: { value: "0069" } }, [
                 _vm._v("四川农业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0070" } }, [
+              _c("Option", { attrs: { value: "0070" } }, [
                 _vm._v("东北师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0071" } }, [
+              _c("Option", { attrs: { value: "0071" } }, [
                 _vm._v("哈尔滨工业大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0072" } }, [
+              _c("Option", { attrs: { value: "0072" } }, [
                 _vm._v("北京航空航天大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0073" } }, [
+              _c("Option", { attrs: { value: "0073" } }, [
                 _vm._v("北京交通大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0074" } }, [
+              _c("Option", { attrs: { value: "0074" } }, [
                 _vm._v("西南交通大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0075" } }, [
+              _c("Option", { attrs: { value: "0075" } }, [
                 _vm._v("中国科学技术大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0076" } }, [
+              _c("Option", { attrs: { value: "0076" } }, [
                 _vm._v("北京外国语大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0077" } }, [
+              _c("Option", { attrs: { value: "0077" } }, [
                 _vm._v("北京邮电大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0078" } }, [
+              _c("Option", { attrs: { value: "0078" } }, [
                 _vm._v("西安建筑科技大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0079" } }, [_vm._v("新疆大学")]),
+              _c("Option", { attrs: { value: "0079" } }, [_vm._v("新疆大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0080" } }, [_vm._v("东南大学")]),
+              _c("Option", { attrs: { value: "0080" } }, [_vm._v("东南大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0081" } }, [
+              _c("Option", { attrs: { value: "0081" } }, [
                 _vm._v("对外经济贸易大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0082" } }, [
+              _c("Option", { attrs: { value: "0082" } }, [
                 _vm._v("北京中医药大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0083" } }, [_vm._v("暨南大学")]),
+              _c("Option", { attrs: { value: "0083" } }, [_vm._v("暨南大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0084" } }, [
+              _c("Option", { attrs: { value: "0084" } }, [
                 _vm._v("北京语言大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0085" } }, [
+              _c("Option", { attrs: { value: "0085" } }, [
                 _vm._v("华中师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0086" } }, [
+              _c("Option", { attrs: { value: "0086" } }, [
                 _vm._v("北京师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0087" } }, [
+              _c("Option", { attrs: { value: "0087" } }, [
                 _vm._v("哈尔滨工程大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0088" } }, [_vm._v("内蒙古大学")]),
+              _c("Option", { attrs: { value: "0088" } }, [
+                _vm._v("内蒙古大学")
+              ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0089" } }, [_vm._v("东华大学")]),
+              _c("Option", { attrs: { value: "0089" } }, [_vm._v("东华大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0090" } }, [
+              _c("Option", { attrs: { value: "0090" } }, [
                 _vm._v("解放军信息工程大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0091" } }, [
+              _c("Option", { attrs: { value: "0091" } }, [
                 _vm._v("上海交通大学医学院 ")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0092" } }, [
+              _c("Option", { attrs: { value: "0092" } }, [
                 _vm._v("华东理工大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0093" } }, [
+              _c("Option", { attrs: { value: "0093" } }, [
                 _vm._v("第四军医大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0094" } }, [
+              _c("Option", { attrs: { value: "0094" } }, [
                 _vm._v("大连海事大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0095" } }, [
+              _c("Option", { attrs: { value: "0095" } }, [
                 _vm._v("华东师范大学")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0096" } }, [_vm._v("辽宁大学")]),
+              _c("Option", { attrs: { value: "0096" } }, [_vm._v("辽宁大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0097" } }, [_vm._v("深圳大学")]),
+              _c("Option", { attrs: { value: "0097" } }, [_vm._v("深圳大学")]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0098" } }, [
+              _c("Option", { attrs: { value: "0098" } }, [
                 _vm._v("中央音乐学院")
               ]),
               _vm._v(" "),
-              _c("Radio", { attrs: { label: "0099" } }, [
-                _vm._v("中国协和医科大学")
-              ]),
-              _vm._v(" "),
-              _c("Radio", { attrs: { label: "0099" } }, [
+              _c("Option", { attrs: { value: "0099" } }, [
                 _vm._v("中国协和医科大学")
               ])
             ],
@@ -84052,9 +84050,11 @@ var render = function() {
         { attrs: { label: "签名 " } },
         [
           _c("Input", {
+            staticStyle: { width: "500px" },
             attrs: {
+              clearable: "",
               type: "textarea",
-              autosize: { minRows: 2, maxRows: 5 },
+              autosize: { minRows: 1, maxRows: 5 },
               placeholder: "请输入签名"
             },
             model: {
@@ -84377,7 +84377,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Carousel.vue"
+Component.options.__file = "resources/assets/js/components/s-carousel.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -84386,9 +84386,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50092a97", Component.options)
+    hotAPI.createRecord("data-v-3dd62c5e", Component.options)
   } else {
-    hotAPI.reload("data-v-50092a97", Component.options)
+    hotAPI.reload("data-v-3dd62c5e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -84422,9 +84422,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    name: "s-carousel",
     data: function data() {
         return {
-            value1: 0
+            value2: 0
         };
     }
 });
@@ -84440,13 +84441,13 @@ var render = function() {
   return _c(
     "Carousel",
     {
-      attrs: { loop: "" },
+      attrs: { autoplay: "", loop: "" },
       model: {
-        value: _vm.value1,
+        value: _vm.value2,
         callback: function($$v) {
-          _vm.value1 = $$v
+          _vm.value2 = $$v
         },
-        expression: "value1"
+        expression: "value2"
       }
     },
     [
@@ -84475,7 +84476,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-50092a97", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3dd62c5e", module.exports)
   }
 }
 

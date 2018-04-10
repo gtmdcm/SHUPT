@@ -28,7 +28,7 @@ Vue.component('h-nav', require('./components/nav.vue'));
 
 Vue.component('s-nav', require('./components/s-nav.vue'));
 
-Vue.component('Carousel',require('./components/Carousel.vue'));
+Vue.component('s-carousel',require('./components/s-carousel.vue'));
 
 const app = new Vue({
     el: '#app'
