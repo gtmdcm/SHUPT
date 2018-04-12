@@ -27,10 +27,19 @@
             <Input v-model="uploadItem.brief_introduction" clearable type="textarea" :autosize="{minRows: 1,maxRows: 5}"
                    placeholder="请输入简介"></Input>
         </FormItem>
+        <Upload action="">
+            <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
+        </Upload>
+        <FormItem>
+            <Button type="primary" @click="uploadData">发布</Button>
+            <Button type="ghost" style="margin-left: 8px">取消</Button>
+        </FormItem>
     </Form>
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
         name: "update_torrent",
         data: function () {
@@ -42,7 +51,31 @@
                     brief_introduction: '',
                 }
             }
-        }
+        },
+        methods:
+            {
+                uploadData: function () {
+                    var self=this;
+                    var params = new URLSearchParams();
+                    params.append('title',this.uploadItem.title);
+                    params.append('subtitle',this.uploadItem.subtitle);
+                    params.append('type',this.uploadItem.type);
+                    params.append('brief_introduction',this.uploadItem.brief_introduction);
+                    axios.post('upload_torrent',params).then(function(response) {
+                       self=response.uploadItem;
+                    })
+                },
+
+                created: function () {
+                    var self = this;
+                    axios.post('/api/upload').then(function (response) {
+                        console.log(response.data);
+                        self.nick_name = response.data.uploadItem.nick_namedo;
+
+
+                    })
+                }
+            }
     }
 </script>
 

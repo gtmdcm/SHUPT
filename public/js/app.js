@@ -513,6 +513,12 @@ module.exports = g;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(24);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -614,7 +620,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11580,7 +11586,7 @@ module.exports = Vue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(42).setImmediate))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /*
@@ -11662,7 +11668,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14182,7 +14188,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -24553,12 +24559,6 @@ return jQuery;
 
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(24);
-
-/***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25315,7 +25315,7 @@ module.exports = __webpack_require__(75);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_iview__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_iview___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_iview__);
@@ -25330,7 +25330,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__(20);
 
-window.Vue = __webpack_require__(4);
+window.Vue = __webpack_require__(5);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -25365,7 +25365,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 
 window._ = __webpack_require__(21);
-window.Popper = __webpack_require__(6).default;
+window.Popper = __webpack_require__(7).default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -25374,7 +25374,7 @@ window.Popper = __webpack_require__(6).default;
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(7);
+  window.$ = window.jQuery = __webpack_require__(8);
 
   __webpack_require__(23);
 } catch (e) {}
@@ -25385,7 +25385,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(8);
+window.axios = __webpack_require__(3);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -42563,7 +42563,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-	 true ? factory(exports, __webpack_require__(7), __webpack_require__(6)) :
+	 true ? factory(exports, __webpack_require__(8), __webpack_require__(7)) :
 	typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
 	(factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -46463,7 +46463,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(9);
 var Axios = __webpack_require__(26);
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 
 /**
  * Create an instance of Axios
@@ -46546,7 +46546,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 var utils = __webpack_require__(0);
 var InterceptorManager = __webpack_require__(35);
 var dispatchRequest = __webpack_require__(36);
@@ -47085,7 +47085,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(37);
 var isCancel = __webpack_require__(13);
-var defaults = __webpack_require__(3);
+var defaults = __webpack_require__(4);
 var isAbsoluteURL = __webpack_require__(38);
 var combineURLs = __webpack_require__(39);
 
@@ -47601,7 +47601,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(4));
+		module.exports = factory(__webpack_require__(5));
 	else if(typeof define === 'function' && define.amd)
 		define("iview", ["vue"], factory);
 	else if(typeof exports === 'object')
@@ -82639,7 +82639,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(47);
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -83292,7 +83292,7 @@ if(false) {
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
@@ -83453,7 +83453,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -83602,7 +83602,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
 
-        temp: function temp() {
+        uploadData: function uploadData() {
             var self = this;
             var params = new URLSearchParams();
             params.append('gender', this.formItem.gender);
@@ -83613,6 +83613,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('edit_profile', params).then(function (response) {
                 self = response.formItem;
             });
+        },
+
+        downloadData: function downloadData() {
+            var self = this;
         },
 
         returnToMain: function returnToMain() {},
@@ -84076,14 +84080,14 @@ var render = function() {
         [
           _c(
             "Button",
-            { attrs: { type: "primary" }, on: { click: _vm.temp } },
-            [_vm._v("Submit")]
+            { attrs: { type: "primary" }, on: { click: _vm.uploadData } },
+            [_vm._v("发布")]
           ),
           _vm._v(" "),
           _c(
             "Button",
             { staticStyle: { "margin-left": "8px" }, attrs: { type: "ghost" } },
-            [_vm._v("Cancel")]
+            [_vm._v("取消")]
           )
         ],
         1
@@ -84563,12 +84567,12 @@ if(false) {
 /* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(6)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84579,6 +84583,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -84611,6 +84617,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "update_torrent",
@@ -84623,6 +84638,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 brief_introduction: ''
             }
         };
+    },
+    methods: {
+        uploadData: function uploadData() {
+            var self = this;
+            var params = new URLSearchParams();
+            params.append('title', this.uploadItem.title);
+            params.append('subtitle', this.uploadItem.subtitle);
+            params.append('type', this.uploadItem.type);
+            params.append('brief_introduction', this.uploadItem.brief_introduction);
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload_torrent', params).then(function (response) {
+                self = response.uploadItem;
+            });
+        },
+
+        created: function created() {
+            var self = this;
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/upload').then(function (response) {
+                console.log(response.data);
+                self.nick_name = response.data.uploadItem.nick_namedo;
+            });
+        }
     }
 });
 
@@ -84741,6 +84777,37 @@ var render = function() {
               expression: "uploadItem.brief_introduction"
             }
           })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "Upload",
+        { attrs: { action: "" } },
+        [
+          _c(
+            "Button",
+            { attrs: { type: "ghost", icon: "ios-cloud-upload-outline" } },
+            [_vm._v("上传文件")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "FormItem",
+        [
+          _c(
+            "Button",
+            { attrs: { type: "primary" }, on: { click: _vm.uploadData } },
+            [_vm._v("发布")]
+          ),
+          _vm._v(" "),
+          _c(
+            "Button",
+            { staticStyle: { "margin-left": "8px" }, attrs: { type: "ghost" } },
+            [_vm._v("取消")]
+          )
         ],
         1
       )

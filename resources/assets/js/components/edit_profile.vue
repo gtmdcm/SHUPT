@@ -123,8 +123,8 @@
                    placeholder="请输入签名"></Input>
         </FormItem>
         <FormItem>
-            <Button type="primary" @click="temp">Submit</Button>
-            <Button type="ghost" style="margin-left: 8px">Cancel</Button>
+            <Button type="primary" @click="uploadData">发布</Button>
+            <Button type="ghost" style="margin-left: 8px">取消</Button>
         </FormItem>
     </Form>
 </template>
@@ -146,7 +146,7 @@
         methods:
             {
 
-                temp: function () {
+                uploadData: function () {
                     var self=this;
                     var params = new URLSearchParams();
                     params.append('gender', this.formItem.gender);
@@ -157,6 +157,10 @@
                     axios.post('edit_profile',params).then(function (response) {
                         self =response.formItem;
                     })
+                },
+
+                downloadData: function () {
+                    var self=this;
                 },
 
                 returnToMain: function () {
