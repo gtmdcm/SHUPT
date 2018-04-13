@@ -11,13 +11,19 @@
 |
 */
 
-Route::get('/', 'PageController@mainpage')->name('mainpage');
+Route::get('/', 'PageController@welcome')->name('welcome');
+
+Route::get('mainpage', 'PageController@mainpage')->name('mainpage');
+
+Route::get('rules', 'PageController@rules')->name('rules');
 
 Route::get('upload', 'PageController@upload')->name('upload');
 
 Route::get('torrent', 'PageController@torrent')->name('torrent');
 
 Route::get('forums', 'PageController@forums')->name('forums');
+
+Route::get('help', 'PageController@help')->name('help');
 
 Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests');
 
@@ -26,10 +32,6 @@ Route::get('edit_profile', 'PageController@edit_profile')->name('edit_profile');
 Route::post('edit_profile', 'UserController@editProfile')->name('edit_profile');
 
 Route::get('todo', 'PageController@todo')->name('todo');
-
-Route::get('main', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 

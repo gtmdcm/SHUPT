@@ -7,7 +7,7 @@
             </MenuItem>
             <MenuItem name="2">
                 <Icon type="ios-people"></Icon>
-                <a href="upload">发布</a>
+                发布
             </MenuItem>
             <Submenu name="3">
                 <template slot="title">
@@ -34,6 +34,14 @@
                     <MenuItem name="4-2">temp</MenuItem>
                 </MenuGroup>
             </Submenu>
+            <MenuItem name="5">
+                <Icon type="alert"></Icon>
+                规则
+            </MenuItem>
+            <MenuItem name="6">
+                <Icon type="help"></Icon>
+                帮助
+            </MenuItem>
         </Menu>
         <br>
     </div>
@@ -48,7 +56,7 @@
         methods: {
             onMenuSelect: function (name) {
                 if (name === "1") {
-                    window.location.href = '/'
+                    window.location.href = '/mainpage'
                 }
                 if (name === "2") {
                     window.location.href = '/upload'
@@ -61,6 +69,12 @@
                 }
                 if (name === "4-1") {
                     window.location.href = '/edit_profile'
+                }
+                if (name === "5") {
+                    window.location.href = '/rules'
+                }
+                if (name === "6") {
+                    window.location.href = '/help'
                 }
             }
         }

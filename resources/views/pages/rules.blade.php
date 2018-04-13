@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title','MainPage')
+@section('title','Rules')
 
 @section('content')
-
+    <rules></rules>
 @stop
 
 @section('iflogin')
