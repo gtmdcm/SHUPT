@@ -3,7 +3,7 @@
 @section('title','Upload')
 
 @section('content')
-    <h1>发布</h1>
+    <upload_torrent></upload_torrent>
 @stop
 
 @section('iflogin')

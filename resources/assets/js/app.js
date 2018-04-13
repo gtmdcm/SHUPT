@@ -36,6 +36,7 @@ Vue.component('help', require('./components/help'))
 
 Vue.component('upload_torrent',require('./components/upload_torrent.vue'));
 
+
 const app = new Vue({
     el: '#app'
 });
