@@ -80,5 +80,7 @@
 </script>
 
 <style scoped>
-
+.ivu-upload .ivu-btn {
+    margin-left: 80px;
+}
 </style>

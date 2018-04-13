@@ -83487,104 +83487,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -83597,7 +83499,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 birthday: '',
                 school: '',
                 signature: ''
-            }
+            },
+            school_list: []
         };
     },
     methods: {
@@ -83609,7 +83512,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             params.append('school', this.formItem.school);
             params.append('signature', this.formItem.signature);
             params.append('birthday', this.formItem.birthday.toLocaleDateString());
-            console.log(this.formItem);
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('edit_profile', params).then(function (response) {
                 self = response.formItem;
             });
@@ -83617,17 +83519,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         downloadData: function downloadData() {
             var self = this;
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/school');
         },
 
-        returnToMain: function returnToMain() {},
+        returnToMain: function returnToMain() {}
 
-        created: function created() {
-            var self = this;
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/documents').then(function (response) {
-                console.log(response.data);
-                self.nick_name = response.data.formItem.nick_namedo;
-            });
-        }
+    },
+    mounted: function mounted() {
+        var self = this;
+        console.log('hi');
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/school').then(function (schoolData) {
+            self.school_list = schoolData.data;
+        });
     }
 });
 
@@ -83718,334 +83621,13 @@ var render = function() {
                 expression: "formItem.school"
               }
             },
-            [
-              _c("Option", { attrs: { value: "0000" } }, [_vm._v("上海大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0001" } }, [
-                _vm._v("南京农业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0002" } }, [_vm._v("中山大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0003" } }, [
-                _vm._v("中国石油大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0004" } }, [_vm._v("云南大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0005" } }, [_vm._v("河海大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0006" } }, [_vm._v("南开大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0007" } }, [_vm._v("兰州大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0008" } }, [
-                _vm._v("合肥工业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0009" } }, [_vm._v("安徽大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0010" } }, [
-                _vm._v("中国海洋大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0011" } }, [_vm._v("复旦大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0012" } }, [_vm._v("西北大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0013" } }, [_vm._v("郑州大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0014" } }, [_vm._v("四川大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0015" } }, [
-                _vm._v("华中科技大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0016" } }, [_vm._v("天津大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0017" } }, [_vm._v("山东大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0018" } }, [
-                _vm._v("中央民族大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0019" } }, [_vm._v("苏州大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0020" } }, [_vm._v("重庆大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0021" } }, [
-                _vm._v("东北农业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0022" } }, [
-                _vm._v("北京工业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0023" } }, [
-                _vm._v("湖南师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0024" } }, [_vm._v("东北大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0025" } }, [
-                _vm._v("电子科技大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0026" } }, [
-                _vm._v("西安电子科技大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0027" } }, [
-                _vm._v("北京化工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0028" } }, [
-                _vm._v("南京航空航天大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0029" } }, [
-                _vm._v("南京理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0030" } }, [
-                _vm._v("西北工业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0031" } }, [
-                _vm._v("天津医科大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0032" } }, [
-                _vm._v("北京林业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0033" } }, [
-                _vm._v("华南师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0034" } }, [_vm._v("浙江大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0035" } }, [_vm._v("长安大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0036" } }, [
-                _vm._v("武汉理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0037" } }, [
-                _vm._v("河北工业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0038" } }, [
-                _vm._v("南京师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0039" } }, [
-                _vm._v("中国农业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0040" } }, [_vm._v("厦门大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0041" } }, [
-                _vm._v("第二军医大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0042" } }, [
-                _vm._v("北京理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0043" } }, [_vm._v("北京大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0044" } }, [
-                _vm._v("上海外国语大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0045" } }, [
-                _vm._v("北京科技大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0046" } }, [
-                _vm._v("西北农林科技大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0047" } }, [_vm._v("中南大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0048" } }, [
-                _vm._v("华南理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0049" } }, [_vm._v("武汉大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0050" } }, [_vm._v("福州大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0051" } }, [_vm._v("同济大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0052" } }, [
-                _vm._v("中国传媒大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0053" } }, [_vm._v("湖南大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0054" } }, [
-                _vm._v("上海财经大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0055" } }, [
-                _vm._v("国防科学技术大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0056" } }, [_vm._v("吉林大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0057" } }, [
-                _vm._v("大连理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0058" } }, [
-                _vm._v("中国人民大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0059" } }, [
-                _vm._v("上海交通大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0060" } }, [
-                _vm._v("西安交通大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0061" } }, [_vm._v("江南大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0062" } }, [_vm._v("南京大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0063" } }, [_vm._v("南昌大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0064" } }, [
-                _vm._v("太原理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0065" } }, [
-                _vm._v("中国地质大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0066" } }, [_vm._v("清华大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0067" } }, [_vm._v("广西大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0068" } }, [
-                _vm._v("中国矿业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0069" } }, [
-                _vm._v("四川农业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0070" } }, [
-                _vm._v("东北师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0071" } }, [
-                _vm._v("哈尔滨工业大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0072" } }, [
-                _vm._v("北京航空航天大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0073" } }, [
-                _vm._v("北京交通大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0074" } }, [
-                _vm._v("西南交通大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0075" } }, [
-                _vm._v("中国科学技术大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0076" } }, [
-                _vm._v("北京外国语大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0077" } }, [
-                _vm._v("北京邮电大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0078" } }, [
-                _vm._v("西安建筑科技大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0079" } }, [_vm._v("新疆大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0080" } }, [_vm._v("东南大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0081" } }, [
-                _vm._v("对外经济贸易大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0082" } }, [
-                _vm._v("北京中医药大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0083" } }, [_vm._v("暨南大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0084" } }, [
-                _vm._v("北京语言大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0085" } }, [
-                _vm._v("华中师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0086" } }, [
-                _vm._v("北京师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0087" } }, [
-                _vm._v("哈尔滨工程大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0088" } }, [
-                _vm._v("内蒙古大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0089" } }, [_vm._v("东华大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0090" } }, [
-                _vm._v("解放军信息工程大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0091" } }, [
-                _vm._v("上海交通大学医学院 ")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0092" } }, [
-                _vm._v("华东理工大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0093" } }, [
-                _vm._v("第四军医大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0094" } }, [
-                _vm._v("大连海事大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0095" } }, [
-                _vm._v("华东师范大学")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0096" } }, [_vm._v("辽宁大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0097" } }, [_vm._v("深圳大学")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0098" } }, [
-                _vm._v("中央音乐学院")
-              ]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0099" } }, [
-                _vm._v("中国协和医科大学")
-              ])
-            ],
-            1
+            _vm._l(_vm.school_list, function(item) {
+              return _c(
+                "Option",
+                { key: item.schoolid, attrs: { value: item.name } },
+                [_vm._v(_vm._s(item.name))]
+              )
+            })
           )
         ],
         1
@@ -84572,7 +84154,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.ivu-upload .ivu-btn[data-v-4def0da9] {\n    margin-left: 80px;\n}\n", ""]);
 
 // exports
 
