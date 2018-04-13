@@ -10,6 +10,14 @@ class PageController extends Controller
         return view('pages/mainpage');
     }
 
+    public function rules(){
+        return view('pages/rules');
+    }
+
+    public function help(){
+        return view('pages/help');
+    }
+
     public function upload(){
         return view('pages/upload');
     }

@@ -26,8 +26,3 @@ Route::get('/catagory','ApiController@showCatagory')->name('catagory');
 Route::post('test',function () {
     print(Input::all());
 });
-
-Route::post('/documents',function(){
-
-});
-

@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -17,6 +16,7 @@ window.Vue = require('vue');
 import Vue from 'vue';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+
 Vue.use(iView);
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
@@ -28,7 +28,11 @@ Vue.component('h-nav', require('./components/nav.vue'));
 
 Vue.component('s-nav', require('./components/s-nav.vue'));
 
-Vue.component('s-carousel',require('./components/s-carousel.vue'));
+Vue.component('s-carousel', require('./components/s-carousel.vue'));
+
+Vue.component('rules', require('./components/rules'));
+
+Vue.component('help', require('./components/help'))
 
 Vue.component('upload_torrent',require('./components/upload_torrent.vue'));
 

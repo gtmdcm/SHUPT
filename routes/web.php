@@ -13,11 +13,15 @@
 
 Route::get('/', 'PageController@mainpage')->name('mainpage');
 
+Route::get('rules', 'PageController@rules')->name('rules');
+
 Route::get('upload', 'PageController@upload')->name('upload');
 
 Route::get('torrent', 'PageController@torrent')->name('torrent');
 
 Route::get('forums', 'PageController@forums')->name('forums');
+
+Route::get('help', 'PageController@help')->name('help');
 
 Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests');
 
