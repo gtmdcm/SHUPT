@@ -1,5 +1,7 @@
 <template>
-    $END$
+    <div><h1>
+        欢迎来到上大pt
+    </h1></div>
 </template>
 
 <script>

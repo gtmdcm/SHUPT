@@ -56,7 +56,7 @@
         methods: {
             onMenuSelect: function (name) {
                 if (name === "1") {
-                    window.location.href = '/'
+                    window.location.href = '/mainpage'
                 }
                 if (name === "2") {
                     window.location.href = '/upload'

@@ -61,6 +61,7 @@
             @endguest
         @show
     </div>
+    <z-main></z-main>
     {{--脚注--}}
     <div>
         ©2018 SHUPT

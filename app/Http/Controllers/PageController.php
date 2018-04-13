@@ -6,47 +6,64 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function mainpage(){
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
+    public function mainpage()
+    {
         return view('pages/mainpage');
     }
 
-    public function rules(){
+    public function rules()
+    {
         return view('pages/rules');
     }
 
-    public function help(){
+    public function help()
+    {
         return view('pages/help');
     }
 
-    public function upload(){
+    public function upload()
+    {
         return view('pages/upload');
     }
 
-    public function torrent(){
+    public function torrent()
+    {
         return view('pages/torrent');
     }
 
-    public function viewrequests(){
+    public function viewrequests()
+    {
         return view('pages/viewrequests');
     }
 
-    public function forums(){
+    public function forums()
+    {
         return view('pages/forums');
     }
+
 //zs test
-    public function app(){
+    public function app()
+    {
         return view('layouts/app');
     }
 
-    public function child(){
+    public function child()
+    {
         return view('child');
     }
 
-    public function edit_profile(){
+    public function edit_profile()
+    {
         return view('pages/edit_profile');
     }
 
-    public function todo(){
+    public function todo()
+    {
         return view('pages/todo');
     }
 }

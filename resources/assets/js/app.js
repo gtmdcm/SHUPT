@@ -30,9 +30,11 @@ Vue.component('s-nav', require('./components/s-nav.vue'));
 
 Vue.component('s-carousel', require('./components/s-carousel.vue'));
 
-Vue.component('rules', require('./components/rules'));
+Vue.component('rules', require('./components/rules.vue'));
 
-Vue.component('help', require('./components/help'))
+Vue.component('help', require('./components/help'));
+
+Vue.component('z-main', require('./components/z-main'));
 
 Vue.component('upload_torrent',require('./components/upload_torrent.vue'));
 
