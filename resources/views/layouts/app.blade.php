@@ -12,6 +12,11 @@
 <div id="app">
     {{--走马灯--}}
     {{--logo栏--}}
+        @guest
+        @else
+            <s-nav></s-nav>
+        @endguest
+    <div style="margin-top: 60px"></div>
     <div>
         @section('logo')
             <a href="/">logos</a>
@@ -41,12 +46,7 @@
         @endguest
     </div>
     {{--nav--}}
-    <div>
-        @guest
-        @else
-            <s-nav></s-nav>
-        @endguest
-    </div>
+
     {{--内容--}}
     <div>
         @yield('content')

@@ -1,5 +1,4 @@
 <template>
-    <div>
         <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="onMenuSelect">
             <MenuItem name="1">
                 <Icon type="ios-paper"></Icon>
@@ -43,8 +42,6 @@
                 帮助
             </MenuItem>
         </Menu>
-        <br>
-    </div>
 </template>
 <script>
     export default {
@@ -81,8 +78,10 @@
     }
 </script>
 <style scoped>
-
-    .ivu-menu.ivu-menu-light.ivu-menu-horizontal {
+    .ivu-menu {
+        position: fixed;
+        top: 0;
+        width:100%;
         display: flex;
         justify-content: space-between;
     }
