@@ -66,3 +66,9 @@
         }
     }
 </script>
+<style scoped>
+    .ivu-menu.ivu-menu-light.ivu-menu-horizontal {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

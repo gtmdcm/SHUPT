@@ -83693,17 +83693,21 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(77)
+}
 var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(65)
 /* template */
-var __vue_template__ = __webpack_require__(66)
+var __vue_template__ = __webpack_require__(79)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-145f88c2"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -83811,135 +83815,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "Menu",
-        {
-          attrs: { mode: "horizontal", theme: _vm.theme1, "active-name": "1" },
-          on: { "on-select": _vm.onMenuSelect }
-        },
-        [
-          _c(
-            "MenuItem",
-            { attrs: { name: "1" } },
-            [
-              _c("Icon", { attrs: { type: "ios-paper" } }),
-              _vm._v("\n            主页\n        ")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "MenuItem",
-            { attrs: { name: "2" } },
-            [
-              _c("Icon", { attrs: { type: "ios-people" } }),
-              _vm._v(" "),
-              _c("a", { attrs: { href: "upload" } }, [_vm._v("发布")])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "Submenu",
-            { attrs: { name: "3" } },
-            [
-              _c(
-                "template",
-                { slot: "title" },
-                [
-                  _c("Icon", { attrs: { type: "stats-bars" } }),
-                  _vm._v("\n                种子\n            ")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "MenuGroup",
-                { attrs: { title: "种子发布" } },
-                [
-                  _c("MenuItem", { attrs: { name: "3-1" } }, [_vm._v("首页")]),
-                  _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "3-2" } }, [_vm._v("temp")]),
-                  _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "3-3" } }, [_vm._v("temp")])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "MenuGroup",
-                { attrs: { title: "查看种子" } },
-                [
-                  _c("MenuItem", { attrs: { name: "3-4" } }, [_vm._v("首页")]),
-                  _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "3-5" } }, [_vm._v("foo")])
-                ],
-                1
-              )
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "Submenu",
-            { attrs: { name: "4" } },
-            [
-              _c(
-                "template",
-                { slot: "title" },
-                [
-                  _c("Icon", { attrs: { type: "settings" } }),
-                  _vm._v("\n                设置\n            ")
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "MenuGroup",
-                [
-                  _c("MenuItem", { attrs: { name: "4-1" } }, [
-                    _c("a", { attrs: { href: "edit_profile" } }, [
-                      _vm._v("编辑个人资料")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("MenuItem", { attrs: { name: "4-2" } }, [_vm._v("temp")])
-                ],
-                1
-              )
-            ],
-            2
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("br")
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-145f88c2", module.exports)
-  }
-}
-
-/***/ }),
+/* 66 */,
 /* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -84412,6 +84288,176 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 76 */,
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(78);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(17)("353cd91a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-145f88c2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./s-nav.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-145f88c2\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./s-nav.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.ivu-menu.ivu-menu-light.ivu-menu-horizontal[data-v-145f88c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "Menu",
+        {
+          attrs: { mode: "horizontal", theme: _vm.theme1, "active-name": "1" },
+          on: { "on-select": _vm.onMenuSelect }
+        },
+        [
+          _c(
+            "MenuItem",
+            { attrs: { name: "1" } },
+            [
+              _c("Icon", { attrs: { type: "ios-paper" } }),
+              _vm._v("\n            主页\n        ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "MenuItem",
+            { attrs: { name: "2" } },
+            [
+              _c("Icon", { attrs: { type: "ios-people" } }),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "upload" } }, [_vm._v("发布")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "Submenu",
+            { attrs: { name: "3" } },
+            [
+              _c(
+                "template",
+                { slot: "title" },
+                [
+                  _c("Icon", { attrs: { type: "stats-bars" } }),
+                  _vm._v("\n                种子\n            ")
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "MenuGroup",
+                { attrs: { title: "种子发布" } },
+                [
+                  _c("MenuItem", { attrs: { name: "3-1" } }, [_vm._v("首页")]),
+                  _vm._v(" "),
+                  _c("MenuItem", { attrs: { name: "3-2" } }, [_vm._v("temp")]),
+                  _vm._v(" "),
+                  _c("MenuItem", { attrs: { name: "3-3" } }, [_vm._v("temp")])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "MenuGroup",
+                { attrs: { title: "查看种子" } },
+                [
+                  _c("MenuItem", { attrs: { name: "3-4" } }, [_vm._v("首页")]),
+                  _vm._v(" "),
+                  _c("MenuItem", { attrs: { name: "3-5" } }, [_vm._v("foo")])
+                ],
+                1
+              )
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "Submenu",
+            { attrs: { name: "4" } },
+            [
+              _c(
+                "template",
+                { slot: "title" },
+                [
+                  _c("Icon", { attrs: { type: "settings" } }),
+                  _vm._v("\n                设置\n            ")
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "MenuGroup",
+                [
+                  _c("MenuItem", { attrs: { name: "4-1" } }, [
+                    _c("a", { attrs: { href: "edit_profile" } }, [
+                      _vm._v("编辑个人资料")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("MenuItem", { attrs: { name: "4-2" } }, [_vm._v("temp")])
+                ],
+                1
+              )
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("br")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-145f88c2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
