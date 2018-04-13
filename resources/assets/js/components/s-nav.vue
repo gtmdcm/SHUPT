@@ -30,7 +30,7 @@
                     设置
                 </template>
                 <MenuGroup>
-                    <MenuItem name="4-1"><a href="edit_profile">编辑个人资料</a></MenuItem>
+                    <MenuItem name="4-1">编辑个人资料</MenuItem>
                     <MenuItem name="4-2">temp</MenuItem>
                 </MenuGroup>
             </Submenu>
