@@ -63,7 +63,7 @@
     </div>
     <z-main></z-main>
     {{--脚注--}}
-    <div>
+    <div class="shupt-logo">
         ©2018 SHUPT
     </div>
 </div>
