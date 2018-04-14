@@ -16,7 +16,7 @@
         </FormItem>
         <FormItem label="学校">
             <Select v-model="formItem.school" style="width:200px">
-                <Option v-for="item in school_list" :value="item.name" :key="item.schoolid">{{item.name}}</Option>
+                <Option v-for="item in school_list" :value="item.schoolid" :key="item.schoolid">{{item.name}}</Option>
             </Select>
         </FormItem>
         <FormItem label="签名 ">
@@ -57,6 +57,7 @@
                     params.append('signature', this.formItem.signature);
                     params.append('birthday', this.formItem.birthday.toLocaleDateString());
                     axios.post('edit_profile',params).then(function (response) {
+                        alert('修改资料成功');
                         self =response.formItem;
                     })
                 },

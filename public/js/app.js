@@ -83506,6 +83506,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             params.append('signature', this.formItem.signature);
             params.append('birthday', this.formItem.birthday.toLocaleDateString());
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('edit_profile', params).then(function (response) {
+                alert('修改资料成功');
                 self = response.formItem;
             });
         },
@@ -83617,7 +83618,7 @@ var render = function() {
             _vm._l(_vm.school_list, function(item) {
               return _c(
                 "Option",
-                { key: item.schoolid, attrs: { value: item.name } },
+                { key: item.schoolid, attrs: { value: item.schoolid } },
                 [_vm._v(_vm._s(item.name))]
               )
             })
@@ -85051,11 +85052,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         uploadData: function uploadData() {
             var self = this;
             var params = new URLSearchParams();
+            var config = {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            };
             params.append('title', this.uploadItem.title);
             params.append('subtitle', this.uploadItem.subtitle);
             params.append('type', this.uploadItem.type);
             params.append('brief_introduction', this.uploadItem.brief_introduction);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload_torrent', params).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload_torrent', params, config).then(function (response) {
                 self = response.uploadItem;
             });
         },
@@ -85191,7 +85195,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Upload",
-        { attrs: { action: "" } },
+        { attrs: { action: "//localhost:8000/upload" } },
         [
           _c(
             "Button",

@@ -31,6 +31,8 @@ Route::get('edit_profile', 'PageController@edit_profile')->name('edit_profile');
 
 Route::post('edit_profile', 'UserController@editProfile')->name('edit_profile');
 
+Route::post('upload','UploadController@uploadSeeds')->name('upload')->middleware('auth');
+
 Route::get('todo', 'PageController@todo')->name('todo');
 
 Auth::routes();

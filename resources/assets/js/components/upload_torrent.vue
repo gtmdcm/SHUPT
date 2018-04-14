@@ -27,7 +27,7 @@
             <Input v-model="uploadItem.brief_introduction" clearable type="textarea" :autosize="{minRows: 1,maxRows: 5}"
                    placeholder="请输入简介"></Input>
         </FormItem>
-        <Upload action="">
+        <Upload action="//localhost:8000/upload">
             <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
         </Upload>
         <FormItem>
@@ -57,11 +57,14 @@
                 uploadData: function () {
                     var self=this;
                     var params = new URLSearchParams();
+                    let config = {
+                        headers: {'Content-Type': 'multipart/form-data'}
+                    }
                     params.append('title',this.uploadItem.title);
                     params.append('subtitle',this.uploadItem.subtitle);
                     params.append('type',this.uploadItem.type);
                     params.append('brief_introduction',this.uploadItem.brief_introduction);
-                    axios.post('upload_torrent',params).then(function(response) {
+                    axios.post('upload_torrent',params,config).then(function(response) {
                        self=response.uploadItem;
                     })
                 },
