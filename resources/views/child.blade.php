@@ -11,8 +11,6 @@
 @section('title', 'Laravel学院')
 
 @section('content')
-    <upload_torrent></upload_torrent>
-    <upload_file></upload_file>
 @endsection
 @section('iflogin')
     @parent
