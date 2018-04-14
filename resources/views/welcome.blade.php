@@ -132,7 +132,7 @@
             //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
             ctx.arc(this.x, this.y, this.r, 0, 360)
             ctx.closePath();
-            ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+            ctx.fillStyle = 'rgba(173, 216, 230, 0.3)';
             ctx.fill();
         }
 
@@ -145,7 +145,8 @@
                 ctx.moveTo(this.x, this.y); //起始点
                 ctx.lineTo(_circle.x, _circle.y); //终点
                 ctx.closePath();
-                ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                //ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                ctx.strokeStyle = 'rgba(172, 216, 230, 0.3)';
                 ctx.stroke();
             }
         }
