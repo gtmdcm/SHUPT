@@ -83823,6 +83823,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -83839,7 +83840,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (name === "upload") {
                 window.location.href = '/upload';
             }
-            if (name === "3-1") {
+            if (name === "torrent") {
                 window.location.href = '/torrent';
             }
             if (name === "3-4") {
@@ -83877,7 +83878,7 @@ var render = function() {
         "MenuItem",
         { attrs: { name: "mainpage" } },
         [
-          _c("Icon", { attrs: { type: "ios-paper" } }),
+          _c("Icon", { attrs: { type: "android-home" } }),
           _vm._v("\n        主页\n    ")
         ],
         1
@@ -83887,51 +83888,20 @@ var render = function() {
         "MenuItem",
         { attrs: { name: "upload" } },
         [
-          _c("Icon", { attrs: { type: "ios-people" } }),
+          _c("Icon", { attrs: { type: "android-upload" } }),
           _vm._v("\n        发布\n    ")
         ],
         1
       ),
       _vm._v(" "),
       _c(
-        "Submenu",
+        "MenuItem",
         { attrs: { name: "torrent" } },
         [
-          _c(
-            "template",
-            { slot: "title" },
-            [
-              _c("Icon", { attrs: { type: "stats-bars" } }),
-              _vm._v("\n            种子\n        ")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "MenuGroup",
-            { attrs: { title: "种子发布" } },
-            [
-              _c("MenuItem", { attrs: { name: "3-1" } }, [_vm._v("首页")]),
-              _vm._v(" "),
-              _c("MenuItem", { attrs: { name: "3-2" } }, [_vm._v("temp")]),
-              _vm._v(" "),
-              _c("MenuItem", { attrs: { name: "3-3" } }, [_vm._v("temp")])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "MenuGroup",
-            { attrs: { title: "查看种子" } },
-            [
-              _c("MenuItem", { attrs: { name: "3-4" } }, [_vm._v("首页")]),
-              _vm._v(" "),
-              _c("MenuItem", { attrs: { name: "3-5" } }, [_vm._v("foo")])
-            ],
-            1
-          )
+          _c("Icon", { attrs: { type: "android-download" } }),
+          _vm._v("\n        种子\n        ")
         ],
-        2
+        1
       ),
       _vm._v(" "),
       _c(
@@ -83942,15 +83912,21 @@ var render = function() {
             "template",
             { slot: "title" },
             [
-              _c("Icon", { attrs: { teype: "settings" } }),
+              _c("Icon", { attrs: { type: "wrench" } }),
               _vm._v("\n            设置\n        ")
             ],
             1
           ),
           _vm._v(" "),
-          _c("MenuItem", { attrs: { name: "setting-1" } }, [
-            _vm._v("编辑个人资料")
-          ]),
+          _c(
+            "MenuItem",
+            { attrs: { name: "setting-1" } },
+            [
+              _c("Icon", { attrs: { type: "person" } }),
+              _vm._v("\n            编辑个人资料\n        ")
+            ],
+            1
+          ),
           _vm._v(" "),
           _c(
             "MenuItem",
@@ -85238,8 +85214,7 @@ var render = function() {
         { attrs: { label: "标题" } },
         [
           _c("Input", {
-            staticStyle: { width: "500px" },
-            attrs: { clearable: "", placeholder: "请输入标题" },
+            attrs: { placeholder: "请输入标题" },
             model: {
               value: _vm.uploadItem.title,
               callback: function($$v) {
@@ -85257,8 +85232,7 @@ var render = function() {
         { attrs: { label: "副标题" } },
         [
           _c("Input", {
-            staticStyle: { width: "500px" },
-            attrs: { clearable: "", placeholder: "请输入副标题" },
+            attrs: { placeholder: "请输入副标题" },
             model: {
               value: _vm.uploadItem.subtitle,
               callback: function($$v) {
@@ -85278,7 +85252,6 @@ var render = function() {
           _c(
             "Select",
             {
-              staticStyle: { width: "200px" },
               model: {
                 value: _vm.uploadItem.type,
                 callback: function($$v) {
@@ -85325,11 +85298,10 @@ var render = function() {
         { attrs: { label: "简介" } },
         [
           _c("Input", {
-            staticStyle: { width: "500px" },
             attrs: {
               clearable: "",
               type: "textarea",
-              autosize: { minRows: 2, maxRows: 5 },
+              autosize: { minRows: 1, maxRows: 5 },
               placeholder: "请输入简介"
             },
             model: {
@@ -85351,7 +85323,7 @@ var render = function() {
           _c(
             "Button",
             { attrs: { type: "ghost", icon: "ios-cloud-upload-outline" } },
-            [_vm._v("上传种子")]
+            [_vm._v("上传文件")]
           )
         ],
         1
@@ -85402,13 +85374,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(97)
+  __webpack_require__(95)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(95)
+var __vue_script__ = __webpack_require__(97)
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(98)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -85448,6 +85420,46 @@ module.exports = Component.exports
 
 /***/ }),
 /* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(96);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("453913db", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e0fb3cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./s-status.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e0fb3cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./s-status.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.ivu-card{\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85557,7 +85569,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -85631,46 +85643,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-e0fb3cba", module.exports)
   }
 }
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(98);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("453913db", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e0fb3cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./s-status.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e0fb3cba\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./s-status.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.ivu-card{\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n", ""]);
-
-// exports
-
 
 /***/ })
 /******/ ]);

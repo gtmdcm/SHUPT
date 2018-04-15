@@ -1,34 +1,35 @@
 <template>
     <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="onMenuSelect">
         <MenuItem name="mainpage">
-            <Icon type="ios-paper"></Icon>
+            <Icon type="android-home"></Icon>
             主页
         </MenuItem>
         <MenuItem name="upload">
-            <Icon type="ios-people"></Icon>
+            <Icon type="android-upload"></Icon>
             发布
         </MenuItem>
-        <Submenu name="torrent">
-            <template slot="title">
-                <Icon type="stats-bars"></Icon>
-                种子
-            </template>
-            <MenuGroup title="种子发布">
-                <MenuItem name="3-1">首页</MenuItem>
-                <MenuItem name="3-2">temp</MenuItem>
-                <MenuItem name="3-3">temp</MenuItem>
-            </MenuGroup>
-            <MenuGroup title="查看种子">
-                <MenuItem name="3-4">首页</MenuItem>
-                <MenuItem name="3-5">foo</MenuItem>
-            </MenuGroup>
-        </Submenu>
+        <MenuItem name="torrent">
+            <Icon type="android-download"></Icon>
+            种子
+            <!--<MenuGroup title="种子发布">-->
+            <!--<MenuItem name="3-1">首页</MenuItem>-->
+            <!--<MenuItem name="3-2">temp</MenuItem>-->
+            <!--<MenuItem name="3-3">temp</MenuItem>-->
+            <!--</MenuGroup>-->
+            <!--<MenuGroup title="查看种子">-->
+            <!--<MenuItem name="3-4">首页</MenuItem>-->
+            <!--<MenuItem name="3-5">foo</MenuItem>-->
+            <!--</MenuGroup>-->
+        </MenuItem>
         <Submenu name="setting">
             <template slot="title">
-                <Icon teype="settings"></Icon>
+                <Icon type="wrench"></Icon>
                 设置
             </template>
-            <MenuItem name="setting-1">编辑个人资料</MenuItem>
+            <MenuItem name="setting-1">
+                <Icon type="person"></Icon>
+                编辑个人资料
+            </MenuItem>
             <MenuItem name="rules">
                 <Icon type="alert"></Icon>
                 规则
@@ -55,7 +56,7 @@
                 if (name === "upload") {
                     window.location.href = '/upload'
                 }
-                if (name === "3-1") {
+                if (name === "torrent") {
                     window.location.href = '/torrent'
                 }
                 if (name === "3-4") {
