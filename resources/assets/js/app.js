@@ -38,6 +38,8 @@ Vue.component('z-main', require('./components/z-main'));
 
 Vue.component('upload_torrent',require('./components/upload_torrent.vue'));
 
+Vue.component('s-status',require('./components/s-status.vue'));
+
 
 const app = new Vue({
     el: '#app'
