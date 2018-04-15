@@ -24,6 +24,7 @@
             </Select>
         </FormItem>
         <FormItem label="简介">
+
             <Input v-model="uploadItem.brief_introduction" clearable style="width:500px"  type="textarea" :autosize="{minRows: 2,maxRows: 5}"
                    placeholder="请输入简介"></Input>
         </FormItem>
