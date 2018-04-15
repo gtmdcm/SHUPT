@@ -25306,7 +25306,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(19);
-module.exports = __webpack_require__(92);
+module.exports = __webpack_require__(97);
 
 
 /***/ }),
@@ -25361,7 +25361,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('z-main', __webpack_requir
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('upload_torrent', __webpack_require__(87));
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('s-status', __webpack_require__(94));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('s-status', __webpack_require__(92));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app'
@@ -85214,7 +85214,8 @@ var render = function() {
         { attrs: { label: "标题" } },
         [
           _c("Input", {
-            attrs: { placeholder: "请输入标题" },
+            staticStyle: { width: "500px" },
+            attrs: { clearable: "", placeholder: "请输入标题" },
             model: {
               value: _vm.uploadItem.title,
               callback: function($$v) {
@@ -85232,7 +85233,8 @@ var render = function() {
         { attrs: { label: "副标题" } },
         [
           _c("Input", {
-            attrs: { placeholder: "请输入副标题" },
+            staticStyle: { width: "500px" },
+            attrs: { clearable: "", placeholder: "请输入副标题" },
             model: {
               value: _vm.uploadItem.subtitle,
               callback: function($$v) {
@@ -85252,6 +85254,7 @@ var render = function() {
           _c(
             "Select",
             {
+              staticStyle: { width: "200px" },
               model: {
                 value: _vm.uploadItem.type,
                 callback: function($$v) {
@@ -85298,10 +85301,11 @@ var render = function() {
         { attrs: { label: "简介" } },
         [
           _c("Input", {
+            staticStyle: { width: "500px" },
             attrs: {
               clearable: "",
               type: "textarea",
-              autosize: { minRows: 1, maxRows: 5 },
+              autosize: { minRows: 2, maxRows: 5 },
               placeholder: "请输入简介"
             },
             model: {
@@ -85323,7 +85327,7 @@ var render = function() {
           _c(
             "Button",
             { attrs: { type: "ghost", icon: "ios-cloud-upload-outline" } },
-            [_vm._v("上传文件")]
+            [_vm._v("上传种子")]
           )
         ],
         1
@@ -85362,25 +85366,18 @@ if (false) {
 
 /***/ }),
 /* 92 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 93 */,
-/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(95)
+  __webpack_require__(93)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(97)
+var __vue_script__ = __webpack_require__(95)
 /* template */
-var __vue_template__ = __webpack_require__(98)
+var __vue_template__ = __webpack_require__(96)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -85419,13 +85416,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 95 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(96);
+var content = __webpack_require__(94);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -85445,7 +85442,7 @@ if(false) {
 }
 
 /***/ }),
-/* 96 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -85459,7 +85456,7 @@ exports.push([module.i, "\n.ivu-card{\n    position: fixed;\n    bottom: 0;\n   
 
 
 /***/ }),
-/* 97 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85569,7 +85566,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 98 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -85643,6 +85640,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-e0fb3cba", module.exports)
   }
 }
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
