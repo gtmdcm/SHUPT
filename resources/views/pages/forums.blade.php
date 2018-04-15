@@ -2,7 +2,7 @@
 
 @section('title','尽情期待')
 
-@section('content')
+@section('vues')
     敬请期待
 @stop
 

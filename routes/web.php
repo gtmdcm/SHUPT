@@ -13,23 +13,23 @@
 
 Route::get('/', 'PageController@welcome')->name('welcome');
 
-Route::get('mainpage', 'PageController@mainpage')->name('mainpage');
+Route::get('mainpage', 'PageController@mainpage')->name('mainpage')->middleware('auth');
 
-Route::get('rules', 'PageController@rules')->name('rules');
+Route::get('rules', 'PageController@rules')->name('rules')->middleware('auth');
 
-Route::get('upload', 'PageController@upload')->name('upload');
+Route::get('upload', 'PageController@upload')->name('upload')->middleware('auth');
 
-Route::get('torrent', 'PageController@torrent')->name('torrent');
+Route::get('torrent', 'PageController@torrent')->name('torrent')->middleware('auth');
 
-Route::get('forums', 'PageController@forums')->name('forums');
+Route::get('forums', 'PageController@forums')->name('forums')->middleware('auth');
 
 Route::get('help', 'PageController@help')->name('help');
 
-Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests');
+Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests')->middleware('auth');
 
-Route::get('edit_profile', 'PageController@edit_profile')->name('edit_profile');
+Route::get('edit_profile', 'PageController@edit_profile')->name('edit_profile')->middleware('auth');
 
-Route::post('edit_profile', 'UserController@editProfile')->name('edit_profile');
+Route::post('edit_profile', 'UserController@editProfile')->name('edit_profile')->middleware('auth');
 
 Route::post('upload','UploadController@uploadSeeds')->name('upload')->middleware('auth');
 
@@ -37,14 +37,14 @@ Route::get('todo', 'PageController@todo')->name('todo');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::resource('users', 'UserController');
 
 //zd test
-Route::get('/testapp', 'PageController@app')->name('app');
+Route::get('/testapp', 'PageController@app')->name('app')->middleware('auth');
 
-Route::get('/testchild', 'PageController@child')->name('child');
+Route::get('/testchild', 'PageController@child')->name('child')->middleware('auth');
 
 //szy test
 Route::get('log', function () {
@@ -53,4 +53,4 @@ Route::get('log', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

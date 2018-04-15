@@ -13,11 +13,48 @@
                             <p slot="content">进一步了解PT原理，<a href="https://baike.baidu.com/item/pt下载/6883416?fr=aladdin">传送门</a>。
                             </p>
                         </Panel>
+                        <Panel name="basic-2">
+                            如何下载
+                            <p slot="content">1·安装用于下载的软件</p>
+                            <p slot="content"> windows和MacOS用户请下载<a href="http://www.utorrent.com/intl/zh/">μTorrent</a>
+                            </p>
+                            <p slot="content"> Linux用户应该可以自己解决这个问题。</p>
+                            <p slot="content">2·下载torrent文件</p>
+                            <p slot="content">3·用下载的软件打开torrent，开始下载</p>
+                        </Panel>
+                        <Panel name="basic-3">
+                            如何上传
+                            <p slot="content">前话</p>
+                            <p slot="content"> 来而不往非礼也。大家都是成年人咯。————Python</p>
+                            <p slot="content"> 分享率过低将失去下载权。</p>
+                            <p slot="content">1·发布</p>
+                            <p slot="content"> 填好相关信息点击确认就可以。</p>
+                            <p slot="content">2·保种</p>
+                            <p slot="content"> 下载完成后，链接这规定网络保持上传就可以咯!</p>
+                        </Panel>
+                        <Panel name="basic-4">
+                            流量？
+                            <p slot="content">目前SHUPT只对上大校内开放，只要使用校内的网络就能以极快的速度下载咯！使用寝室自己办的宽带会又慢又占用室友带宽的。</p>
+                        </Panel>
                     </Collapse>
                 </div>
             </Panel>
-            <Panel>
+            <Panel name="user">
                 用户信息
+                <div slot="content">
+                    <Collapse accordion v-model="value3">
+                        <Panel name="user-1">
+                            分享率？
+                            <p slot="content">上传量于下载量的比值</p>
+                            <p slot="content"> 如果下载量大于50GB，应该要有大于0.5的分享率，过低会被封禁</p>
+                            <p slot="content"> 如果下载量大于500GB,应该要有大于0.7的分享率，过低会被封禁</p>
+                            <p slot="content"> 如果下载量大于1T，应该要有大于0.8的分享率，过低会被封禁</p>
+                        </Panel>
+                        <Panel name="user-2" id="join">
+                            加入我们？
+                        </Panel>
+                    </Collapse>
+                </div>
             </Panel>
             <Panel>
                 数据统计
@@ -40,10 +77,21 @@
         name: "help",
         data: function () {
             return {
-                value1: '1',
-                value2: '1'
+                value1: 'basic',
+                value2: 'basic-1',
+                value3: 'user-1',
             }
         },
+        mounted: function () {
+            console.log(window.location);
+            if(window.location.href.indexOf('join=1') !== -1) {
+                console.log("Hello?");
+                this.value1 = "user";
+                this.value3 = "user-2";
+                console.log(this.value1)
+
+            }
+        }
     }
 </script>
 

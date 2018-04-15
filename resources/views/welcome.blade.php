@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SHUPT - @yield('title')</title>
+    <title>SHUPT</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{csrf_token()}}">
@@ -73,13 +73,13 @@
         }
 
         .links > a {
-            color: #636b6f;
             padding: 0 25px;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
+            color: black;
         }
 
         .m-b-md {
@@ -108,11 +108,8 @@
         </div>
         <div class="links">
             <a href="">PT介绍</a>
-            <a href="">加入我们</a>
+            <a href="{{url('help')}}?join=1">加入我们</a>
         </div>
-        @section('content')
-            <nav></nav>
-        @endsection
     </div>
 </div>
 </body>
@@ -181,12 +178,12 @@
 
     let canvas = document.getElementById('canvas');
     let ctx = canvas.getContext('2d');
-    let w = canvas.width = canvas.offsetWidth;
-    let h = canvas.height = canvas.offsetHeight;
-    let circles = [];
-    let current_circle = new currentCirle(0, 0)
+    var w = canvas.width = canvas.offsetWidth;
+    var h = canvas.height = canvas.offsetHeight;
+    var circles = [];
+    var current_circle = new currentCirle(0, 0)
 
-    let draw = function () {
+    let draw = function (animition) {
         ctx.clearRect(0, 0, w, h);
         for (let i = 0; i < circles.length; i++) {
             circles[i].move(w, h);
@@ -201,14 +198,15 @@
                 current_circle.drawLine(ctx, circles[k])
             }
         }
-        requestAnimationFrame(draw)
+        if(animition)
+            requestAnimationFrame(draw);
     }
 
     let init = function (num) {
         for (var i = 0; i < num; i++) {
             circles.push(new Circle(Math.random() * w, Math.random() * h));
         }
-        draw();
+        draw(true);
     }
 
     window.addEventListener('load', init(60));
@@ -222,5 +220,10 @@
     window.onmouseout = function () {
         current_circle.x = null;
         current_circle.y = null;
+    }
+    window.onresize = function () {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+        draw(false);
     }
 </script>

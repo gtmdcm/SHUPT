@@ -2,7 +2,7 @@
 
 @section('title','ViewRequests')
 
-@section('content')
+@section('vues')
     <h1>求种</h1>
 @stop
 

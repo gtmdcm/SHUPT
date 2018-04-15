@@ -1,14 +1,11 @@
 <template>
     <div>
-        <p>一定要熟悉规则哦<br>
-            <span style="color: #ff9900;">橙色的是和使用相关的东西</span><br>
-            <span style="color: #ed3f14;">红色非常重要</span></p>
         <Collapse v-model="value1" accordion>
 
             <Panel name="1">
                 账号规则
                 <p slot="content">违规账号会被<span style="color: #ed3f14;">封禁</span></p>
-                <p slot="content">以为用户只能拥有<span style="color: #ed3f14;">一个</span>账户
+                <p slot="content">一位用户只能拥有<span style="color: #ed3f14;">一个</span>账户
                     ，注册多个账号将<span style="color: #ed3f14;">全部封禁</span></p>
                 <p slot="content">一个账号只允许<span style="color: #ed3f14;">一位</span>用户使用，被<span
                         style="color: #ed3f14;">共用</span>的账号将被<span style="color: #ed3f14;">封禁</span>。</p>

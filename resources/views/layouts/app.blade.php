@@ -11,11 +11,21 @@
 <body>
 <div id="app">
     {{--走马灯--}}
+    @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+                <a href="{{ url('/mainpage') }}">Home</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a>
+            @endauth
+        </div>
+    @endif
     {{--logo栏--}}
-        @guest
-        @else
-            <s-nav></s-nav>
-        @endguest
+    @guest
+    @else
+        <s-nav></s-nav>
+    @endguest
     <div style="margin-top: 60px"></div>
     <div>
         @section('logo')
@@ -48,21 +58,17 @@
     {{--nav--}}
 
     {{--内容--}}
-    <div>
+    @guest
         @yield('content')
-        @section('iflogin')
-            @guest
-                请先
-                <a href="{{ route('login') }}">登录</a>
-                或
-                <a href="{{ route('register') }}">注册</a>
-            @else
-
-            @endguest
         @show
-    </div>
-    <z-main></z-main>
+    @endguest
+    @auth
+        @yield('vues')
+        @show
+    @endauth
+
     {{--脚注--}}
+
     <div class="shupt-logo">
         ©2018 SHUPT
     </div>

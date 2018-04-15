@@ -2,7 +2,7 @@
 
 @section('title','Torrent')
 
-@section('content')
+@section('vues')
     <h1>种子</h1>
 @stop
 

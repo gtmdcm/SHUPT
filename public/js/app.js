@@ -83636,7 +83636,7 @@ var render = function() {
             attrs: {
               clearable: "",
               type: "textarea",
-              autosize: { minRows: 1, maxRows: 5 },
+              autosize: { minRows: 2, maxRows: 5 },
               placeholder: "请输入签名"
             },
             model: {
@@ -83768,7 +83768,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.ivu-menu[data-v-145f88c2] {\n    position: fixed;\n    top: 0;\n    width:100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
+exports.push([module.i, "\n.ivu-menu[data-v-145f88c2] {\n    position: fixed;\n    top: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
 
 // exports
 
@@ -83821,9 +83821,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -83834,10 +83831,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         onMenuSelect: function onMenuSelect(name) {
-            if (name === "1") {
+            if (name === "mainpage") {
                 window.location.href = '/mainpage';
             }
-            if (name === "2") {
+            if (name === "upload") {
                 window.location.href = '/upload';
             }
             if (name === "3-1") {
@@ -83846,13 +83843,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             if (name === "3-4") {
                 windows.location.href = '/upload';
             }
-            if (name === "4-1") {
+            if (name === "setting-1") {
                 window.location.href = '/edit_profile';
             }
-            if (name === "5") {
+            if (name === "rules") {
                 window.location.href = '/rules';
             }
-            if (name === "6") {
+            if (name === "help") {
                 window.location.href = '/help';
             }
         }
@@ -83876,7 +83873,7 @@ var render = function() {
     [
       _c(
         "MenuItem",
-        { attrs: { name: "1" } },
+        { attrs: { name: "mainpage" } },
         [
           _c("Icon", { attrs: { type: "ios-paper" } }),
           _vm._v("\n        主页\n    ")
@@ -83886,7 +83883,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "MenuItem",
-        { attrs: { name: "2" } },
+        { attrs: { name: "upload" } },
         [
           _c("Icon", { attrs: { type: "ios-people" } }),
           _vm._v("\n        发布\n    ")
@@ -83896,7 +83893,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Submenu",
-        { attrs: { name: "3" } },
+        { attrs: { name: "torrent" } },
         [
           _c(
             "template",
@@ -83937,26 +83934,28 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Submenu",
-        { attrs: { name: "4" } },
+        { attrs: { name: "setting" } },
         [
           _c(
             "template",
             { slot: "title" },
             [
-              _c("Icon", { attrs: { type: "settings" } }),
+              _c("Icon", { attrs: { teype: "settings" } }),
               _vm._v("\n            设置\n        ")
             ],
             1
           ),
           _vm._v(" "),
+          _c("MenuItem", { attrs: { name: "setting-1" } }, [
+            _vm._v("编辑个人资料")
+          ]),
+          _vm._v(" "),
           _c(
-            "MenuGroup",
+            "MenuItem",
+            { attrs: { name: "rules" } },
             [
-              _c("MenuItem", { attrs: { name: "4-1" } }, [
-                _vm._v("编辑个人资料")
-              ]),
-              _vm._v(" "),
-              _c("MenuItem", { attrs: { name: "4-2" } }, [_vm._v("temp")])
+              _c("Icon", { attrs: { type: "alert" } }),
+              _vm._v("\n            规则\n        ")
             ],
             1
           )
@@ -83966,17 +83965,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "MenuItem",
-        { attrs: { name: "5" } },
-        [
-          _c("Icon", { attrs: { type: "alert" } }),
-          _vm._v("\n        规则\n    ")
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "MenuItem",
-        { attrs: { name: "6" } },
+        { attrs: { name: "help" } },
         [
           _c("Icon", { attrs: { type: "help" } }),
           _vm._v("\n        帮助\n    ")
@@ -84212,7 +84201,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84223,9 +84212,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -84292,8 +84278,6 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm._m(0),
-      _vm._v(" "),
       _c(
         "Collapse",
         {
@@ -84317,7 +84301,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-              _vm._v("以为用户只能拥有"),
+              _vm._v("一位用户只能拥有"),
               _c("span", { staticStyle: { color: "#ed3f14" } }, [
                 _vm._v("一个")
               ]),
@@ -84472,26 +84456,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v("一定要熟悉规则哦"),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticStyle: { color: "#ff9900" } }, [
-        _vm._v("橙色的是和使用相关的东西")
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticStyle: { color: "#ed3f14" } }, [
-        _vm._v("红色非常重要")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -84587,7 +84552,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84635,14 +84600,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "help",
     data: function data() {
         return {
-            value1: '1',
-            value2: '1'
+            value1: 'basic',
+            value2: 'basic-1',
+            value3: 'user-1'
         };
+    },
+    mounted: function mounted() {
+        console.log(window.location);
+        if (window.location.href.indexOf('join=1') !== -1) {
+            console.log("Hello?");
+            this.value1 = "user";
+            this.value3 = "user-2";
+            console.log(this.value1);
+        }
     }
 });
 
@@ -84725,6 +84737,82 @@ var render = function() {
                         ),
                         _vm._v("。\n                        ")
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("Panel", { attrs: { name: "basic-2" } }, [
+                      _vm._v(
+                        "\n                        如何下载\n                        "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("1·安装用于下载的软件")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(" windows和MacOS用户请下载"),
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "http://www.utorrent.com/intl/zh/" }
+                          },
+                          [_vm._v("μTorrent")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(" Linux用户应该可以自己解决这个问题。")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("2·下载torrent文件")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("3·用下载的软件打开torrent，开始下载")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("Panel", { attrs: { name: "basic-3" } }, [
+                      _vm._v(
+                        "\n                        如何上传\n                        "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("前话")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(" 来而不往非礼也。大家都是成年人咯。————Python")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(" 分享率过低将失去下载权。")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("1·发布")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(" 填好相关信息点击确认就可以。")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("2·保种")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(" 下载完成后，链接这规定网络保持上传就可以咯!")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("Panel", { attrs: { name: "basic-4" } }, [
+                      _vm._v(
+                        "\n                        流量？\n                        "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          "目前SHUPT只对上大校内开放，只要使用校内的网络就能以极快的速度下载咯！使用寝室自己办的宽带会又慢又占用室友带宽的。"
+                        )
+                      ])
                     ])
                   ],
                   1
@@ -84734,7 +84822,64 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\n            用户信息\n        ")]),
+          _c("Panel", { attrs: { name: "user" } }, [
+            _vm._v("\n            用户信息\n            "),
+            _c(
+              "div",
+              { attrs: { slot: "content" }, slot: "content" },
+              [
+                _c(
+                  "Collapse",
+                  {
+                    attrs: { accordion: "" },
+                    model: {
+                      value: _vm.value3,
+                      callback: function($$v) {
+                        _vm.value3 = $$v
+                      },
+                      expression: "value3"
+                    }
+                  },
+                  [
+                    _c("Panel", { attrs: { name: "user-1" } }, [
+                      _vm._v(
+                        "\n                        分享率？\n                        "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("上传量于下载量的比值")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          " 如果下载量大于50GB，应该要有大于0.5的分享率，过低会被封禁"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          " 如果下载量大于500GB,应该要有大于0.7的分享率，过低会被封禁"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          " 如果下载量大于1T，应该要有大于0.8的分享率，过低会被封禁"
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("Panel", { attrs: { name: "user-2", id: "join" } }, [
+                      _vm._v(
+                        "\n                        加入我们？\n                    "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
           _c("Panel", [_vm._v("\n            数据统计\n        ")]),
           _vm._v(" "),

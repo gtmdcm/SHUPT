@@ -2,7 +2,7 @@
 
 @section('title','Upload')
 
-@section('content')
+@section('vues')
     <upload_torrent></upload_torrent>
 @stop
 

@@ -2,7 +2,7 @@
 
 @section('title','Rules')
 
-@section('content')
+@section('vues')
     <help></help>
 @stop
 

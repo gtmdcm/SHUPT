@@ -2,7 +2,7 @@
 
 @section('title','coming soon!')
 
-@section('content')
+@section('vues')
     <div>
         <h1>
             敬请期待!

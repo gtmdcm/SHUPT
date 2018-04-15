@@ -20,7 +20,7 @@
             </Select>
         </FormItem>
         <FormItem label="签名 ">
-            <Input v-model="formItem.signature" clearable style="width:500px" type="textarea" :autosize="{minRows: 1,maxRows: 5}"
+            <Input v-model="formItem.signature" clearable style="width:500px" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
                    placeholder="请输入签名"></Input>
         </FormItem>
         <FormItem>

@@ -2,8 +2,8 @@
 
 @section('title','MainPage')
 
-@section('content')
-
+@section('vues')
+    <z-main></z-main>
 @stop
 
 @section('iflogin')
