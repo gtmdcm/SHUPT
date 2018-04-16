@@ -15,9 +15,8 @@ class CreateResourcesTable extends Migration
     {
         Schema::create('resources', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('rid',4);
             $table->string('name',80);
-            $table->char('seed',16);
+            $table->char('seed',16)->nullable();
             $table->enum('visible',['yes','no']);
             $table->enum('banned',['yes','no']);
             $table->enum('down50',['yes','no']);
@@ -28,9 +27,8 @@ class CreateResourcesTable extends Migration
             $table->enum('up200downfree',['yes','no']);
             $table->string('owner',20);
             $table->char('catagory',4);
-            $table->char('standard',4);
+            $table->char('standard',4)->nullable();
             $table->dateTime('last_action');
-            $table->dateTime('upload_time');
             $table->timestamps();
         });
     }

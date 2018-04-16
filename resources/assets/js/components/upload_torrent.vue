@@ -8,19 +8,19 @@
         </FormItem>
         <FormItem label="类型">
             <Select v-model="uploadItem.type" style="width:200px">
-                <Option value="00">资料</Option>
-                <Option value="01">电影</Option>
-                <Option value="02">动漫</Option>
-                <Option value="03">剧集</Option>
-                <Option value="04">综艺</Option>
-                <Option value="05">体育</Option>
-                <Option value="06">记录</Option>
-                <Option value="07">音乐</Option>
-                <Option value="08">MV</Option>
-                <Option value="09">软件</Option>
-                <Option value="10">游戏</Option>
-                <Option value="11">校园</Option>
-                <Option value="12">其他</Option>
+                <Option value="0000">资料</Option>
+                <Option value="0001">电影</Option>
+                <Option value="0002">动漫</Option>
+                <Option value="0003">剧集</Option>
+                <Option value="0004">综艺</Option>
+                <Option value="0005">体育</Option>
+                <Option value="0006">记录</Option>
+                <Option value="0007">音乐</Option>
+                <Option value="0008">MV</Option>
+                <Option value="0009">软件</Option>
+                <Option value="0010">游戏</Option>
+                <Option value="0011">校园</Option>
+                <Option value="0012">其他</Option>
             </Select>
         </FormItem>
         <FormItem label="简介">
@@ -58,14 +58,11 @@
                 uploadData: function () {
                     var self=this;
                     var params = new URLSearchParams();
-                    let config = {
-                        headers: {'Content-Type': 'multipart/form-data'}
-                    }
                     params.append('title',this.uploadItem.title);
                     params.append('subtitle',this.uploadItem.subtitle);
                     params.append('type',this.uploadItem.type);
                     params.append('brief_introduction',this.uploadItem.brief_introduction);
-                    axios.post('upload_torrent',params,config).then(function(response) {
+                    axios.post('upload',params).then(function(response) {
                         self=response.uploadItem;
                     })
                 },

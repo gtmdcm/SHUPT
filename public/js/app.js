@@ -85225,14 +85225,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         uploadData: function uploadData() {
             var self = this;
             var params = new URLSearchParams();
-            var config = {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            };
             params.append('title', this.uploadItem.title);
             params.append('subtitle', this.uploadItem.subtitle);
             params.append('type', this.uploadItem.type);
             params.append('brief_introduction', this.uploadItem.brief_introduction);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload_torrent', params, config).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload', params).then(function (response) {
                 self = response.uploadItem;
             });
         },
@@ -85314,31 +85311,31 @@ var render = function() {
               }
             },
             [
-              _c("Option", { attrs: { value: "00" } }, [_vm._v("资料")]),
+              _c("Option", { attrs: { value: "0000" } }, [_vm._v("资料")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "01" } }, [_vm._v("电影")]),
+              _c("Option", { attrs: { value: "0001" } }, [_vm._v("电影")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "02" } }, [_vm._v("动漫")]),
+              _c("Option", { attrs: { value: "0002" } }, [_vm._v("动漫")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "03" } }, [_vm._v("剧集")]),
+              _c("Option", { attrs: { value: "0003" } }, [_vm._v("剧集")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "04" } }, [_vm._v("综艺")]),
+              _c("Option", { attrs: { value: "0004" } }, [_vm._v("综艺")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "05" } }, [_vm._v("体育")]),
+              _c("Option", { attrs: { value: "0005" } }, [_vm._v("体育")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "06" } }, [_vm._v("记录")]),
+              _c("Option", { attrs: { value: "0006" } }, [_vm._v("记录")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "07" } }, [_vm._v("音乐")]),
+              _c("Option", { attrs: { value: "0007" } }, [_vm._v("音乐")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "08" } }, [_vm._v("MV")]),
+              _c("Option", { attrs: { value: "0008" } }, [_vm._v("MV")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "09" } }, [_vm._v("软件")]),
+              _c("Option", { attrs: { value: "0009" } }, [_vm._v("软件")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "10" } }, [_vm._v("游戏")]),
+              _c("Option", { attrs: { value: "0010" } }, [_vm._v("游戏")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "11" } }, [_vm._v("校园")]),
+              _c("Option", { attrs: { value: "0011" } }, [_vm._v("校园")]),
               _vm._v(" "),
-              _c("Option", { attrs: { value: "12" } }, [_vm._v("其他")])
+              _c("Option", { attrs: { value: "0012" } }, [_vm._v("其他")])
             ],
             1
           )
