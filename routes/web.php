@@ -23,7 +23,7 @@ Route::get('torrent', 'PageController@torrent')->name('torrent')->middleware('au
 
 Route::get('forums', 'PageController@forums')->name('forums')->middleware('auth');
 
-Route::get('help', 'PageController@help')->name('help');
+Route::get('help', 'PageController@help')->name('help')->middleware('auth');
 
 Route::get('viewrequests', 'PageController@viewrequests')->name('viewrequests')->middleware('auth');
 

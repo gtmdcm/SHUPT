@@ -60,6 +60,7 @@
                         alert('修改资料成功');
                         self =response.formItem;
                     })
+                    this.$Message.success('成功啦(๑•̀ω•́๑)');
                 },
 
                 downloadData: function () {

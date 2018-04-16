@@ -84,12 +84,10 @@
         },
         mounted: function () {
             console.log(window.location);
-            if(window.location.href.indexOf('join=1') !== -1) {
+            if (window.location.href.indexOf('join=1') !== -1) {
                 console.log("Hello?");
                 this.value1 = "user";
                 this.value3 = "user-2";
-                console.log(this.value1)
-
             }
         }
     }
