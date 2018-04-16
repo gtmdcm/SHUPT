@@ -1,4 +1,5 @@
 <template>
+    <Affix :offset-bottom="20">
     <Card>
         <p slot="title">
             <Icon type="ios-film-outline"></Icon>
@@ -20,6 +21,7 @@
             </li>
         </ul>
     </Card>
+    </Affix>
 </template>
 <script>
     import axios from 'axios'
@@ -111,11 +113,11 @@
         }
     }
 </script>
-<style>
-    .ivu-card{
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        display: flex;
-    }
-</style>
+<!--<style>-->
+    <!--.ivu-card{-->
+        <!--position: fixed;-->
+        <!--bottom: 0;-->
+        <!--width: 100%;-->
+        <!--display: flex;-->
+    <!--}-->
+<!--</style>-->
