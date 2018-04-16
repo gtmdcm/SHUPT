@@ -57,7 +57,6 @@
                     params.append('signature', this.formItem.signature);
                     params.append('birthday', this.formItem.birthday.toLocaleDateString());
                     axios.post('edit_profile',params).then(function (response) {
-                        alert('修改资料成功');
                         self =response.formItem;
                     })
                     this.$Message.success('成功啦(๑•̀ω•́๑)');
