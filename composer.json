@@ -10,7 +10,8 @@
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
         "johnlui/aliyun-oss": "dev-master",
-        "aws/aws-sdk-php": "3.*"
+        "aws/aws-sdk-php": "3.*",
+        "bhutanio/laravel-bencode": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
