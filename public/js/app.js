@@ -84506,7 +84506,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84517,30 +84517,133 @@ exports.push([module.i, "", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "help",
-  data: function data() {
-    return {
-      valuemain: 'basic',
-      valuebasic: 'basic-1',
-      valueuser: 'user-1',
-      valuedata: 'data-1'
-    };
-  },
-  mounted: function mounted() {
-    console.log(window.location);
-    if (window.location.href.indexOf('join=1') !== -1) {
-      console.log("Hello?");
-      this.valuemain = "user";
-      this.valueuser = "user-2";
+    name: "help",
+    data: function data() {
+        return {
+            valuemain: 'basic',
+            valuebasic: 'basic-1',
+            valueuser: 'user-1',
+            valuedata: 'data-1'
+        };
+    },
+    mounted: function mounted() {
+        console.log(window.location);
+        if (window.location.href.indexOf('join=1') !== -1) {
+            console.log("Hello?");
+            this.valuemain = "user";
+            this.valueuser = "user-2";
+        }
+        if (window.location.href.indexOf('join=2') !== -1) {
+            console.log("Hello!");
+            this.valuemain = "basic";
+            this.valuebasic = "basic-1";
+        }
     }
-    if (window.location.href.indexOf('join=2') !== -1) {
-      console.log("Hello!");
-      this.valuemain = "basic";
-      this.valuebasic = "basic-1";
-    }
-  }
 });
 
 /***/ }),
@@ -84568,7 +84671,7 @@ var render = function() {
         },
         [
           _c("Panel", { attrs: { name: "basic" } }, [
-            _vm._v("\r                基本\r                "),
+            _vm._v("\n            基本\n            "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84588,7 +84691,7 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "basic-1" } }, [
                       _vm._v(
-                        "\r                            SHUPT？\r                            "
+                        "\n                        SHUPT？\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
@@ -84620,13 +84723,13 @@ var render = function() {
                           },
                           [_vm._v("传送门")]
                         ),
-                        _vm._v("。\r                            ")
+                        _vm._v("。\n                        ")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-2" } }, [
                       _vm._v(
-                        "\r                            如何下载\r                            "
+                        "\n                        如何下载\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("1·安装用于下载的软件")
@@ -84658,7 +84761,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-3" } }, [
                       _vm._v(
-                        "\r                            如何上传\r                            "
+                        "\n                        如何上传\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("前话")
@@ -84691,7 +84794,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-4" } }, [
                       _vm._v(
-                        "\r                            流量？\r                            "
+                        "\n                        流量？\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
@@ -84708,7 +84811,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "user" } }, [
-            _vm._v("\r                用户信息\r                "),
+            _vm._v("\n            用户信息\n            "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84728,7 +84831,7 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "user-1" } }, [
                       _vm._v(
-                        "\r                            分享率？\r                            "
+                        "\n                        分享率？\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("上传量于下载量的比值")
@@ -84755,7 +84858,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "user-2", id: "join" } }, [
                       _vm._v(
-                        "\r                            加入我们？\r                            "
+                        "\n                        加入我们？\n                        "
                       ),
                       _c(
                         "p",
@@ -84780,7 +84883,7 @@ var render = function() {
                         [
                           _c("Icon", { attrs: { type: "email" } }),
                           _vm._v(
-                            "\r                                1104127978@qq.com\r                            "
+                            "\n                            1104127978@qq.com\n                        "
                           )
                         ],
                         1
@@ -84795,7 +84898,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "data" } }, [
-            _vm._v("\r                数据\r                "),
+            _vm._v("\n            数据\n            "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84815,23 +84918,23 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "data-1" } }, [
                       _vm._v(
-                        "\r                            未更新？\r                            "
+                        "\n                        未更新？\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\r                                µtorrent等客服端不是实时更新的！\r                            "
+                          "\n                            µtorrent等客服端不是实时更新的！\n                        "
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\r                                服务器被玩坏啦～会有补偿的。\r                            "
+                          "\n                            服务器被玩坏啦～会有补偿的。\n                        "
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\r                                你没有正确关闭客户端或者有"
+                          "\n                            你没有正确关闭客户端或者有"
                         ),
                         _c(
                           "a",
@@ -84847,7 +84950,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "data-2" } }, [
                       _vm._v(
-                        "\r                            ALL Free？\r                            "
+                        "\n                        ALL Free？\n                        "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _c("img", {
@@ -84864,14 +84967,12 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "upload" } }, [
-            _vm._v("\r                上传\r            ")
+            _vm._v("\n            上传\n        ")
           ]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\r                下载\r            ")]),
+          _c("Panel", [_vm._v("\n            下载\n        ")]),
           _vm._v(" "),
-          _c("Panel", [
-            _vm._v("\r                如果找不到答案\r            ")
-          ])
+          _c("Panel", [_vm._v("\n            如果找不到答案\n        ")])
         ],
         1
       )
@@ -85484,7 +85585,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.ivu-card{\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n", ""]);
+exports.push([module.i, "\n.ivu-card{\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.ivu-card-body {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n}\n", ""]);
 
 // exports
 
@@ -85518,8 +85619,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -85527,75 +85626,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: 's-status',
     data: function data() {
         return {
-            movieList: [{
-                name: 'The Shawshank Redemption',
-                url: 'https://movie.douban.com/subject/1292052/',
-                rate: 9.6
-            }, {
-                name: 'Leon:The Professional',
-                url: 'https://movie.douban.com/subject/1295644/',
-                rate: 9.4
-            }, {
-                name: 'Farewell to My Concubine',
-                url: 'https://movie.douban.com/subject/1291546/',
-                rate: 9.5
-            }, {
-                name: 'Forrest Gump',
-                url: 'https://movie.douban.com/subject/1292720/',
-                rate: 9.4
-            }, {
-                name: 'Life Is Beautiful',
-                url: 'https://movie.douban.com/subject/1292063/',
-                rate: 9.5
-            }, {
-                name: 'Spirited Away',
-                url: 'https://movie.douban.com/subject/1291561/',
-                rate: 9.2
-            }, {
-                name: 'Schindlers List',
-                url: 'https://movie.douban.com/subject/1295124/',
-                rate: 9.4
-            }, {
-                name: 'The Legend of 1900',
-                url: 'https://movie.douban.com/subject/1292001/',
-                rate: 9.2
-            }, {
-                name: 'WALL·E',
-                url: 'https://movie.douban.com/subject/2131459/',
-                rate: 9.3
-            }, {
-                name: 'Inception',
-                url: 'https://movie.douban.com/subject/3541415/',
-                rate: 9.2
-            }],
-            randomMovieList: []
+            name: '临时用户',
+            upload_quantity: 0,
+            download_quantity: 0,
+            user_ip: '192.168.0.0',
+            ip_status: 'IPv4'
         };
     },
     methods: {
-        changeLimit: function changeLimit() {
-            function getArrayItems(arr, num) {
-                var temp_array = [];
-                for (var index in arr) {
-                    temp_array.push(arr[index]);
-                }
-                var return_array = [];
-                for (var i = 0; i < num; i++) {
-                    if (temp_array.length > 0) {
-                        var arrIndex = Math.floor(Math.random() * temp_array.length);
-                        return_array[i] = temp_array[arrIndex];
-                        temp_array.splice(arrIndex, 1);
-                    } else {
-                        break;
-                    }
-                }
-                return return_array;
-            }
-
-            this.randomMovieList = getArrayItems(this.movieList, 5);
+        downloadData: function downloadData() {
+            var self = this;
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get();
         }
     },
     mounted: function mounted() {
-        this.changeLimit();
+        var self = this;
+        console.log('hi');
     }
 });
 
@@ -85607,62 +85653,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("Card", [
-    _c(
-      "p",
-      { attrs: { slot: "title" }, slot: "title" },
-      [
-        _c("Icon", { attrs: { type: "ios-film-outline" } }),
-        _vm._v("\n        Classic film\n    ")
-      ],
-      1
-    ),
+  return _c("Card", { staticClass: "status_menu" }, [
+    _c("div", { staticStyle: { flex: "2" } }, [
+      _c("div", [_vm._v("当前IP: " + _vm._s(_vm.user_ip))]),
+      _vm._v(" "),
+      _c("div", [_vm._v("网络: " + _vm._s(_vm.ip_status))])
+    ]),
     _vm._v(" "),
     _c(
-      "a",
+      "div",
       {
-        attrs: { slot: "extra", href: "#" },
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            return _vm.changeLimit($event)
-          }
-        },
-        slot: "extra"
+        staticClass: "profile-avator",
+        staticStyle: { flex: "4", "text-align": "center" }
       },
       [
-        _c("Icon", { attrs: { type: "ios-loop-strong" } }),
-        _vm._v("\n        Change\n    ")
+        _c(
+          "Avatar",
+          {
+            attrs: {
+              size: "large",
+              src: "https://i.loli.net/2017/08/21/599a521472424.jpg"
+            }
+          },
+          [_vm._v("users")]
+        ),
+        _vm._v("\n        " + _vm._s(_vm.name) + "\n    ")
       ],
       1
     ),
     _vm._v(" "),
-    _c(
-      "ul",
-      _vm._l(_vm.randomMovieList, function(item) {
-        return _c("li", [
-          _c("a", { attrs: { href: item.url, target: "_blank" } }, [
-            _vm._v(_vm._s(item.name))
-          ]),
-          _vm._v(" "),
-          _c(
-            "span",
-            [
-              _vm._l(4, function(n) {
-                return _c("Icon", { key: n, attrs: { type: "ios-star" } })
-              }),
-              item.rate >= 9.5
-                ? _c("Icon", { attrs: { type: "ios-star" } })
-                : _c("Icon", { attrs: { type: "ios-star-half" } }),
-              _vm._v(
-                "\n                " + _vm._s(item.rate) + "\n            "
-              )
-            ],
-            2
-          )
-        ])
-      })
-    )
+    _c("div", { staticStyle: { "text-align": "right", flex: "2" } }, [
+      _c("div", [
+        _vm._v(
+          "\n        上传量: " + _vm._s(_vm.upload_quantity) + "\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        _vm._v(
+          "\n        下载量: " + _vm._s(_vm.download_quantity) + "\n        "
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
