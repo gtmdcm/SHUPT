@@ -21,4 +21,8 @@ class ApiController extends Controller
         $result=DB::select('select cataid,name from catagory');
         return $result;
     }
+    public function showUserinfo(){
+        $result=DB::select('select * from users');
+        return $result;
+    }
 }

@@ -17,11 +17,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/school','ApiController@showSchools')->name('school');
+Route::get('school','ApiController@showSchools')->name('school');
 
-Route::get('/standard','ApiController@showStandards')->name('standard');
+Route::get('standard','ApiController@showStandards')->name('standard');
 
-Route::get('/catagory','ApiController@showCatagory')->name('catagory');
+Route::get('catagory','ApiController@showCatagory')->name('catagory');
+
+Route::get('userinfo','ApiController@showUserinfo')->name('userinfo');
 
 Route::post('test',function () {
     print(Input::all());

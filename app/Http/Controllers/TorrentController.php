@@ -28,8 +28,8 @@ class TorrentController extends Controller
         $originTorrent = file_get_contents('/Users/jackysong/Documents/Torrents/Torrent1.torrent');
         $bcoder->set([
             'announce'=>"127.0.0.1:8000/announce?passkey=".$passkey,
-            'comment'=>'Downloaded from Private Tracker',
-            'created_by'=>'PrivateTracker v1.0',
+            'comment'=>'Tracker Service by Szy',
+            'created_by'=>'Bit Torrent',
         ]);
         $torrent = $bcoder -> bdecode($originTorrent);
         $files = $bcoder->filelist( $torrent );

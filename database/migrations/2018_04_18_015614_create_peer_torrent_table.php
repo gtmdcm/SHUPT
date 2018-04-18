@@ -20,7 +20,6 @@ class CreatePeerTorrentTable extends Migration
             $table->double('upload');
             $table->double('download');
             $table->double('left');
-            $table->dateTime('last_updated');
             $table->integer('stopped');
             $table->timestamps();
         });

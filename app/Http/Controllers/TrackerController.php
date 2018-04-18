@@ -8,11 +8,12 @@ use App\Services\BEncode;
 use App\User;
 use App\Torrent;
 use App\Peer;
+use App\Peer_Torrent;
 
 class TrackerController extends Controller
 {
     public function Tracking(Request $request){
-        $fkey = intval($request -> fkey);
+        $passkey = $request -> passkey;
         $info_hash = $request -> info_hash;
         $peer_id = $request -> peer_id;
         $event = $request -> event;
@@ -22,17 +23,48 @@ class TrackerController extends Controller
         $upload = $request -> upload;
         $left = $request -> left;
 
-        $user = User::find($fkey);
+        $user = User::where('passkey',$passkey)->first();
 
-        $peer = new Peer;
-        $peer -> peer_id = $peer_id;
-        $peer -> fkey = $fkey;
-        $peer -> port = $port;
-        $peer -> save();
+        $peer = Peer::where('peer_id',$peer_id)->first();
+        if($peer == null){
+            $peer = new Peer;
+            $peer -> peer_id = $peer_id;
+            $peer -> passkey = $passkey;
+            $peer -> port = $port;
+            $peer -> save();
+        }else{
+            $peer -> peer_id = $peer_id;
+            $peer -> passkey = $passkey;
+            $peer -> port = $port;
+            $peer -> save();
+        }
 
-        $torrent = new Torrent;
-        $torrent -> hash = $info_hash;
-        $torrent -> save();
+
+        $torrent = Torrent::where('hash',$info_hash)->first();
+        if($torrent == null){
+            $torrent = new Torrent;
+            $torrent -> hash = $info_hash;
+            $torrent -> save();
+        }else{
+            $torrent -> hash = $info_hash;
+            $torrent -> save();
+        }
+
+        $peer_torrent = Peer_Torrent::where('torrent_id',$info_hash);
+        if($peer_torrent == null){
+            $peer_torrent = new Peer_Torrent;
+            $peer_torrent -> peer_id = $peer_id;
+            $peer_torrent -> torrent_id = $info_hash;
+            $peer_torrent -> upload = $upload;
+            $peer_torrent -> download = $download;
+            $peer_torrent -> left = $left;
+            $peer_torrent -> save();
+        }else{
+            $peer_torrent -> upload = $upload;
+            $peer_torrent -> download = $download;
+            $peer_torrent -> left = $left;
+            $peer_torrent -> save();
+        }
 
         
     }
