@@ -85619,6 +85619,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -85668,18 +85674,34 @@ var render = function() {
       },
       [
         _c(
-          "Avatar",
+          "div",
+          [
+            _c(
+              "Avatar",
+              {
+                attrs: {
+                  src: "https://i.loli.net/2017/08/21/599a521472424.jpg"
+                }
+              },
+              [_vm._v("users")]
+            ),
+            _vm._v("\n        " + _vm._s(_vm.name) + "\n        ")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
           {
             attrs: {
-              size: "large",
-              src: "https://i.loli.net/2017/08/21/599a521472424.jpg"
+              href: "http://localhost:8000/logout",
+              onclick:
+                "event.preventDefault();\n                   document.getElementById('logout-form').submit();"
             }
           },
-          [_vm._v("users")]
-        ),
-        _vm._v("\n        " + _vm._s(_vm.name) + "\n    ")
-      ],
-      1
+          [_vm._v("\n            退出登陆\n        ")]
+        )
+      ]
     ),
     _vm._v(" "),
     _c("div", { staticStyle: { "text-align": "right", flex: "2" } }, [

@@ -5,8 +5,14 @@
             <div>网络: {{ip_status}}</div>
         </div>
         <div class="profile-avator" style="flex: 4;text-align:  center;">
-            <Avatar size="large" src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>
+            <div>
+            <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>
             {{name}}
+            </div>
+            <a href="http://localhost:8000/logout" onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">
+                退出登陆
+            </a>
         </div>
         <div style="text-align:  right;flex: 2;">
             <div>
