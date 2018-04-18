@@ -84863,7 +84863,9 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\r                上传\r            ")]),
+          _c("Panel", { attrs: { name: "upload" } }, [
+            _vm._v("\r                上传\r            ")
+          ]),
           _vm._v(" "),
           _c("Panel", [_vm._v("\r                下载\r            ")]),
           _vm._v(" "),
