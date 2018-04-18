@@ -25,5 +25,4 @@ class ApiController extends Controller
         $result=DB::select('select * from users');
         return $result;
     }
-
 }
