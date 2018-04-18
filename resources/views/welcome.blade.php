@@ -68,8 +68,9 @@
             text-align: center;
         }
 
-        .title {
+        .title > a {
             font-size: 84px;
+            color: black;
         }
 
         .links > a {
@@ -82,7 +83,7 @@
             color: black;
         }
 
-        .m-b-md {
+        .m-b-md > a {
             margin-bottom: 30px;
         }
     </style>
@@ -104,10 +105,10 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            SHUPT
+            <a href="/torrent">SHUPT</a>
         </div>
         <div class="links">
-            <a href="">PT介绍</a>
+            <a href="{{url('help')}}?join=2">PT介绍</a>
             <a href="{{url('help')}}?join=1">加入我们</a>
         </div>
     </div>
@@ -198,7 +199,7 @@
                 current_circle.drawLine(ctx, circles[k])
             }
         }
-        if(animition)
+        if (animition)
             requestAnimationFrame(draw);
     }
 

@@ -83825,6 +83825,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -83877,10 +83879,10 @@ var render = function() {
     [
       _c(
         "MenuItem",
-        { attrs: { name: "mainpage" } },
+        { attrs: { name: "torrent" } },
         [
-          _c("Icon", { attrs: { type: "android-home" } }),
-          _vm._v("\n        主页\n    ")
+          _c("Icon", { attrs: { type: "android-download" } }),
+          _vm._v("\n        种子\n        ")
         ],
         1
       ),
@@ -83897,49 +83899,22 @@ var render = function() {
       _vm._v(" "),
       _c(
         "MenuItem",
-        { attrs: { name: "torrent" } },
+        { attrs: { name: "setting-1" } },
         [
-          _c("Icon", { attrs: { type: "android-download" } }),
-          _vm._v("\n        种子\n        ")
+          _c("Icon", { attrs: { type: "person" } }),
+          _vm._v("\n        编辑个人资料\n    ")
         ],
         1
       ),
       _vm._v(" "),
       _c(
-        "Submenu",
-        { attrs: { name: "setting" } },
+        "MenuItem",
+        { attrs: { name: "rules" } },
         [
-          _c(
-            "template",
-            { slot: "title" },
-            [
-              _c("Icon", { attrs: { type: "wrench" } }),
-              _vm._v("\n            设置\n        ")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "MenuItem",
-            { attrs: { name: "setting-1" } },
-            [
-              _c("Icon", { attrs: { type: "person" } }),
-              _vm._v("\n            编辑个人资料\n        ")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "MenuItem",
-            { attrs: { name: "rules" } },
-            [
-              _c("Icon", { attrs: { type: "alert" } }),
-              _vm._v("\n            规则\n        ")
-            ],
-            1
-          )
+          _c("Icon", { attrs: { type: "alert" } }),
+          _vm._v("\n        规则\n    ")
         ],
-        2
+        1
       ),
       _vm._v(" "),
       _c(
@@ -84531,7 +84506,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -84542,98 +84517,30 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "help",
-    data: function data() {
-        return {
-            value1: 'basic',
-            value2: 'basic-1',
-            value3: 'user-1'
-        };
-    },
-    mounted: function mounted() {
-        console.log(window.location);
-        if (window.location.href.indexOf('join=1') !== -1) {
-            console.log("Hello?");
-            this.value1 = "user";
-            this.value3 = "user-2";
-        }
+  name: "help",
+  data: function data() {
+    return {
+      valuemain: 'basic',
+      valuebasic: 'basic-1',
+      valueuser: 'user-1',
+      valuedata: 'data-1'
+    };
+  },
+  mounted: function mounted() {
+    console.log(window.location);
+    if (window.location.href.indexOf('join=1') !== -1) {
+      console.log("Hello?");
+      this.valuemain = "user";
+      this.valueuser = "user-2";
     }
+    if (window.location.href.indexOf('join=2') !== -1) {
+      console.log("Hello!");
+      this.valuemain = "basic";
+      this.valuebasic = "basic-1";
+    }
+  }
 });
 
 /***/ }),
@@ -84652,16 +84559,16 @@ var render = function() {
         {
           attrs: { accordion: "" },
           model: {
-            value: _vm.value1,
+            value: _vm.valuemain,
             callback: function($$v) {
-              _vm.value1 = $$v
+              _vm.valuemain = $$v
             },
-            expression: "value1"
+            expression: "valuemain"
           }
         },
         [
           _c("Panel", { attrs: { name: "basic" } }, [
-            _vm._v("\n            基本\n            "),
+            _vm._v("\r                基本\r                "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84671,17 +84578,17 @@ var render = function() {
                   {
                     attrs: { accordion: "" },
                     model: {
-                      value: _vm.value2,
+                      value: _vm.valuebasic,
                       callback: function($$v) {
-                        _vm.value2 = $$v
+                        _vm.valuebasic = $$v
                       },
-                      expression: "value2"
+                      expression: "valuebasic"
                     }
                   },
                   [
                     _c("Panel", { attrs: { name: "basic-1" } }, [
                       _vm._v(
-                        "\n                        SHUPT？\n                        "
+                        "\r                            SHUPT？\r                            "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
@@ -84713,13 +84620,13 @@ var render = function() {
                           },
                           [_vm._v("传送门")]
                         ),
-                        _vm._v("。\n                        ")
+                        _vm._v("。\r                            ")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-2" } }, [
                       _vm._v(
-                        "\n                        如何下载\n                        "
+                        "\r                            如何下载\r                            "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("1·安装用于下载的软件")
@@ -84751,7 +84658,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-3" } }, [
                       _vm._v(
-                        "\n                        如何上传\n                        "
+                        "\r                            如何上传\r                            "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("前话")
@@ -84784,7 +84691,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-4" } }, [
                       _vm._v(
-                        "\n                        流量？\n                        "
+                        "\r                            流量？\r                            "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
@@ -84801,7 +84708,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "user" } }, [
-            _vm._v("\n            用户信息\n            "),
+            _vm._v("\r                用户信息\r                "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84811,17 +84718,17 @@ var render = function() {
                   {
                     attrs: { accordion: "" },
                     model: {
-                      value: _vm.value3,
+                      value: _vm.valueuser,
                       callback: function($$v) {
-                        _vm.value3 = $$v
+                        _vm.valueuser = $$v
                       },
-                      expression: "value3"
+                      expression: "valueuser"
                     }
                   },
                   [
                     _c("Panel", { attrs: { name: "user-1" } }, [
                       _vm._v(
-                        "\n                        分享率？\n                        "
+                        "\r                            分享率？\r                            "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("上传量于下载量的比值")
@@ -84848,7 +84755,35 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "user-2", id: "join" } }, [
                       _vm._v(
-                        "\n                        加入我们？\n                    "
+                        "\r                            加入我们？\r                            "
+                      ),
+                      _c(
+                        "p",
+                        { attrs: { slot: "content" }, slot: "content" },
+                        [
+                          _c("Icon", { attrs: { type: "social-github" } }),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "https://github.com/gtmdcm/SHUPT" }
+                            },
+                            [_vm._v("GITHUB")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { attrs: { slot: "content" }, slot: "content" },
+                        [
+                          _c("Icon", { attrs: { type: "email" } }),
+                          _vm._v(
+                            "\r                                1104127978@qq.com\r                            "
+                          )
+                        ],
+                        1
                       )
                     ])
                   ],
@@ -84859,13 +84794,82 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\n            数据统计\n        ")]),
+          _c("Panel", { attrs: { name: "data" } }, [
+            _vm._v("\r                数据\r                "),
+            _c(
+              "div",
+              { attrs: { slot: "content" }, slot: "content" },
+              [
+                _c(
+                  "Collapse",
+                  {
+                    attrs: { accordion: "" },
+                    model: {
+                      value: _vm.valuedata,
+                      callback: function($$v) {
+                        _vm.valuedata = $$v
+                      },
+                      expression: "valuedata"
+                    }
+                  },
+                  [
+                    _c("Panel", { attrs: { name: "data-1" } }, [
+                      _vm._v(
+                        "\r                            未更新？\r                            "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          "\r                                µtorrent等客服端不是实时更新的！\r                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          "\r                                服务器被玩坏啦～会有补偿的。\r                            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          "\r                                你没有正确关闭客户端或者有"
+                        ),
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "https://github.com/gtmdcm/SHUPT/issues"
+                            }
+                          },
+                          [_vm._v("其他问题")]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("Panel", { attrs: { name: "data-2" } }, [
+                      _vm._v(
+                        "\r                            ALL Free？\r                            "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _c("img", {
+                          attrs: { src: "/images/allfree.gif", alt: "" }
+                        })
+                      ])
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\n            上传\n        ")]),
+          _c("Panel", [_vm._v("\r                上传\r            ")]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\n            下载\n        ")]),
+          _c("Panel", [_vm._v("\r                下载\r            ")]),
           _vm._v(" "),
-          _c("Panel", [_vm._v("\n            如果找不到答案\n        ")])
+          _c("Panel", [
+            _vm._v("\r                如果找不到答案\r            ")
+          ])
         ],
         1
       )
@@ -84969,7 +84973,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84980,10 +84984,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
 //
 //
 //
@@ -85035,23 +85035,9 @@ var render = function() {
       }
     },
     [
-      _c("CarouselItem", [
-        _c("div", { staticClass: "demo-carousel" }, [
-          _c("span", { staticStyle: { width: "100%" } }, [_vm._v("SHUPT!")])
-        ])
-      ]),
+      _c("CarouselItem", [_c("div", { staticClass: "demo-carousel" })]),
       _vm._v(" "),
-      _c("CarouselItem", [
-        _c("div", { staticClass: "demo-carousel" }, [_vm._v("2")])
-      ]),
-      _vm._v(" "),
-      _c("CarouselItem", [
-        _c("div", { staticClass: "demo-carousel" }, [_vm._v("3")])
-      ]),
-      _vm._v(" "),
-      _c("CarouselItem", [
-        _c("div", { staticClass: "demo-carousel" }, [_vm._v("4")])
-      ])
+      _c("CarouselItem", [_c("div", { staticClass: "demo-carousel" })])
     ],
     1
   )

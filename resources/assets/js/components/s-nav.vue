@@ -1,13 +1,5 @@
 <template>
     <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="onMenuSelect">
-        <MenuItem name="mainpage">
-            <Icon type="android-home"></Icon>
-            主页
-        </MenuItem>
-        <MenuItem name="upload">
-            <Icon type="android-upload"></Icon>
-            发布
-        </MenuItem>
         <MenuItem name="torrent">
             <Icon type="android-download"></Icon>
             种子
@@ -21,20 +13,30 @@
             <!--<MenuItem name="3-5">foo</MenuItem>-->
             <!--</MenuGroup>-->
         </MenuItem>
-        <Submenu name="setting">
-            <template slot="title">
-                <Icon type="wrench"></Icon>
-                设置
-            </template>
-            <MenuItem name="setting-1">
-                <Icon type="person"></Icon>
-                编辑个人资料
-            </MenuItem>
-            <MenuItem name="rules">
-                <Icon type="alert"></Icon>
-                规则
-            </MenuItem>
-        </Submenu>
+        <!--<MenuItem name="mainpage">-->
+        <!--<Icon type="android-home"></Icon>-->
+        <!--主页-->
+        <!--</MenuItem>-->
+        <MenuItem name="upload">
+            <Icon type="android-upload"></Icon>
+            发布
+        </MenuItem>
+
+        <MenuItem name="setting-1">
+            <Icon type="person"></Icon>
+            编辑个人资料
+        </MenuItem>
+        <!--<Submenu name="setting">-->
+        <!--<template slot="title">-->
+        <!--<Icon type="wrench"></Icon>-->
+        <!--设置-->
+        <!--</template>-->
+        <!--</Submenu>-->
+
+        <MenuItem name="rules">
+            <Icon type="alert"></Icon>
+            规则
+        </MenuItem>
         <MenuItem name="help">
             <Icon type="help"></Icon>
             帮助
