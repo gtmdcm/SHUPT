@@ -20,8 +20,6 @@ class BEncode {
 	public $comment = null;
 	// Created by Program
 	public $created_by = null;
-	//Passkey
-    public $fkey = null;
 
 	function __construct() {
 		// Here you can load default announce URL, comment and created_by from your configuration file.
@@ -50,9 +48,6 @@ class BEncode {
 			if ( isset($data['created_by']) ) {
 				$this->created_by = $data['created_by'];
 			}
-			if ( isset($data['fkey']) ){
-			    $this->fkey = $data['fkey'];
-            }
 		}
 	}
 	
@@ -236,9 +231,6 @@ class BEncode {
 		unset($data['info']['profiles']);
 		unset($data['info']['file-duration']);
 		unset($data['info']['file-media']);
-
-        //Add Passkey
-        $data['fkey'] = $this->fkey;
 
 		// Add Announce URL
 		if ( is_array($this->announce) ) {

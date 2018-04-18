@@ -37,13 +37,11 @@ Route::post('upload_file','UploadController@uploadSeeds')->name('upload_file')->
 
 Route::get('todo', 'PageController@todo')->name('todo');
 
-Route::get('announce','TrackerController@getRequest');
+Route::get('handletorrent','TorrentController@handleTorrent');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-
-Route::resource('users', 'UserController');
 
 //zd test
 Route::get('/testapp', 'PageController@app')->name('app')->middleware('auth');

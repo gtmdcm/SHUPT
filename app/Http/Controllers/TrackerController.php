@@ -6,41 +6,34 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Services\BEncode;
 use App\User;
+use App\Torrent;
+use App\Peer;
 
 class TrackerController extends Controller
 {
+    public function Tracking(Request $request){
+        $fkey = intval($request -> fkey);
+        $info_hash = $request -> info_hash;
+        $peer_id = $request -> peer_id;
+        $event = $request -> event;
 
-    public function getRequest(Request $request){
+        $port = $request -> port;
+        $download = $request -> download;
+        $upload = $request -> upload;
+        $left = $request -> left;
 
-        $downloaded = $request -> downloaded;
-        $uploaded = $request -> uploaded;
+        $user = User::find($fkey);
 
-        $id = Auth::id();
+        $peer = new Peer;
+        $peer -> peer_id = $peer_id;
+        $peer -> fkey = $fkey;
+        $peer -> port = $port;
+        $peer -> save();
 
-        $user = User::find($id);
+        $torrent = new Torrent;
+        $torrent -> hash = $info_hash;
+        $torrent -> save();
 
-        $user -> up = doubleval($user -> up) + 0.5;
-
-        $user -> down = doubleval($user->down) + 0.43;
-
-        $user -> save();
-
-        $bcoder = new BEncode;
-        $originTorrent = file_get_contents(
-            '/Users/jackysong/Documents/Torrents/Torrent1.torrent');
-        $bcoder->set([
-            'announce'=>'127.0.0.1:8000/announce',
-            'comment'=>'Downloaded from Private Tracker',
-            'created_by'=>'PrivateTracker v1.0',
-            'fkey' => 'JackySong',
-        ]);
-        $torrent = $bcoder -> bdecode($originTorrent);
-        $files = $bcoder->filelist( $torrent );
-        $torrent = $bcoder -> make_private($torrent);
-        $infohash = $bcoder->bencode($torrent);
-
-        return $infohash;
-
+        
     }
-
 }

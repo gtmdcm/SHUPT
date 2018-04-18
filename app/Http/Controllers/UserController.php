@@ -46,7 +46,7 @@ class UserController extends Controller
     public function editProfile(Request $request){
         $id=Auth::id();
 
-        $user=User::find($id);
+        $user=User::where('name','123123')->firstOrFail();
 
         $signature=$request->input('signature');
 
