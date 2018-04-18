@@ -5,7 +5,13 @@
 @section('vues')
 
     {{--<edit_profile></edit_profile>--}}
-    <s-status></s-status>
+    {{--<s-status></s-status>--}}
+    <div>
+    <upload_torrent></upload_torrent>
+    </div>
+    <style>
+
+    </style>
 @stop
 
 
