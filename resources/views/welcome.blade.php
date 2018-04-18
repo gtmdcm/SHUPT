@@ -210,7 +210,7 @@
         draw(true);
     }
 
-    window.addEventListener('load', init(60));
+    window.addEventListener('load', init(70));
 
     window.onmousemove = function (e) {
         e = e || window.event;

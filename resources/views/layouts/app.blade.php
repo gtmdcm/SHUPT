@@ -228,12 +228,12 @@
                 circles[i].drawLine(ctx, circles[j])
             }
         }
-        if (current_circle.x) {
-            current_circle.drawCircle(ctx);
-            for (var k = 1; k < circles.length; k++) {
-                current_circle.drawLine(ctx, circles[k])
-            }
-        }
+        // if (current_circle.x) {
+        //     current_circle.drawCircle(ctx);
+        //     for (var k = 1; k < circles.length; k++) {
+        //         current_circle.drawLine(ctx, circles[k])
+        //     }
+        // }
         if (animition)
             requestAnimationFrame(draw);
     }
@@ -245,7 +245,7 @@
         draw(true);
     }
 
-    window.addEventListener('load', init(60));
+    window.addEventListener('load', init(40));
 
     window.onmousemove = function (e) {
         e = e || window.event;
