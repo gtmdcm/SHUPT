@@ -16,9 +16,8 @@ class TrackerController extends Controller
         return 'd14:failure reason3:123';
     }
     public function Tracking(Request $request){
-        $passkey = $request -> passkey;
-        $info_hash = $request -> info_hash;
-
+        //$passkey = $request -> passkey;
+        $info_hash = isset($_GET["info_hash"])?is_string($_GET["info_hash"]):0;
 
         $peer_id = $request -> peer_id;
         $event = $request -> event;
@@ -33,50 +32,21 @@ class TrackerController extends Controller
 
         //$user = User::where('passkey',$passkey)->first();
 
-        $peer = Peer::where('peer_id',$peer_id)->first();
-        if($peer == null){
-            $peer = new Peer;
-            $peer -> peer_id = $peer_id;
-            $peer -> passkey = $passkey;
-            $peer -> port = $port;
-            $peer -> save();
-        }else{
-            $peer -> peer_id = $peer_id;
-            $peer -> passkey = $passkey;
-            $peer -> port = $port;
-            $peer -> save();
-        }
 
-
-        $torrent = Torrent::where('hash',$info_hash)->first();
-        if($torrent == null){
+        //$torrent = Torrent::where('hash',$info_hash)->first();
+        //if($torrent == null){
             $torrent = new Torrent;
             $torrent -> hash = $info_hash;
             $torrent -> save();
-        }else{
-            $torrent -> hash = $info_hash;
-            $torrent -> save();
-        }
-
-        $peer_torrent = PeerTorrent::where('torrent_id',$info_hash)->first();
-        if($peer_torrent == null){
-            $peer_torrent = new PeerTorrent;
-            $peer_torrent -> peer_id = $peer_id;
-            $peer_torrent -> torrent_id = $info_hash;
-            $peer_torrent -> upload = $upload;
-            $peer_torrent -> download = $download;
-            $peer_torrent -> left = $left;
-            $peer_torrent -> save();
-        }else{
-            $peer_torrent -> upload = $upload;
-            $peer_torrent -> download = $download;
-            $peer_torrent -> left = $left;
-            $peer_torrent -> save();
-        }
+        //}else{
+           // $torrent -> hash = $info_hash;
+            //$torrent -> save();
+        //}
 
 
-        $reply = array();
 
-        return $info_hash.$peer_id.$event.$port.$download.$upload.$left;
+        //$reply = array();
+
+        return 'd8:intervali10e12:min intervali5e8:completei0e10:incompletei0e5:peersl4ee';
     }
 }

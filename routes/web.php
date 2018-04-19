@@ -37,6 +37,8 @@ Route::post('upload_file','UploadController@uploadSeeds')->name('upload_file')->
 
 Route::get('userinfo','UserInfoController@getUserInfo')->name('userinfo');
 
+Route::get('userud','UserInfoController@getUserUD')->name('userud');
+
 Route::get('todo', 'PageController@todo')->name('todo');
 
 Route::get('announce', 'TrackerController@Tracking');
