@@ -20,7 +20,8 @@
             </Select>
         </FormItem>
         <FormItem label="签名 ">
-            <Input v-model="formItem.signature" clearable style="width:500px" type="textarea" :autosize="{minRows: 2,maxRows: 5}"
+            <Input v-model="formItem.signature" clearable style="width:500px" type="textarea"
+                   :autosize="{minRows: 2,maxRows: 5}"
                    placeholder="请输入签名"></Input>
         </FormItem>
         <FormItem>
@@ -37,6 +38,7 @@
         name: "edit_profile",
         data: function () {
             return {
+                id: '',
                 formItem: {
                     gender: 'secret',
                     birthday: '',
@@ -48,22 +50,21 @@
         },
         methods:
             {
-
                 uploadData: function () {
-                    var self=this;
+                    var self = this;
                     var params = new URLSearchParams();
                     params.append('gender', this.formItem.gender);
                     params.append('school', this.formItem.school);
                     params.append('signature', this.formItem.signature);
                     params.append('birthday', this.formItem.birthday.toLocaleDateString());
-                    axios.post('edit_profile',params).then(function (response) {
-                        self =response.formItem;
+                    axios.post('edit_profile', params).then(function (response) {
+                        self = response.formItem;
                     })
                     this.$Message.success('成功啦(๑•̀ω•́๑)');
                 },
 
                 downloadData: function () {
-                    var self=this;
+                    var self = this;
                     axios.get('/api/school');
                 },
 
@@ -75,10 +76,14 @@
             },
         mounted: function () {
             var self = this;
-            console.log('hi');
             axios.get('/api/school').then(function (schoolData) {
                 self.school_list = schoolData.data;
             });
+            // 这边改了api
+
+            axios.get('/userinfo',).then(function (userinfo) {
+                console.log(userinfo.data);
+            })
         }
     }
 </script>
