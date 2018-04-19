@@ -31,19 +31,21 @@ Route::get('edit_profile', 'PageController@edit_profile')->name('edit_profile')-
 
 Route::post('edit_profile', 'UserController@editProfile')->name('edit_profile')->middleware('auth');
 
-Route::post('upload','ResourceController@createResource')->name('upload')->middleware('auth');
+Route::post('upload', 'ResourceController@createResource')->name('upload')->middleware('auth');
 
-Route::post('upload_file','UploadController@uploadSeeds')->name('upload_file')->middleware('auth');
+Route::post('upload_file', 'UploadController@uploadSeeds')->name('upload_file')->middleware('auth');
 
-Route::get('userinfo','UserInfoController@getUserInfo')->name('userinfo');
+Route::get('userinfo', 'UserInfoController@getUserInfo')->name('userinfo');
 
-Route::get('userud','UserInfoController@getUserUD')->name('userud');
+Route::get('userud', 'UserInfoController@getUserUD')->name('userud');
+
+Route::get('contribute', 'UserInfoController@getContribute')->name('contribute');
 
 Route::get('todo', 'PageController@todo')->name('todo');
 
 Route::get('announce', 'TrackerController@Tracking');
 
-Route::get('handletorrent','TorrentController@handleTorrent');
+Route::get('handletorrent', 'TorrentController@handleTorrent');
 
 Auth::routes();
 

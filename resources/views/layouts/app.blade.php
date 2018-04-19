@@ -97,51 +97,55 @@
     @endif
     {{--logo栏--}}
     @guest
-    @else
-        <s-nav></s-nav>
-        <s-status></s-status>
-    @endguest
-    <div style="margin-top: 60px"></div>
-    <div>
-        @section('logo')
-            <a href="/torrent">logos</a>
+        @yield('content')
         @show
-        @guest
-            <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
-            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
-        @else
-            <li>
-                <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+    @else
+        <header>
+            <s-nav></s-nav>
+        </header>
+        <content>
+            <div style="height: 5%;">
+            </div>
+            <Row type="flex" justify="center">
+                @yield('vues')
+                @show
+            </Row>
+        </content>
+        <footer>
+            <s-status></s-status>
+        </footer>
+    @endguest
+    {{--<div>--}}
+    {{--@section('logo')--}}
+    {{--<a href="/torrent">logos</a>--}}
+    {{--@show--}}
+    {{--@guest--}}
+    {{--<li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>--}}
+    {{--<li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>--}}
+    {{--@else--}}
+    {{--<li>--}}
+    {{--<a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"--}}
+    {{--aria-expanded="false" v-pre>--}}
+    {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
+    {{--</a>--}}
 
-                <div aria-labelledby="navbarDropdown">
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                       document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+    {{--<div aria-labelledby="navbarDropdown">--}}
+    {{--<a href="{{ route('logout') }}"--}}
+    {{--onclick="event.preventDefault();--}}
+    {{--document.getElementById('logout-form').submit();">--}}
+    {{--{{ __('Logout') }}--}}
+    {{--</a>--}}
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        @endguest
-    </div>
+    {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
+    {{--@csrf--}}
+    {{--</form>--}}
+    {{--</div>--}}
+    {{--</li>--}}
+    {{--@endguest--}}
+    {{--</div>--}}
     {{--nav--}}
 
     {{--内容--}}
-    @guest
-        @yield('content')
-        @show
-    @endguest
-    @auth
-        @yield('vues')
-        @show
-    @endauth
-
     {{--脚注--}}
 
     <div class="shupt-logo">

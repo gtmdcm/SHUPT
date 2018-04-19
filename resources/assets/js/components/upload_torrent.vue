@@ -25,7 +25,8 @@
         </FormItem>
         <FormItem label="简介">
 
-            <Input v-model="uploadItem.brief_introduction" clearable style="width:500px"  type="textarea" :autosize="{minRows: 2,maxRows: 5}"
+            <Input v-model="uploadItem.brief_introduction" clearable style="width:500px" type="textarea"
+                   :autosize="{minRows: 2,maxRows: 5}"
                    placeholder="请输入简介"></Input>
         </FormItem>
         <Upload action="//localhost:8000/upload">
@@ -56,26 +57,16 @@
         methods:
             {
                 uploadData: function () {
-                    var self=this;
+                    var self = this;
                     var params = new URLSearchParams();
-                    params.append('title',this.uploadItem.title);
-                    params.append('subtitle',this.uploadItem.subtitle);
-                    params.append('type',this.uploadItem.type);
-                    params.append('brief_introduction',this.uploadItem.brief_introduction);
-                    axios.post('upload',params).then(function(response) {
-                        self=response.uploadItem;
+                    params.append('title', this.uploadItem.title);
+                    params.append('subtitle', this.uploadItem.subtitle);
+                    params.append('type', this.uploadItem.type);
+                    params.append('brief_introduction', this.uploadItem.brief_introduction);
+                    axios.post('upload', params).then(function (response) {
+                        self = response.uploadItem;
                     })
                 },
-
-                created: function () {
-                    var self = this;
-                    axios.post('/api/upload').then(function (response) {
-                        console.log(response.data);
-                        self.nick_name = response.data.uploadItem.nick_namedo;
-
-
-                    })
-                }
             }
     }
 </script>

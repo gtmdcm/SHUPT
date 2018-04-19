@@ -83538,7 +83538,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // 这边改了api
 
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/userinfo').then(function (userinfo) {
-            console.log(userinfo.data);
+            var obj = userinfo.data[0];
+            self.formItem = obj;
         });
     }
 });
@@ -83783,7 +83784,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.ivu-menu[data-v-145f88c2] {\n    position: fixed;\n    top: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -83794,6 +83795,12 @@ exports.push([module.i, "\n.ivu-menu[data-v-145f88c2] {\n    position: fixed;\n 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -83889,6 +83896,14 @@ var render = function() {
       on: { "on-select": _vm.onMenuSelect }
     },
     [
+      _c("MenuItem", { attrs: { name: "logo" } }, [
+        _c(
+          "span",
+          { staticStyle: { "margin-bottom": "30px", color: "black" } },
+          [_c("a", { attrs: { href: "/" } }, [_vm._v("SHUPT")])]
+        )
+      ]),
+      _vm._v(" "),
       _c(
         "MenuItem",
         { attrs: { name: "torrent" } },
@@ -84242,7 +84257,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "Col",
+    { attrs: { span: "18" } },
     [
       _c(
         "Collapse",
@@ -84518,7 +84534,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84529,6 +84545,11 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
 //
 //
 //
@@ -84667,7 +84688,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "Col",
+    { attrs: { span: "18" } },
     [
       _c(
         "Collapse",
@@ -84979,7 +85001,13 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "upload" } }, [
-            _vm._v("\n            上传\n        ")
+            _vm._v("\n            上传\n            "),
+            _c(
+              "div",
+              { attrs: { slot: "content" }, slot: "content" },
+              [_c("Collapse")],
+              1
+            )
           ]),
           _vm._v(" "),
           _c("Panel", [_vm._v("\n            下载\n        ")]),
@@ -85306,6 +85334,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -85331,14 +85360,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             params.append('brief_introduction', this.uploadItem.brief_introduction);
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload', params).then(function (response) {
                 self = response.uploadItem;
-            });
-        },
-
-        created: function created() {
-            var self = this;
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/upload').then(function (response) {
-                console.log(response.data);
-                self.nick_name = response.data.uploadItem.nick_namedo;
             });
         }
     }
@@ -85597,7 +85618,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.ivu-card{\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.ivu-card-body {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n}\n", ""]);
+exports.push([module.i, "\n.ivu-card {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.ivu-card-body {\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n        justify-content: space-around;\n}\n", ""]);
 
 // exports
 
@@ -85637,6 +85658,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -85644,11 +85691,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: 's-status',
     data: function data() {
         return {
-            name: '临时用户',
-            upload_quantity: 0,
-            download_quantity: 0,
+            name: 'temp',
+            up: 0,
+            down: 0,
             user_ip: '192.168.0.0',
-            ip_status: 'IPv4'
+            ip_status: 'IPv4',
+            contribute: 0
         };
     },
     methods: {
@@ -85660,6 +85708,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var self = this;
         console.log('hi');
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/userinfo').then(function (userinfo) {
+            var obj = userinfo.data[0];
+            self.up = obj.up;
+            self.down = obj.down;
+            self.name = obj.name;
+        });
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/contribute').then(function (contribute) {
+            console.log(contribute.data);
+            self.contribute = contribute.data;
+        });
     }
 });
 
@@ -85671,7 +85729,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("Card", { staticClass: "status_menu" }, [
+  return _c("Card", [
     _c("div", { staticStyle: { flex: "2" } }, [
       _c("div", [_vm._v("当前IP: " + _vm._s(_vm.user_ip))]),
       _vm._v(" "),
@@ -85697,7 +85755,7 @@ var render = function() {
               },
               [_vm._v("users")]
             ),
-            _vm._v("\n        " + _vm._s(_vm.name) + "\n        ")
+            _vm._v("\n            " + _vm._s(_vm.name) + "\n        ")
           ],
           1
         ),
@@ -85708,26 +85766,43 @@ var render = function() {
             attrs: {
               href: "http://localhost:8000/logout",
               onclick:
-                "event.preventDefault();\n                   document.getElementById('logout-form').submit();"
+                "event.preventDefault();\n    document.getElementById('logout-form').submit();"
             }
           },
-          [_vm._v("\n            退出登陆\n        ")]
+          [
+            _c("Icon", { attrs: { type: "log-out" } }),
+            _vm._v("\n            退出登陆\n        ")
+          ],
+          1
         )
       ]
     ),
     _vm._v(" "),
     _c("div", { staticStyle: { "text-align": "right", flex: "2" } }, [
-      _c("div", [
-        _vm._v(
-          "\n        上传量: " + _vm._s(_vm.upload_quantity) + "\n        "
-        )
-      ]),
+      _c(
+        "p",
+        [
+          _vm._v(
+            "\n            上传量: " +
+              _vm._s(_vm.up) +
+              "\n            下载量: " +
+              _vm._s(_vm.down) +
+              "\n            分享率:\n            "
+          ),
+          _c("Icon", { attrs: { type: "chevron-down" } })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("div", [
-        _vm._v(
-          "\n        下载量: " + _vm._s(_vm.download_quantity) + "\n        "
-        )
-      ])
+      _c(
+        "p",
+        [
+          _c("Progress", {
+            attrs: { percent: _vm.contribute, status: "active" }
+          })
+        ],
+        1
+      )
     ])
   ])
 }

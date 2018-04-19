@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <Col span="18">
         <Collapse v-model="value1" accordion>
 
             <Panel name="1">
@@ -40,7 +40,7 @@
                 <p slot="content" style="color: #ff9900;">在腾讯各产品没有办法更换头像、昵称的时候。我们也将停止更换。</p>
             </Panel>
         </Collapse>
-    </div>
+    </Col>
 </template>
 
 <script>

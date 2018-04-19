@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <Col span="18">
         <Collapse v-model="valuemain" accordion>
             <Panel name="basic">
                 基本
@@ -90,6 +90,11 @@
             </Panel>
             <Panel name="upload">
                 上传
+                <div slot="content">
+                    <Collapse>
+
+                    </Collapse>
+                </div>
             </Panel>
             <Panel>
                 下载
@@ -98,7 +103,7 @@
                 如果找不到答案
             </Panel>
         </Collapse>
-    </div>
+    </Col>
 </template>
 
 <script>

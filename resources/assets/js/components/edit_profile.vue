@@ -82,7 +82,9 @@
             // 这边改了api
 
             axios.get('/userinfo',).then(function (userinfo) {
-                console.log(userinfo.data);
+                let obj = userinfo.data[0];
+                self.formItem = obj;
+
             })
         }
     }

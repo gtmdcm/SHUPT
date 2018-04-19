@@ -1,5 +1,11 @@
 <template>
     <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="onMenuSelect">
+        <MenuItem name="logo">
+            <span style="margin-bottom: 30px;
+            color: black;">
+                <a href="/">SHUPT</a>
+            </span>
+        </MenuItem>
         <MenuItem name="torrent">
             <Icon type="android-download"></Icon>
             种子
@@ -78,11 +84,4 @@
     }
 </script>
 <style scoped>
-    .ivu-menu {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
 </style>
