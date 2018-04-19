@@ -91,16 +91,43 @@
             <Panel name="upload">
                 上传
                 <div slot="content">
-                    <Collapse>
-
+                    <Collapse accordion v-model="valueupload">
+                        <Panel name="upload-1">
+                            我可以发布些什么？
+                            <p slot="content">
+                               非（政治敏感、色情、宗教）的影视软件,如有发现，会被封禁的！
+                            </p>
+                        </Panel>
                     </Collapse>
                 </div>
             </Panel>
             <Panel>
                 下载
+                <div slot="content">
+                    <Collapse accordion v-model="valuedownload">
+                        <Panel name="download-1">
+                            我可以使用迅雷吗？
+                            <p slot="content">
+                                不可以，使用任何网盘或是迅雷等会造成passkey破坏的都会被封禁
+                            </p>
+                        </Panel>
+                        <Panel name="download-2">
+                            种子不见啦！
+                            <p slot="content">可能是含有非法信息被删掉了。</p>
+                        </Panel>
+
+                    </Collapse>
+                </div>
             </Panel>
             <Panel>
                 如果找不到答案
+                <p slot="content">
+                    <Icon type="social-github"></Icon>
+                    <a href="https://github.com/gtmdcm/SHUPT">GITHUB</a></p>
+                <p slot="content">
+                    <Icon type="email"></Icon>
+                    1104127978@qq.com
+                </p>
             </Panel>
         </Collapse>
     </Col>
