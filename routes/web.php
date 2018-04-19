@@ -35,6 +35,8 @@ Route::post('upload','ResourceController@createResource')->name('upload')->middl
 
 Route::post('upload_file','UploadController@uploadSeeds')->name('upload_file')->middleware('auth');
 
+Route::get('userinfo','UserInfoController@getUserInfo')->name('userinfo');
+
 Route::get('todo', 'PageController@todo')->name('todo');
 
 Route::get('announce', 'TrackerController@Tracking');
