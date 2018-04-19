@@ -15,12 +15,12 @@ class CreatePeerTorrentTable extends Migration
     {
         Schema::create('peer_torrent', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('peer_id');
-            $table->string('torrent_id');
-            $table->double('upload');
-            $table->double('download');
-            $table->double('left');
-            $table->integer('stopped');
+            $table->string('peer_id')->nullable();
+            $table->string('torrent_id')->nullable();
+            $table->double('upload')->nullable();
+            $table->double('download')->nullable();
+            $table->double('left')->nullable();
+            $table->integer('stopped')->nullable();
             $table->timestamps();
         });
     }

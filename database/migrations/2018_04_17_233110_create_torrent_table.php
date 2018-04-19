@@ -15,7 +15,7 @@ class CreateTorrentTable extends Migration
     {
         Schema::create('torrent', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hash');
+            $table->string('hash')->nullable();
             $table->timestamps();
         });
     }

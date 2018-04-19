@@ -37,6 +37,8 @@ Route::post('upload_file','UploadController@uploadSeeds')->name('upload_file')->
 
 Route::get('todo', 'PageController@todo')->name('todo');
 
+Route::get('announce', 'TrackerController@Tracking');
+
 Route::get('handletorrent','TorrentController@handleTorrent');
 
 Auth::routes();

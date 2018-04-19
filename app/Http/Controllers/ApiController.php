@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class ApiController extends Controller
 {
@@ -22,7 +24,10 @@ class ApiController extends Controller
         return $result;
     }
     public function showUserinfo(){
-        $result=DB::select('select * from users');
+        $id = Auth::id();
+        $user = User::all()->first();
+        $username = $user -> name;
+        $result=DB::select("select birthday,gender,school,signature from users where name = '$username'");
         return $result;
     }
 }

@@ -15,9 +15,9 @@ class CreatePeerTable extends Migration
     {
         Schema::create('peer', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('peer_id');
-            $table->integer('passkey');
-            $table->integer('port');
+            $table->string('peer_id')->nullable();
+            $table->integer('passkey')->nullable();
+            $table->integer('port')->nullable();
             $table->timestamps();
         });
     }
