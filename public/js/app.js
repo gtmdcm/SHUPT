@@ -84314,17 +84314,13 @@ var render = function() {
           _c("Panel", { attrs: { name: "2" } }, [
             _vm._v("\n            下载规则\n            "),
             _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-              _vm._v("只能使用"),
-              _c("a", { attrs: { href: "" } }, [_vm._v("特定软件")]),
-              _vm._v("下载资源，详见"),
-              _c("a", { attrs: { href: "/help/#download" } }, [_vm._v("帮助")])
+              _vm._v("只能使用特定软件下载资源，详见"),
+              _c("a", { attrs: { href: "/help?join=3" } }, [_vm._v("帮助")])
             ]),
             _vm._v(" "),
             _c("p", { attrs: { slot: "content" }, slot: "content" }, [
               _vm._v("过低的"),
-              _c("a", { attrs: { href: "/help/#uploadrate" } }, [
-                _vm._v("分享率")
-              ]),
+              _c("a", { attrs: { href: "/help?join=4" } }, [_vm._v("分享率")]),
               _vm._v("会导致账号被封禁一段时间")
             ])
           ]),
@@ -84528,7 +84524,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84674,6 +84670,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "help",
@@ -84682,20 +84685,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             valuemain: 'basic',
             valuebasic: 'basic-1',
             valueuser: 'user-1',
-            valuedata: 'data-1'
+            valuedata: 'data-1',
+            valuedownload: 'download-1',
+            valueupload: 'upload-1'
         };
     },
     mounted: function mounted() {
         console.log(window.location);
         if (window.location.href.indexOf('join=1') !== -1) {
-            console.log("Hello?");
             this.valuemain = "user";
             this.valueuser = "user-2";
         }
         if (window.location.href.indexOf('join=2') !== -1) {
-            console.log("Hello!");
             this.valuemain = "basic";
             this.valuebasic = "basic-1";
+        }
+
+        if (window.location.href.indexOf('join=3') !== -1) {
+            this.valuemain = "download";
+            this.valuedownload = "download-1";
+        }
+        if (window.location.href.indexOf('join=4') !== -1) {
+            this.valuemain = "user";
+            this.valueuser = "user-1";
         }
     }
 });
@@ -84726,7 +84738,7 @@ var render = function() {
         },
         [
           _c("Panel", { attrs: { name: "basic" } }, [
-            _vm._v("\n            基本\n            "),
+            _vm._v("\n        基本\n        "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84746,7 +84758,7 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "basic-1" } }, [
                       _vm._v(
-                        "\n                        SHUPT？\n                        "
+                        "\n                    SHUPT？\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
@@ -84778,13 +84790,13 @@ var render = function() {
                           },
                           [_vm._v("传送门")]
                         ),
-                        _vm._v("。\n                        ")
+                        _vm._v("。\n                    ")
                       ])
                     ]),
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-2" } }, [
                       _vm._v(
-                        "\n                        如何下载\n                        "
+                        "\n                    如何下载\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("1·安装用于下载的软件")
@@ -84816,7 +84828,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-3" } }, [
                       _vm._v(
-                        "\n                        如何上传\n                        "
+                        "\n                    如何上传\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("前话")
@@ -84849,7 +84861,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "basic-4" } }, [
                       _vm._v(
-                        "\n                        流量？\n                        "
+                        "\n                    流量？\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
@@ -84866,7 +84878,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "user" } }, [
-            _vm._v("\n            用户信息\n            "),
+            _vm._v("\n        用户信息\n        "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84886,7 +84898,7 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "user-1" } }, [
                       _vm._v(
-                        "\n                        分享率？\n                        "
+                        "\n                    分享率？\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("上传量于下载量的比值")
@@ -84913,7 +84925,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "user-2", id: "join" } }, [
                       _vm._v(
-                        "\n                        加入我们？\n                        "
+                        "\n                    加入我们？\n                    "
                       ),
                       _c(
                         "p",
@@ -84938,7 +84950,7 @@ var render = function() {
                         [
                           _c("Icon", { attrs: { type: "email" } }),
                           _vm._v(
-                            "\n                            1104127978@qq.com\n                        "
+                            "\n                        1104127978@qq.com\n                    "
                           )
                         ],
                         1
@@ -84953,7 +84965,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "data" } }, [
-            _vm._v("\n            数据\n            "),
+            _vm._v("\n        数据\n        "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -84973,23 +84985,23 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "data-1" } }, [
                       _vm._v(
-                        "\n                        未更新？\n                        "
+                        "\n                    未更新？\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\n                            µtorrent等客服端不是实时更新的！\n                        "
+                          "\n                        µtorrent等客服端不是实时更新的！\n                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\n                            服务器被玩坏啦～会有补偿的。\n                        "
+                          "\n                        服务器被玩坏啦～会有补偿的。\n                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\n                            你没有正确关闭客户端或者有"
+                          "\n                        你没有正确关闭客户端或者有"
                         ),
                         _c(
                           "a",
@@ -85005,7 +85017,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "data-2" } }, [
                       _vm._v(
-                        "\n                        ALL Free？\n                        "
+                        "\n                    ALL Free？\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _c("img", {
@@ -85022,7 +85034,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("Panel", { attrs: { name: "upload" } }, [
-            _vm._v("\n            上传\n            "),
+            _vm._v("\n        上传\n        "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -85042,11 +85054,11 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "upload-1" } }, [
                       _vm._v(
-                        "\n                        我可以发布些什么？\n                        "
+                        "\n                    我可以发布些什么？\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v(
-                          "\n                           非（政治敏感、色情、宗教）的影视软件,如有发现，会被封禁的！\n                        "
+                          "\n                        非（政治敏感、色情、宗教）的影视软件,如有发现，会被封禁的！\n                    "
                         )
                       ])
                     ])
@@ -85058,8 +85070,8 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("Panel", [
-            _vm._v("\n            下载\n            "),
+          _c("Panel", { attrs: { name: "download" } }, [
+            _vm._v("\n        下载\n        "),
             _c(
               "div",
               { attrs: { slot: "content" }, slot: "content" },
@@ -85079,18 +85091,35 @@ var render = function() {
                   [
                     _c("Panel", { attrs: { name: "download-1" } }, [
                       _vm._v(
-                        "\n                        我可以使用迅雷吗？\n                        "
+                        "\n                    推荐的软件\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-                        _vm._v(
-                          "\n                            不可以，使用任何网盘或是迅雷等会造成passkey破坏的都会被封禁\n                        "
+                        _c(
+                          "a",
+                          { attrs: { href: "www.http://www.utorrent.com" } },
+                          [
+                            _c("img", {
+                              attrs: { src: "images/µtorrent.png", alt: "" }
+                            })
+                          ]
                         )
                       ])
                     ]),
                     _vm._v(" "),
                     _c("Panel", { attrs: { name: "download-2" } }, [
                       _vm._v(
-                        "\n                        种子不见啦！\n                        "
+                        "\n                    我可以使用迅雷吗？\n                    "
+                      ),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v(
+                          "\n                        不可以，使用任何网盘或是迅雷等会造成passkey破坏的都会被封禁\n                    "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("Panel", { attrs: { name: "download-3" } }, [
+                      _vm._v(
+                        "\n                    种子不见啦！\n                    "
                       ),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("可能是含有非法信息被删掉了。")
@@ -85104,8 +85133,8 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("Panel", [
-            _vm._v("\n            如果找不到答案\n            "),
+          _c("Panel", { attrs: { name: "more" } }, [
+            _vm._v("\n        如果找不到答案\n        "),
             _c(
               "p",
               { attrs: { slot: "content" }, slot: "content" },
@@ -85126,7 +85155,7 @@ var render = function() {
               { attrs: { slot: "content" }, slot: "content" },
               [
                 _c("Icon", { attrs: { type: "email" } }),
-                _vm._v("\n                1104127978@qq.com\n            ")
+                _vm._v("\n            1104127978@qq.com\n        ")
               ],
               1
             )

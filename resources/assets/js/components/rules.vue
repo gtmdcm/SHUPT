@@ -13,8 +13,8 @@
             </Panel>
             <Panel name="2">
                 下载规则
-                <p slot="content">只能使用<a href="">特定软件</a>下载资源，详见<a href="/help/#download">帮助</a></p>
-                <p slot="content">过低的<a href="/help/#uploadrate">分享率</a>会导致账号被封禁一段时间</p>
+                <p slot="content">只能使用特定软件下载资源，详见<a href="/help?join=3">帮助</a></p>
+                <p slot="content">过低的<a href="/help?join=4">分享率</a>会导致账号被封禁一段时间</p>
             </Panel>
             <Panel name="3">
                 上传规则
