@@ -27,6 +27,8 @@ Route::get('userinfo','ApiController@showUserinfo')->name('userinfo');
 
 Route::get('resource','ApiController@showResource')->name('resource');
 
+Route::get('ip','ApiController@showIP')->name('ip');
+
 Route::post('test',function () {
     print(Input::all());
 });

@@ -62,7 +62,7 @@
                 up: 0,
                 down: 0,
                 user_ip: '192.168.0.0',
-                ip_status: 'IPv4',
+                ip_status: 'IPv6',
                 contribute: 0,
             }
         },
@@ -86,6 +86,16 @@
                 console.log(contribute.data);
                 self.contribute = contribute.data;
             })
+            axios.get('api/ip').then(function (ip) {
+                console.log(ip.data);
+                self.user_ip = ip.data;
+            })
+            var l = self.user_ip.length;
+
+            console.log(l);
+            if (l < 16) {
+                self.ip_status = 'IPv4';
+            }
         }
     }
 </script>

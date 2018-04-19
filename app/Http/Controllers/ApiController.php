@@ -9,31 +9,42 @@ use App\User;
 
 class ApiController extends Controller
 {
-    public function showSchools(){
-        $result=DB::select('select schoolid,name from schools');
+    public function showSchools()
+    {
+        $result = DB::select('select schoolid,name from schools');
         return $result;
     }
 
-    public function showStandards(){
-        $result=DB::select('select standardid,name from standard');
+    public function showStandards()
+    {
+        $result = DB::select('select standardid,name from standard');
         return $result;
     }
 
-    public function showCatagory(){
-        $result=DB::select('select cataid,name from catagory');
+    public function showCatagory()
+    {
+        $result = DB::select('select cataid,name from catagory');
         return $result;
     }
 
-    public function showResource(){
+    public function showResource()
+    {
         $result = DB::select('select name,owner,catagory,standard from resources');
         return $result;
     }
 
-    public function showUserinfo(){
+    public function showUserinfo()
+    {
         $id = Auth::id();
         $user = User::all()->first();
-        $username = $user -> name;
-        $result=DB::select("select birthday,gender,school,signature from users where name = '$username'");
+        $username = $user->name;
+        $result = DB::select("select birthday,gender,school,signature from users where name = '$username'");
         return $result;
+    }
+
+    public function showIP()
+    {
+        $ip = $_SERVER["REMOTE_ADDR"];
+        return $ip;
     }
 }
