@@ -17,7 +17,7 @@ class TrackerController extends Controller
     }
     public function Tracking(Request $request){
         //$passkey = $request -> passkey;
-        $info_hash = isset($_GET["info_hash"])?is_string($_GET["info_hash"]):0;
+        $info_hash = isset($_GET["info_hash"])?(string)$_GET["info_hash"]:0;
 
         $peer_id = $request -> peer_id;
         $event = $request -> event;

@@ -25,6 +25,8 @@ Route::get('catagory','ApiController@showCatagory')->name('catagory');
 
 Route::get('userinfo','ApiController@showUserinfo')->name('userinfo');
 
+Route::get('resource','ApiController@showResource')->name('resource');
+
 Route::post('test',function () {
     print(Input::all());
 });
