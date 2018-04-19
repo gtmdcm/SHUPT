@@ -29,7 +29,7 @@
                    :autosize="{minRows: 2,maxRows: 5}"
                    placeholder="请输入简介"></Input>
         </FormItem>
-        <Upload action="//localhost:8000/upload">
+        <Upload name="upload_file" action="http://localhost:8000/upload_file">
             <Button type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
         </Upload>
         <FormItem>

@@ -85637,7 +85637,12 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Upload",
-        { attrs: { action: "//localhost:8000/upload" } },
+        {
+          attrs: {
+            name: "upload_file",
+            action: "http://localhost:8000/upload_file"
+          }
+        },
         [
           _c(
             "Button",
