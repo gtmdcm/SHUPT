@@ -18,5 +18,6 @@ class UserInfoController extends Controller
         $id = Auth::id();
         $result = DB::select("select up,down from users where id = $id");
         return $result;
+
     }
 }
