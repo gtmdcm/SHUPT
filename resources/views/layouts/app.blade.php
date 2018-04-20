@@ -104,7 +104,7 @@
             <s-nav></s-nav>
         </header>
         <content>
-            <div style="height: 5%;">
+            <div style="height: 10%;">
             </div>
             <Row type="flex" justify="center">
                 @yield('vues')

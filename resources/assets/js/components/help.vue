@@ -109,7 +109,7 @@
                     <Panel name="download-1">
                         推荐的软件
                         <p slot="content">
-                            <a href="www.http://www.utorrent.com"><img src="images/µtorrent.png" alt=""></a>
+                            <a href="http://www.utorrent.com"><img src="images/µtorrent.png" alt=""></a>
                         </p>
                     </Panel>
                     <Panel name="download-2">

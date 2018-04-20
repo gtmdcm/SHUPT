@@ -3,7 +3,7 @@
         <MenuItem name="logo">
             <span style="margin-bottom: 30px;
             color: black;">
-                <a href="/">SHUPT</a>
+                SHUPT
             </span>
         </MenuItem>
         <MenuItem name="torrent">
@@ -58,8 +58,8 @@
         },
         methods: {
             onMenuSelect: function (name) {
-                if (name === "mainpage") {
-                    window.location.href = '/mainpage'
+                if (name === "logo") {
+                    window.location.href = '/'
                 }
                 if (name === "upload") {
                     window.location.href = '/upload'
