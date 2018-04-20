@@ -85637,7 +85637,12 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Upload",
-        { attrs: { name: "upload_file", action: "/api/upload_file" } },
+        {
+          attrs: {
+            name: "upload_file",
+            action: "http://127.0.0.1:8000/api/upload_file"
+          }
+        },
         [
           _c(
             "Button",
