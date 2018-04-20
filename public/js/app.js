@@ -85637,7 +85637,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Upload",
-        { attrs: { name: "upload_file", action: "upload_file" } },
+        { attrs: { name: "upload_file", action: "/api/upload_file" } },
         [
           _c(
             "Button",
