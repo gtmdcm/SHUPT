@@ -17,7 +17,7 @@ class ApiController extends Controller
 
     public function showStandards()
     {
-        $result = DB::select('select standardid,name from standard');
+           $result = DB::select('select standardid,name from standard');
         return $result;
     }
 
@@ -29,7 +29,7 @@ class ApiController extends Controller
 
     public function showResource()
     {
-        $result = DB::select('select name,owner,catagory,standard from resources');
+        $result = DB::select("select name,owner,catagory,standard from resources");
         return $result;
     }
 

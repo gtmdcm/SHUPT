@@ -25306,7 +25306,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(19);
-module.exports = __webpack_require__(97);
+module.exports = __webpack_require__(102);
 
 
 /***/ }),
@@ -25363,8 +25363,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('upload_torrent', __webpac
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('s-status', __webpack_require__(92));
 
-// Vue.component('torrent',require('./components/torrent'));
-// Vue.component('welcome2join', require('./message/welcome2join'))
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('torrent', __webpack_require__(97));
+//    Vue.component('welcome2join', require('./message/welcome2join'))
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app'
 });
@@ -85637,12 +85637,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Upload",
-        {
-          attrs: {
-            name: "upload_file",
-            action: "http://localhost:8000/upload_file"
-          }
-        },
+        { attrs: { name: "upload_file", action: "upload_file" } },
         [
           _c(
             "Button",
@@ -85859,7 +85854,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         var self = this;
-        console.log('hi');
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/userinfo').then(function (userinfo) {
             var obj = userinfo.data[0];
             self.up = obj.up;
@@ -85867,16 +85861,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             self.name = obj.name;
         });
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/contribute').then(function (contribute) {
-            console.log(contribute.data);
             self.contribute = contribute.data;
         });
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/ip').then(function (ip) {
-            console.log(ip.data);
             self.user_ip = ip.data;
         });
         var l = self.user_ip.length;
-
-        console.log(l);
         if (l < 16) {
             self.ip_status = 'IPv4';
         }
@@ -85980,6 +85970,362 @@ if (false) {
 
 /***/ }),
 /* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(98)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(100)
+/* template */
+var __vue_template__ = __webpack_require__(101)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-2b2a0549"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/torrent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2b2a0549", Component.options)
+  } else {
+    hotAPI.reload("data-v-2b2a0549", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(99);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("37a20f4d", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b2a0549\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./torrent.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b2a0549\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./torrent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.paging[data-v-2b2a0549] {\n    float: right;\n    margin-top: 10px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            ajaxHistoryData: [],
+            // 初始化信息总条数
+            dataCount: 0,
+            // 每页显示多少条
+            pageSize: 10,
+            historyColumns: [{
+                title: '人员',
+                key: 'username'
+            }, {
+                title: '操作',
+                key: 'shenpistatus'
+            }, {
+                title: '意见',
+                key: 'shenpicomments'
+            }, {
+                title: '时间',
+                key: 'time'
+            }],
+            historyData: []
+        };
+    },
+
+    methods: {
+        // 获取历史记录信息
+        handleListApproveHistory: function handleListApproveHistory() {
+
+            // 保存取到的所有数据
+            this.ajaxHistoryData = testData.histories;
+            this.dataCount = testData.histories.length;
+            // 初始化显示，小于每页显示条数，全显，大于每页显示条数，取前每页条数显示
+            if (testData.histories.length < this.pageSize) {
+                this.historyData = this.ajaxHistoryData;
+            } else {
+                this.historyData = this.ajaxHistoryData.slice(0, this.pageSize);
+            }
+        },
+        changepage: function changepage(index) {
+            var _start = (index - 1) * this.pageSize;
+            var _end = index * this.pageSize;
+            this.historyData = this.ajaxHistoryData.slice(_start, _end);
+        }
+    },
+    created: function created() {
+        this.handleListApproveHistory();
+    },
+
+    mounted: function mounted() {
+        var self = this;
+        axios.get('/api/resource').then(function (resource) {
+            console.log(resource);
+        });
+    }
+
+});
+var testData = {
+    "histories": [{
+        "username": "智能审批",
+        "shenpistatus": "审批已通过",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-24 18:11"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批已通过",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-24 18:11"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批已通过",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-24 10:04"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201",
+        "time": "2017-07-24 10:03"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201",
+        "time": "2017-07-24 10:02"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批已通过",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-24 10:02"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-24 10:01"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-24 09:56"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:23"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-21 14:23"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:23"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-21 14:23"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-21 14:23"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-21 14:21"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:21"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:20"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-21 14:20"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:14"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:13"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:11"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-21 14:10"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-20 18:09"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-20 18:08"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
+        "time": "2017-07-20 18:08"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-20 18:07"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-20 18:05"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批已通过",
+        "shenpicomments": "wedfqw",
+        "time": "2017-07-20 15:50"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批已通过",
+        "shenpicomments": "wedfqw",
+        "time": "2017-07-20 15:20"
+    }, {
+        "username": "智能审批",
+        "shenpistatus": "审批被拒绝",
+        "shenpicomments": "自动审批通过",
+        "time": "2017-07-19 18:27"
+    }]
+};
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { height: "70%" } },
+    [
+      _c("Table", {
+        attrs: { columns: _vm.historyColumns, data: _vm.historyData }
+      }),
+      _vm._v(" "),
+      _c("Page", {
+        staticClass: "paging",
+        attrs: {
+          total: _vm.dataCount,
+          "page-size": _vm.pageSize,
+          "show-total": ""
+        },
+        on: { "on-change": _vm.changepage }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2b2a0549", module.exports)
+  }
+}
+
+/***/ }),
+/* 102 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

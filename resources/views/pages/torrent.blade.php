@@ -3,7 +3,9 @@
 @section('title','Torrent')
 
 @section('vues')
-    <h1>种子</h1>
+    <Col>
+    <torrent></torrent>
+    </Col>
 @stop
 
 @section('iflogin')

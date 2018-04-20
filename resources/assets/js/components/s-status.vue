@@ -74,7 +74,6 @@
         },
         mounted: function () {
             var self = this;
-            console.log('hi');
             axios.get('/userinfo').then(function (userinfo) {
                 let obj = userinfo.data[0];
                 self.up = obj.up;
@@ -83,16 +82,12 @@
 
             })
             axios.get('/contribute').then(function (contribute) {
-                console.log(contribute.data);
                 self.contribute = contribute.data;
             })
             axios.get('api/ip').then(function (ip) {
-                console.log(ip.data);
                 self.user_ip = ip.data;
             })
             var l = self.user_ip.length;
-
-            console.log(l);
             if (l < 16) {
                 self.ip_status = 'IPv4';
             }
