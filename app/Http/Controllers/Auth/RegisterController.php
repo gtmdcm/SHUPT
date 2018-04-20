@@ -40,7 +40,7 @@ class RegisterController extends Controller
 
     private $newUid;
 
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/torrent';
 
     /**
      * Create a new controller instance.

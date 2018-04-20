@@ -49,6 +49,8 @@ Route::get('handletorrent', 'TorrentController@handleTorrent');
 
 Auth::routes();
 
+Route::get('logout', 'UserController@getLogout')->name('logout')->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 //zd test

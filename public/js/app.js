@@ -85895,38 +85895,29 @@ var render = function() {
         staticStyle: { flex: "4", "text-align": "center" }
       },
       [
-        _c(
-          "div",
-          [
-            _c(
-              "Avatar",
-              {
-                attrs: {
-                  src: "https://i.loli.net/2017/08/21/599a521472424.jpg"
-                }
-              },
-              [_vm._v("users")]
-            ),
-            _vm._v("\n            " + _vm._s(_vm.name) + "\n        ")
-          ],
-          1
-        ),
+        _c("div", [
+          _c(
+            "a",
+            { attrs: { href: "edit_profile" } },
+            [
+              _c(
+                "Avatar",
+                {
+                  attrs: {
+                    src: "https://i.loli.net/2017/08/21/599a521472424.jpg"
+                  }
+                },
+                [_vm._v("users")]
+              ),
+              _vm._v("\n                " + _vm._s(_vm.name) + "\n            ")
+            ],
+            1
+          )
+        ]),
         _vm._v(" "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "http://localhost:8000/logout",
-              onclick:
-                "event.preventDefault();\n    document.getElementById('logout-form').submit();"
-            }
-          },
-          [
-            _c("Icon", { attrs: { type: "log-out" } }),
-            _vm._v("\n            退出登陆\n        ")
-          ],
-          1
-        )
+        _c("a", { attrs: { href: "logout" } }, [
+          _vm._v("\n            退出登陆\n        ")
+        ])
       ]
     ),
     _vm._v(" "),
@@ -85976,6 +85967,7 @@ var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(98)
+  __webpack_require__(104)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -86115,7 +86107,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         },
                         on: {
                             click: function click() {
-                                _this.show(params.index);
+                                _this.download(params.index);
                             }
                         }
                     }, '下载')]
@@ -86164,8 +86156,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _start = (index - 1) * this.pageSize;
             var _end = index * this.pageSize;
             this.historyData = this.ajaxHistoryData.slice(_start, _end);
-        },
-        show: function show(index) {}
+        }
     },
     created: function created() {
         this.handleListApproveHistory();
@@ -86197,7 +86188,11 @@ var render = function() {
     { staticStyle: { height: "59%", width: "80%" } },
     [
       _c("Table", {
-        attrs: { columns: _vm.historyColumns, data: _vm.historyData }
+        attrs: {
+          columns: _vm.historyColumns,
+          data: _vm.historyData,
+          type: "ghost"
+        }
       }),
       _vm._v(" "),
       _c("Page", {
@@ -86229,6 +86224,47 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 103 */,
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(105);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("478b31c2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b2a0549\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./torrent.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b2a0549\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./torrent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

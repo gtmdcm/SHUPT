@@ -6,12 +6,12 @@
         </div>
         <div class="profile-avator" style="flex: 4;text-align:  center;">
             <div>
-                <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>
-                {{name}}
+                <a href="edit_profile">
+                    <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>
+                    {{name}}
+                </a>
             </div>
-            <a href="http://localhost:8000/logout" onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
-                <Icon type="log-out"></Icon>
+            <a href="logout">
                 退出登陆
             </a>
         </div>

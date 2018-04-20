@@ -1,6 +1,6 @@
 <template>
     <div style="height: 59%; width:80%;">
-        <Table :columns="historyColumns" :data="historyData"></Table>
+        <Table :columns="historyColumns" :data="historyData" type="ghost"></Table>
         <Page :total="dataCount" :page-size="pageSize" size="small" show-elevator class="paging"
               @on-change="changepage"></Page>
     </div>
@@ -50,7 +50,7 @@
                                     },
                                     on: {
                                         click: () => {
-                                            this.show(params.index)
+                                            this.download(params.index)
                                         }
                                     }
                                 }, '下载'),
@@ -106,13 +106,11 @@
                 this.historyData = this.ajaxHistoryData.slice(_start, _end);
             },
 
-            show(index) {
-
-            }
         },
         created() {
             this.handleListApproveHistory();
-        },
+        }
+        ,
         mounted: function () {
             var self = this;
             axios.get('userinfo',).then(function (userinfo) {
@@ -123,7 +121,11 @@
                 self.testData.histories = resource.data;
                 self.handleListApproveHistory()
             })
-        },
+        }
+        ,
 
     }
 </script>
+
+<style>
+</style>

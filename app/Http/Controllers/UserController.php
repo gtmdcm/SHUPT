@@ -67,5 +67,10 @@ class UserController extends Controller
         $user->save();
     }
 
+    public function getLogout(){
+        Auth::logout();
+        return redirect('/');
+    }
+
     //
 }
