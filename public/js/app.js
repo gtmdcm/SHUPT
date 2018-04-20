@@ -83850,8 +83850,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         onMenuSelect: function onMenuSelect(name) {
-            if (name === "mainpage") {
-                window.location.href = '/mainpage';
+            if (name === "logo") {
+                window.location.href = '/';
             }
             if (name === "upload") {
                 window.location.href = '/upload';
@@ -83894,7 +83894,7 @@ var render = function() {
         _c(
           "span",
           { staticStyle: { "margin-bottom": "30px", color: "black" } },
-          [_c("a", { attrs: { href: "/" } }, [_vm._v("SHUPT")])]
+          [_vm._v("\n            SHUPT\n        ")]
         )
       ]),
       _vm._v(" "),
@@ -85096,7 +85096,7 @@ var render = function() {
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _c(
                           "a",
-                          { attrs: { href: "www.http://www.utorrent.com" } },
+                          { attrs: { href: "http://www.utorrent.com" } },
                           [
                             _c("img", {
                               attrs: { src: "images/µtorrent.png", alt: "" }
@@ -86077,30 +86077,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
+        var _this = this;
+
         return {
+
+            username: 'error',
+
             ajaxHistoryData: [],
             // 初始化信息总条数
             dataCount: 0,
             // 每页显示多少条
             pageSize: 10,
             historyColumns: [{
-                title: '人员',
-                key: 'username'
+                title: '资源名',
+                key: 'name'
+            }, {
+                title: '发布者',
+                key: 'owner'
             }, {
                 title: '操作',
-                key: 'shenpistatus'
-            }, {
-                title: '意见',
-                key: 'shenpicomments'
-            }, {
-                title: '时间',
-                key: 'time'
+                key: 'action',
+                width: 150,
+                align: 'center',
+                render: function render(h, params) {
+                    return h('div', [h('Button', {
+                        props: {
+                            type: 'primary',
+                            size: 'small'
+                        },
+                        style: {
+                            marginRight: '5px'
+                        },
+                        on: {
+                            click: function click() {
+                                _this.show(params.index);
+                            }
+                        }
+                    }, '下载')]
+                    // h('Button', {
+                    //     props: {
+                    //         type: 'error',
+                    //         size: 'small'
+                    //     },
+                    //     on: {
+                    //         click: () => {
+                    //             this.remove(params.index)
+                    //         }
+                    //     }
+                    // }, '删除')
+                    );
+                }
             }],
-            historyData: []
+            historyData: [],
+            testData: {
+                "histories": [{
+                    name: 'test01',
+                    owner: 'zd'
+                }, {
+                    name: 'test02',
+                    owner: 'zd'
+                }]
+            }
         };
     },
 
@@ -86109,10 +86151,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         handleListApproveHistory: function handleListApproveHistory() {
 
             // 保存取到的所有数据
-            this.ajaxHistoryData = testData.histories;
-            this.dataCount = testData.histories.length;
+            this.ajaxHistoryData = this.testData.histories;
+            this.dataCount = this.testData.histories.length;
             // 初始化显示，小于每页显示条数，全显，大于每页显示条数，取前每页条数显示
-            if (testData.histories.length < this.pageSize) {
+            if (this.testData.histories.length < this.pageSize) {
                 this.historyData = this.ajaxHistoryData;
             } else {
                 this.historyData = this.ajaxHistoryData.slice(0, this.pageSize);
@@ -86122,7 +86164,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _start = (index - 1) * this.pageSize;
             var _end = index * this.pageSize;
             this.historyData = this.ajaxHistoryData.slice(_start, _end);
-        }
+        },
+        show: function show(index) {}
     },
     created: function created() {
         this.handleListApproveHistory();
@@ -86130,160 +86173,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     mounted: function mounted() {
         var self = this;
+        axios.get('userinfo').then(function (userinfo) {
+            self.username = userinfo.data[0].name;
+        });
         axios.get('/api/resource').then(function (resource) {
-            console.log(resource);
+            self.testData.histories = resource.data;
+            self.handleListApproveHistory();
         });
     }
 
 });
-var testData = {
-    "histories": [{
-        "username": "智能审批",
-        "shenpistatus": "审批已通过",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-24 18:11"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批已通过",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-24 18:11"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批已通过",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-24 10:04"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201",
-        "time": "2017-07-24 10:03"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201",
-        "time": "2017-07-24 10:02"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批已通过",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-24 10:02"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-24 10:01"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-24 09:56"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:23"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-21 14:23"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:23"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-21 14:23"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-21 14:23"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-21 14:21"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:21"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:20"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-21 14:20"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:14"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:13"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:11"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-21 14:10"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-20 18:09"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-20 18:08"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "  收入 > 999 && 支出 < 201 && 所有项目的总净收入 > 5000",
-        "time": "2017-07-20 18:08"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-20 18:07"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-20 18:05"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批已通过",
-        "shenpicomments": "wedfqw",
-        "time": "2017-07-20 15:50"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批已通过",
-        "shenpicomments": "wedfqw",
-        "time": "2017-07-20 15:20"
-    }, {
-        "username": "智能审批",
-        "shenpistatus": "审批被拒绝",
-        "shenpicomments": "自动审批通过",
-        "time": "2017-07-19 18:27"
-    }]
-};
 
 /***/ }),
 /* 101 */
@@ -86295,7 +86194,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticStyle: { height: "70%" } },
+    { staticStyle: { height: "59%", width: "80%" } },
     [
       _c("Table", {
         attrs: { columns: _vm.historyColumns, data: _vm.historyData }
@@ -86306,7 +86205,8 @@ var render = function() {
         attrs: {
           total: _vm.dataCount,
           "page-size": _vm.pageSize,
-          "show-total": ""
+          size: "small",
+          "show-elevator": ""
         },
         on: { "on-change": _vm.changepage }
       })
