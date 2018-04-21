@@ -3,6 +3,7 @@
         <Table :columns="historyColumns" :data="historyData" height="450"></Table>
         <Page :total="dataCount" :page-size="pageSize" size="small" show-elevator class="paging"
               @on-change="changepage"></Page>
+
     </div>
 </template>
 <style scoped>
