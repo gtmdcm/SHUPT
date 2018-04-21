@@ -105,6 +105,9 @@
                 var _end = index * this.pageSize;
                 this.historyData = this.ajaxHistoryData.slice(_start, _end);
             },
+            download(){
+                location.href='/api/download';
+            }
 
         },
         created() {

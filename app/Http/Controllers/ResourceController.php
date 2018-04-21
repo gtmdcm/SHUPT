@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\Resource;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 
 
 class ResourceController extends Controller
@@ -55,8 +56,11 @@ class ResourceController extends Controller
 
     }
 
-    public function downloadSeed()
+    public function downloadSeeds(Request $request)
     {
 
+        return Storage::download('public/user/zhou/head.png');
+
     }
+
 }

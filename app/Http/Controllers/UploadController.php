@@ -11,13 +11,7 @@ class UploadController extends Controller
 {
     public function uploadSeeds(Request $request)
     {
-//        $path = $request -> file('upload_file')->store('file');
-         $request->file('upload_file')->store('/');
-
-
-        //return $request;
-        //$upload=$request->file('upload_file');
-        //$store_result=$upload->storeAs('Seeds','test');
+        $request->file('upload_file')->store('/public/seed/');
     }
 }
 
