@@ -59,3 +59,5 @@ Route::get('/testapp', 'PageController@app')->name('app')->middleware('auth');
 Route::get('/testchild', 'PageController@child')->name('child')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+Route::get('getImage','UserinfoController@getImage')->name('getImage')->middleware('auth');

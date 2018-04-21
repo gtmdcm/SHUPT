@@ -27,9 +27,9 @@
 
             <Input v-model="uploadItem.brief_introduction" clearable style="width:500px" type="textarea"
                    :autosize="{minRows: 2,maxRows: 5}"
-                   placeholder="请输入简介"></Input>
+                   placeholder="请输入简介" ></Input>
         </FormItem>
-        <Upload name="upload_file" action="http://127.0.0.1:8000/api/upload_file">
+        <Upload name="upload_file" action="upload_file" method="POST">
             <Button type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
         </Upload>
         <FormItem>

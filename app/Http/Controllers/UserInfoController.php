@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class UserInfoController extends Controller
 {
@@ -31,6 +30,17 @@ class UserInfoController extends Controller
             $contribute = 100;
         }
         return $contribute;
+    }
+
+    public function getImage()
+    {
+        $id = Auth::id();
+        $name = DB::select("select name from users where id = $id")[0]->name;
+
+//        $contents = Storage::url("user/$name/head.png");
+//  上线后修改
+        $contents = Storage::url("user/zhou/head.png");
+        return $contents;
     }
 
 }

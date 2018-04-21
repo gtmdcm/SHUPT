@@ -7,7 +7,9 @@
         <div class="profile-avator" style="flex: 4;text-align:  center;">
             <div>
                 <a href="edit_profile">
-                    <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>
+                    <!--<Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>-->
+                    <!--{{image}}-->
+                    <img v-bind:src="image" alt="" height="50" width="50">
                     {{name}}
                 </a>
             </div>
@@ -64,6 +66,7 @@
                 user_ip: '192.168.0.0',
                 ip_status: 'IPv6',
                 contribute: 0,
+                image: '',
             }
         },
         methods: {
@@ -91,6 +94,10 @@
             if (l < 16) {
                 self.ip_status = 'IPv4';
             }
+            axios.get('getImage').then(function (image) {
+                // console.log(image);
+                self.image = image.data;
+            })
         }
     }
 </script>
