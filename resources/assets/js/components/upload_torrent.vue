@@ -53,7 +53,7 @@
                 uploadItem: {
                     title: '',
                     subtitle: '',
-                    type: '12',
+                    type: '0012',
                     brief_introduction: '',
                 },
                 upload_title: '',
