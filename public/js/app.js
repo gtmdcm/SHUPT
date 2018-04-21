@@ -86086,7 +86086,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -86131,6 +86131,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, {
                 title: '发布者',
                 key: 'owner'
+            }, {
+                title: '类型',
+                key: 'catagory'
             }, {
                 title: '操作',
                 key: 'action',
@@ -86212,6 +86215,66 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
         axios.get('/api/resource').then(function (resource) {
             self.testData.histories = resource.data;
+            console.log(self.testData.histories);
+            for (var i in self.testData.histories) {
+                console.log(self.testData.histories[i].catagory);
+                switch (self.testData.histories[i].catagory) {
+                    case "0000":
+                        self.testData.histories[i].catagory = '资料';
+                        break;
+
+                    case "0001":
+                        self.testData.histories[i].catagory = '电影';
+                        break;
+
+                    case "0002":
+                        self.testData.histories[i].catagory = '动漫';
+                        break;
+
+                    case "0003":
+                        self.testData.histories[i].catagory = '剧集';
+                        break;
+
+                    case "0004":
+                        self.testData.histories[i].catagory = '综艺';
+                        break;
+
+                    case "0005":
+                        self.testData.histories[i].catagory = '体育';
+                        break;
+
+                    case "0006":
+                        self.testData.histories[i].catagory = '记录';
+                        break;
+
+                    case "0007":
+                        self.testData.histories[i].catagory = '英语';
+                        break;
+
+                    case "0008":
+                        self.testData.histories[i].catagory = 'MV';
+                        break;
+
+                    case "009":
+                        self.testData.histories[i].catagory = '软件';
+                        break;
+
+                    case "0010":
+                        self.testData.histories[i].catagory = '游戏';
+                        break;
+
+                    case "0011":
+                        self.testData.histories[i].catagory = '校园';
+                        break;
+
+                    case "0012":
+                        self.testData.histories[i].catagory = '其他';
+                        break;
+
+                    default:
+                        self.testData.histories[i].catagory = 'error';
+                }
+            }
             self.handleListApproveHistory();
         });
     }
@@ -86234,7 +86297,7 @@ var render = function() {
         attrs: {
           columns: _vm.historyColumns,
           data: _vm.historyData,
-          type: "ghost"
+          height: "450"
         }
       }),
       _vm._v(" "),

@@ -1,6 +1,6 @@
 <template>
     <div style="height: 59%; width:80%;">
-        <Table :columns="historyColumns" :data="historyData" type="ghost"></Table>
+        <Table :columns="historyColumns" :data="historyData" height="450"></Table>
         <Page :total="dataCount" :page-size="pageSize" size="small" show-elevator class="paging"
               @on-change="changepage"></Page>
     </div>
@@ -32,6 +32,10 @@
                     {
                         title: '发布者',
                         key: 'owner'
+                    },
+                    {
+                        title: '类型',
+                        key: 'catagory'
                     },
                     {
                         title: '操作',
@@ -105,8 +109,8 @@
                 var _end = index * this.pageSize;
                 this.historyData = this.ajaxHistoryData.slice(_start, _end);
             },
-            download(){
-                location.href='/api/download';
+            download() {
+                location.href = '/api/download';
             }
 
         },
@@ -122,6 +126,66 @@
             });
             axios.get('/api/resource',).then(function (resource) {
                 self.testData.histories = resource.data;
+                console.log(self.testData.histories);
+                for (var i in  self.testData.histories) {
+                    console.log(self.testData.histories[i].catagory);
+                    switch (self.testData.histories[i].catagory) {
+                        case "0000":
+                            self.testData.histories[i].catagory = '资料';
+                            break;
+
+                        case "0001":
+                            self.testData.histories[i].catagory = '电影';
+                            break;
+
+                        case "0002":
+                            self.testData.histories[i].catagory = '动漫';
+                            break;
+
+                        case "0003":
+                            self.testData.histories[i].catagory = '剧集';
+                            break;
+
+                        case "0004":
+                            self.testData.histories[i].catagory = '综艺';
+                            break;
+
+                        case "0005":
+                            self.testData.histories[i].catagory = '体育';
+                            break;
+
+                        case "0006":
+                            self.testData.histories[i].catagory = '记录';
+                            break;
+
+                        case "0007":
+                            self.testData.histories[i].catagory = '英语';
+                            break;
+
+                        case "0008":
+                            self.testData.histories[i].catagory = 'MV';
+                            break;
+
+                        case "009":
+                            self.testData.histories[i].catagory = '软件';
+                            break;
+
+                        case "0010":
+                            self.testData.histories[i].catagory = '游戏';
+                            break;
+
+                        case "0011":
+                            self.testData.histories[i].catagory = '校园';
+                            break;
+
+                        case "0012":
+                            self.testData.histories[i].catagory = '其他';
+                            break;
+
+                        default:
+                            self.testData.histories[i].catagory = 'error';
+                    }
+                }
                 self.handleListApproveHistory()
             })
         }

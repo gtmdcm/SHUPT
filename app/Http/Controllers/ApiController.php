@@ -29,7 +29,7 @@ class ApiController extends Controller
 
     public function showResource()
     {
-        $result = DB::select("select name,owner,catagory,standard from resources where visible = 'yes' ");
+        $result = DB::select("select name,owner,catagory from resources where visible = 'yes' ");
         return $result;
     }
 
