@@ -12,9 +12,9 @@
             <FormItem label="标题">
                 <Input v-model="uploadItem.title" clearable style="width:500px" placeholder="请输入标题"></Input>
             </FormItem>
-            <FormItem label="副标题">
-                <Input v-model="uploadItem.subtitle" clearable style="width:500px" placeholder="请输入副标题"></Input>
-            </FormItem>
+            <!--<FormItem label="副标题">-->
+            <!--<Input v-model="uploadItem.subtitle" clearable style="width:500px" placeholder="请输入副标题"></Input>-->
+            <!--</FormItem>-->
             <FormItem label="类型">
                 <Select v-model="uploadItem.type" style="width:200px">
                     <Option value="0000">资料</Option>
@@ -49,10 +49,12 @@
         <Button v-show="step1_flag" type="primary" @click="uploadData">确认</Button>
         <Button v-show="step1_flag" type="ghost" style="margin-left: 8px">取消</Button>
         <!--<Button type="primary" @click="next">Next step</Button>-->
-        <Upload v-show="step2_flag" name="upload_file" action="/api/upload_file" method="POST">
+        <Upload v-show="step2_flag" name="upload_file" :action="upload_title+uploadItem.title" method="POST"
+                :format="['torrent']"
+                :on-format-error="handleFormatError" :on-success="handleSuccess">
             <Button v-show="step2_flag" type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
         </Upload>
-        <Button v-show="step2_flag" type="primary" @click="step2to3">确认</Button>
+        <Button v-show="step3" type="primary" @click="step2to3">确认</Button>
     </div>
     </Col>
 </template>
@@ -65,11 +67,13 @@
                 uploadItem: {
                     title: '',
                     subtitle: '',
-                    type: '12',
+                    type: '0012',
                     brief_introduction: '',
                 },
+                upload_title: '/api/upload_file/',
                 step1_flag: true,
                 step2_flag: false,
+                step3: false,
                 current: 0,
             }
         },
@@ -79,6 +83,14 @@
                 this.current += 1;
                 this.step1_flag = false;
                 this.step2_flag = true;
+
+                // self.upload_tile = "/api/upload_file/" + self.uploadItem.title;
+                // console.log(self.uploadItem.title);
+                // console.log(self.upload_title);
+            },
+            step2to3: function () {
+                this.current += 1;
+                this.step2_flag = false;
                 var self = this;
                 var params = new URLSearchParams();
                 params.append('title', this.uploadItem.title);
@@ -88,11 +100,17 @@
                 axios.post('upload', params).then(function (response) {
                     self = response.uploadItem;
                 })
+                location.href='torrent';
             },
-            step2to3: function () {
-                this.current += 1;
-                this.step2_flag = false;
-            }
+            handleFormatError(file) {
+                this.$Notice.warning({
+                    title: '格式不对！',
+                    desc: '一定要torrent文件哦！'
+                });
+            },
+            handleSuccess() {
+                this.step3 = true;
+            },
         }
     }
 </script>

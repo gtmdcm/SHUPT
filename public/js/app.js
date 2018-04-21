@@ -25364,6 +25364,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('upload_torrent', __webpac
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('s-status', __webpack_require__(92));
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('torrent', __webpack_require__(97));
+
 //    Vue.component('welcome2join', require('./message/welcome2join'))
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app'
@@ -85428,7 +85429,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.ivu-upload .ivu-btn[data-v-4def0da9] {\n    margin-left: 80px;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85439,8 +85440,6 @@ exports.push([module.i, "\n.ivu-upload .ivu-btn[data-v-4def0da9] {\n    margin-l
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -85486,35 +85485,73 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "update_torrent",
+    name: "upload_step",
     data: function data() {
         return {
             uploadItem: {
                 title: '',
                 subtitle: '',
-                type: '12',
+                type: '0012',
                 brief_introduction: ''
             },
-            upload_title: ''
+            upload_title: '/api/upload_file/',
+            step1_flag: true,
+            step2_flag: false,
+            step3: false,
+            current: 0
         };
     },
     methods: {
         uploadData: function uploadData() {
+            console.log('hi');
+            this.current += 1;
+            this.step1_flag = false;
+            this.step2_flag = true;
+
+            // self.upload_tile = "/api/upload_file/" + self.uploadItem.title;
+            // console.log(self.uploadItem.title);
+            // console.log(self.upload_title);
+        },
+        step2to3: function step2to3() {
+            this.current += 1;
+            this.step2_flag = false;
             var self = this;
             var params = new URLSearchParams();
             params.append('title', this.uploadItem.title);
             params.append('subtitle', this.uploadItem.subtitle);
             params.append('type', this.uploadItem.type);
             params.append('brief_introduction', this.uploadItem.brief_introduction);
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload', params).then(function (response) {
+            axios.post('upload', params).then(function (response) {
                 self = response.uploadItem;
             });
-            self.upload_title = "/api/upload_file/" + self.uploadItem.title;
-            console.log(self.upload_title);
+            location.href = 'torrent';
+        },
+        handleFormatError: function handleFormatError(file) {
+            this.$Notice.warning({
+                title: '格式不对！',
+                desc: '一定要torrent文件哦！'
+            });
+        },
+        handleSuccess: function handleSuccess() {
+            this.step3 = true;
         }
     }
 });
@@ -85527,154 +85564,259 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "Form",
-    { attrs: { model: _vm.uploadItem, "label-width": 80 } },
-    [
-      _c(
-        "FormItem",
-        { attrs: { label: "标题" } },
-        [
-          _c("Input", {
-            staticStyle: { width: "500px" },
-            attrs: { clearable: "", placeholder: "请输入标题" },
-            model: {
-              value: _vm.uploadItem.title,
-              callback: function($$v) {
-                _vm.$set(_vm.uploadItem, "title", $$v)
-              },
-              expression: "uploadItem.title"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "副标题" } },
-        [
-          _c("Input", {
-            staticStyle: { width: "500px" },
-            attrs: { clearable: "", placeholder: "请输入副标题" },
-            model: {
-              value: _vm.uploadItem.subtitle,
-              callback: function($$v) {
-                _vm.$set(_vm.uploadItem, "subtitle", $$v)
-              },
-              expression: "uploadItem.subtitle"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "类型" } },
-        [
-          _c(
-            "Select",
-            {
-              staticStyle: { width: "200px" },
-              model: {
-                value: _vm.uploadItem.type,
-                callback: function($$v) {
-                  _vm.$set(_vm.uploadItem, "type", $$v)
-                },
-                expression: "uploadItem.type"
+  return _c("Col", { attrs: { span: "18" } }, [
+    _c(
+      "div",
+      { staticStyle: { "justify-content": "center" } },
+      [
+        _c(
+          "Steps",
+          { attrs: { current: _vm.current } },
+          [
+            _c("Step", {
+              attrs: { title: "种子信息", content: "填写种子相关信息" }
+            }),
+            _vm._v(" "),
+            _c("Step", {
+              attrs: { title: "种子文件", content: "上传种子到服务器" }
+            }),
+            _vm._v(" "),
+            _c("Step", { attrs: { title: "完成", content: "感谢你的上传" } })
+          ],
+          1
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c(
+          "Form",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.step1_flag,
+                expression: "step1_flag"
               }
-            },
-            [
-              _c("Option", { attrs: { value: "0000" } }, [_vm._v("资料")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0001" } }, [_vm._v("电影")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0002" } }, [_vm._v("动漫")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0003" } }, [_vm._v("剧集")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0004" } }, [_vm._v("综艺")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0005" } }, [_vm._v("体育")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0006" } }, [_vm._v("记录")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0007" } }, [_vm._v("音乐")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0008" } }, [_vm._v("MV")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0009" } }, [_vm._v("软件")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0010" } }, [_vm._v("游戏")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0011" } }, [_vm._v("校园")]),
-              _vm._v(" "),
-              _c("Option", { attrs: { value: "0012" } }, [_vm._v("其他")])
             ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        { attrs: { label: "简介" } },
-        [
-          _c("Input", {
-            staticStyle: { width: "500px" },
+            attrs: { model: _vm.uploadItem, "label-width": 80 }
+          },
+          [
+            _c(
+              "FormItem",
+              { attrs: { label: "标题" } },
+              [
+                _c("Input", {
+                  staticStyle: { width: "500px" },
+                  attrs: { clearable: "", placeholder: "请输入标题" },
+                  model: {
+                    value: _vm.uploadItem.title,
+                    callback: function($$v) {
+                      _vm.$set(_vm.uploadItem, "title", $$v)
+                    },
+                    expression: "uploadItem.title"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "FormItem",
+              { attrs: { label: "类型" } },
+              [
+                _c(
+                  "Select",
+                  {
+                    staticStyle: { width: "200px" },
+                    model: {
+                      value: _vm.uploadItem.type,
+                      callback: function($$v) {
+                        _vm.$set(_vm.uploadItem, "type", $$v)
+                      },
+                      expression: "uploadItem.type"
+                    }
+                  },
+                  [
+                    _c("Option", { attrs: { value: "0000" } }, [
+                      _vm._v("资料")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0001" } }, [
+                      _vm._v("电影")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0002" } }, [
+                      _vm._v("动漫")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0003" } }, [
+                      _vm._v("剧集")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0004" } }, [
+                      _vm._v("综艺")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0005" } }, [
+                      _vm._v("体育")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0006" } }, [
+                      _vm._v("记录")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0007" } }, [
+                      _vm._v("音乐")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0008" } }, [_vm._v("MV")]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0009" } }, [
+                      _vm._v("软件")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0010" } }, [
+                      _vm._v("游戏")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0011" } }, [
+                      _vm._v("校园")
+                    ]),
+                    _vm._v(" "),
+                    _c("Option", { attrs: { value: "0012" } }, [_vm._v("其他")])
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "FormItem",
+              { attrs: { label: "简介" } },
+              [
+                _c("Input", {
+                  staticStyle: { width: "500px" },
+                  attrs: {
+                    clearable: "",
+                    type: "textarea",
+                    autosize: { minRows: 2, maxRows: 5 },
+                    placeholder: "请输入简介"
+                  },
+                  model: {
+                    value: _vm.uploadItem.brief_introduction,
+                    callback: function($$v) {
+                      _vm.$set(_vm.uploadItem, "brief_introduction", $$v)
+                    },
+                    expression: "uploadItem.brief_introduction"
+                  }
+                })
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "Button",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.step1_flag,
+                expression: "step1_flag"
+              }
+            ],
+            attrs: { type: "primary" },
+            on: { click: _vm.uploadData }
+          },
+          [_vm._v("确认")]
+        ),
+        _vm._v(" "),
+        _c(
+          "Button",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.step1_flag,
+                expression: "step1_flag"
+              }
+            ],
+            staticStyle: { "margin-left": "8px" },
+            attrs: { type: "ghost" }
+          },
+          [_vm._v("取消")]
+        ),
+        _vm._v(" "),
+        _c(
+          "Upload",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.step2_flag,
+                expression: "step2_flag"
+              }
+            ],
             attrs: {
-              clearable: "",
-              type: "textarea",
-              autosize: { minRows: 2, maxRows: 5 },
-              placeholder: "请输入简介"
-            },
-            model: {
-              value: _vm.uploadItem.brief_introduction,
-              callback: function($$v) {
-                _vm.$set(_vm.uploadItem, "brief_introduction", $$v)
-              },
-              expression: "uploadItem.brief_introduction"
+              name: "upload_file",
+              action: _vm.upload_title + _vm.uploadItem.title,
+              method: "POST",
+              format: ["torrent"],
+              "on-format-error": _vm.handleFormatError,
+              "on-success": _vm.handleSuccess
             }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "Upload",
-        { attrs: { name: "upload_file", action: "upload_title" } },
-        [
-          _c(
-            "Button",
-            { attrs: { type: "ghost", icon: "ios-cloud-upload-outline" } },
-            [_vm._v("上传种子")]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "FormItem",
-        [
-          _c(
-            "Button",
-            { attrs: { type: "primary" }, on: { click: _vm.uploadData } },
-            [_vm._v("发布")]
-          ),
-          _vm._v(" "),
-          _c(
-            "Button",
-            { staticStyle: { "margin-left": "8px" }, attrs: { type: "ghost" } },
-            [_vm._v("取消")]
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+          },
+          [
+            _c(
+              "Button",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.step2_flag,
+                    expression: "step2_flag"
+                  }
+                ],
+                attrs: { type: "ghost", icon: "ios-cloud-upload-outline" }
+              },
+              [_vm._v("上传种子")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "Button",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.step3,
+                expression: "step3"
+              }
+            ],
+            attrs: { type: "primary" },
+            on: { click: _vm.step2to3 }
+          },
+          [_vm._v("确认")]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -86089,7 +86231,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -86174,13 +86316,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }],
             historyData: [],
             testData: {
-                "histories": [{
-                    name: 'test01',
-                    owner: 'zd'
-                }, {
-                    name: 'test02',
-                    owner: 'zd'
-                }]
+                "histories": []
             }
         };
     },
@@ -86206,7 +86342,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         download: function download(index) {
 
-            window.location = 'api/download/public/seed/test1.c';
+            window.location = 'api/download/public/seed/' + index;
         }
     },
     created: function created() {
@@ -86216,6 +86352,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var self = this;
         axios.get('userinfo').then(function (userinfo) {
+            console.log(userinfo);
             self.username = userinfo.data[0].name;
         });
         axios.get('/api/resource').then(function (resource) {

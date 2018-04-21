@@ -31,7 +31,7 @@ Route::get('ip', 'ApiController@showIP')->name('ip');
 
 Route::post('upload_file/{name}', 'UploadController@uploadSeeds');
 
-Route::get('download/{pub}/{seed}/{name}', 'ResourceController@downloadSeeds');
+Route::get('download/{pub}/{seed}/{index}', 'ResourceController@downloadSeeds');
 
 Route::post('test', function () {
     print(Input::all());

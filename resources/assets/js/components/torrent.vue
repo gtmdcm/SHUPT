@@ -76,16 +76,7 @@
                 ],
                 historyData: [],
                 testData: {
-                    "histories": [
-                        {
-                            name: 'test01',
-                            owner: 'zd'
-                        },
-                        {
-                            name: 'test02',
-                            owner: 'zd'
-                        }
-                    ]
+                    "histories": []
                 }
             }
         },
@@ -112,7 +103,7 @@
             },
             download(index) {
 
-                window.location = 'api/download/public/seed/test1.c';
+                window.location = 'api/download/public/seed/' + index;
             }
 
         },
@@ -123,6 +114,7 @@
         mounted: function () {
             var self = this;
             axios.get('userinfo',).then(function (userinfo) {
+                console.log(userinfo);
                 self.username = userinfo.data[0].name;
 
             });

@@ -11,13 +11,14 @@ class UploadController extends Controller
 {
     public function uploadSeeds(Request $request, $name)
     {
-        $path = $request->file('upload_file')->store("public/seed/$name");
+//        $path = $request->file('upload_file')->store("public/seed/$name");
 
-        $result = DB::select('select seed from resources where name = $name');
-
-        $result->seed = $path;
-
-        $result->save();
+        Storage::putFileAs('public/seed/', $request->file('upload_file'), "$name");
+//        $result = DB::select("select seed from resources where name = $name")[0]->seed;
+//
+//        $result = $path;
+//
+//        $result->save();
 
     }
 }

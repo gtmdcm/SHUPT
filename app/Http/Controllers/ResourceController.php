@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Resource;
 use App\User;
 use Illuminate\Support\Facades\Storage;
-
+use DB;
 
 class ResourceController extends Controller
 {
@@ -29,6 +29,8 @@ class ResourceController extends Controller
         $owner = $user->name;
 
         $resource->name = $name;
+
+        $resource->seed = "$name.torrent";
 
         $resource->catagory = $catagory;
 
@@ -56,10 +58,13 @@ class ResourceController extends Controller
 
     }
 
-    public function downloadSeeds(Request $request, $pub, $seed, $name)
+    public function downloadSeeds(Request $request, $pub, $seed, $index)
     {
 
-        return Storage::download("/$pub/$seed/$name");
+        $result = DB::select("select seed from resources where id = $index+1")[0]->seed;
+
+
+        return Storage::download("/$pub/$seed/$result");
     }
 
 }
