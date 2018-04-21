@@ -110,8 +110,9 @@
                 var _end = index * this.pageSize;
                 this.historyData = this.ajaxHistoryData.slice(_start, _end);
             },
-            download() {
-                location.href = '/api/download';
+            download(index) {
+
+                window.location = 'api/download/public/seed/test1.c';
             }
 
         },
@@ -127,9 +128,7 @@
             });
             axios.get('/api/resource',).then(function (resource) {
                 self.testData.histories = resource.data;
-                console.log(self.testData.histories);
                 for (var i in  self.testData.histories) {
-                    console.log(self.testData.histories[i].catagory);
                     switch (self.testData.histories[i].catagory) {
                         case "0000":
                             self.testData.histories[i].catagory = '资料';

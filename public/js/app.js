@@ -85498,7 +85498,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 subtitle: '',
                 type: '12',
                 brief_introduction: ''
-            }
+            },
+            upload_title: ''
         };
     },
     methods: {
@@ -85512,6 +85513,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('upload', params).then(function (response) {
                 self = response.uploadItem;
             });
+            self.upload_title = "/api/upload_file/" + self.uploadItem.title;
+            console.log(self.upload_title);
         }
     }
 });
@@ -85641,7 +85644,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "Upload",
-        { attrs: { name: "upload_file", action: "/api/upload_file" } },
+        { attrs: { name: "upload_file", action: "upload_title" } },
         [
           _c(
             "Button",
@@ -86110,6 +86113,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -86200,8 +86204,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _end = index * this.pageSize;
             this.historyData = this.ajaxHistoryData.slice(_start, _end);
         },
-        download: function download() {
-            location.href = '/api/download';
+        download: function download(index) {
+
+            window.location = 'api/download/public/seed/test1.c';
         }
     },
     created: function created() {
@@ -86215,9 +86220,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
         axios.get('/api/resource').then(function (resource) {
             self.testData.histories = resource.data;
-            console.log(self.testData.histories);
             for (var i in self.testData.histories) {
-                console.log(self.testData.histories[i].catagory);
                 switch (self.testData.histories[i].catagory) {
                     case "0000":
                         self.testData.histories[i].catagory = '资料';

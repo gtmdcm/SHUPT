@@ -9,9 +9,16 @@ use App\Http\Controllers\Controller;
 
 class UploadController extends Controller
 {
-    public function uploadSeeds(Request $request)
+    public function uploadSeeds(Request $request, $name)
     {
-        $request->file('upload_file')->store('/public/seed/');
+        $path = $request->file('upload_file')->store("public/seed/$name");
+
+        $result = DB::select('select seed from resources where name = $name');
+
+        $result->seed = $path;
+
+        $result->save();
+
     }
 }
 

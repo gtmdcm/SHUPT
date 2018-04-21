@@ -29,11 +29,10 @@ Route::get('resource', 'ApiController@showResource')->name('resource');
 
 Route::get('ip', 'ApiController@showIP')->name('ip');
 
-//sk test
+Route::post('upload_file/{name}', 'UploadController@uploadSeeds');
 
-Route::post('upload_file', 'UploadController@uploadSeeds');
+Route::get('download/{pub}/{seed}/{name}', 'ResourceController@downloadSeeds');
 
-Route::get('download', 'ResourceController@downloadSeeds');
 Route::post('test', function () {
     print(Input::all());
 });

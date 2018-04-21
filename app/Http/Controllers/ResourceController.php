@@ -56,11 +56,10 @@ class ResourceController extends Controller
 
     }
 
-    public function downloadSeeds(Request $request)
+    public function downloadSeeds(Request $request, $pub, $seed, $name)
     {
 
-        return Storage::download('public/user/zhou/head.png');
-
+        return Storage::download("/$pub/$seed/$name");
     }
 
 }

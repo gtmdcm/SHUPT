@@ -29,7 +29,7 @@
                    :autosize="{minRows: 2,maxRows: 5}"
                    placeholder="请输入简介"></Input>
         </FormItem>
-        <Upload name="upload_file" action="/api/upload_file">
+        <Upload name="upload_file" action=upload_title>
             <Button type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
         </Upload>
         <FormItem>
@@ -38,8 +38,8 @@
         </FormItem>
     </Form>
     <!--<form action="/api/upload_file" method="post" enctype="multipart/form-data">-->
-        <!--<input type="file" name="upload_file" value="选择jar包"/>-->
-        <!--<input id="submit_form" type="submit" class="btn btn-success save" value="保存"/>-->
+    <!--<input type="file" name="upload_file" value="选择jar包"/>-->
+    <!--<input id="submit_form" type="submit" class="btn btn-success save" value="保存"/>-->
     <!--</form>-->
 </template>
 
@@ -55,7 +55,8 @@
                     subtitle: '',
                     type: '12',
                     brief_introduction: '',
-                }
+                },
+                upload_title: '',
             }
         },
         methods:
@@ -70,6 +71,8 @@
                     axios.post('upload', params).then(function (response) {
                         self = response.uploadItem;
                     })
+                    self.upload_title = "/api/upload_file/" + self.uploadItem.title;
+                    console.log(self.upload_title);
                 },
             }
     }
