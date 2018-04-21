@@ -31,7 +31,7 @@ Route::get('ip','ApiController@showIP')->name('ip');
 
 //sk test
 
-Route::post('upload_file', 'UploadController@uploadSeeds')->name('upload_file')->middleware('auth');
+Route::post('upload_file', 'UploadController@uploadSeeds');
 
 Route::post('test',function () {
     print(Input::all());

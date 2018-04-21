@@ -35,4 +35,6 @@ echo DB_PASSWORD=$dbp >> .env
 rm key
 php artisan migrate:fresh
 npm run dev
+php artisan storage:link
+
 php artisan serve

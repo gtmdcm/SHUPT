@@ -27,9 +27,9 @@
 
             <Input v-model="uploadItem.brief_introduction" clearable style="width:500px" type="textarea"
                    :autosize="{minRows: 2,maxRows: 5}"
-                   placeholder="请输入简介" ></Input>
+                   placeholder="请输入简介"></Input>
         </FormItem>
-        <Upload name="upload_file" action="upload_file" method="POST">
+        <Upload name="upload_file" action="/api/upload_file">
             <Button type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
         </Upload>
         <FormItem>
@@ -37,6 +37,10 @@
             <Button type="ghost" style="margin-left: 8px">取消</Button>
         </FormItem>
     </Form>
+    <!--<form action="/api/upload_file" method="post" enctype="multipart/form-data">-->
+        <!--<input type="file" name="upload_file" value="选择jar包"/>-->
+        <!--<input id="submit_form" type="submit" class="btn btn-success save" value="保存"/>-->
+    <!--</form>-->
 </template>
 
 <script>
