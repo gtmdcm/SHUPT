@@ -10,7 +10,7 @@
     <div style="height: 10px">
     </div>
     <div>
-        <Form v-show="step1_flag" :model="uploadItem" :label-width="80" :rules="formValidate">
+        <Form ref="uploadItem" v-show="step1_flag" :model="uploadItem" :label-width="80" :rules="ruleValidate">
             <FormItem label="标题" prop="title">
                 <Input v-model="uploadItem.title" clearable style="width:500px" placeholder="请输入标题"></Input>
             </FormItem>
@@ -48,7 +48,7 @@
             <!--<Button type="ghost" style="margin-left: 8px">取消</Button>-->
             <!--</FormItem>-->
         </Form>
-        <Button v-show="step1_flag" type="primary" @click="uploadData" style="">确认</Button>
+        <Button v-show="step1_flag" type="primary" @click="uploadData('uploadItem')" style="">确认</Button>
         <!--<Button v-show="step1_flag" type="ghost" style="margin-left: 8px">取消</Button>-->
         <!--<Button type="primary" @click="next">Next step</Button>-->
         <Upload v-show="step2_flag" name="upload_file" :action="upload_title+uploadItem.title" method="POST"
@@ -68,7 +68,7 @@
             return {
                 uploadItem: {
                     title: '',
-                    subtitle: '',
+                    // subtitle: '',
                     type: '',
                     brief_introduction: '',
                 },
@@ -76,48 +76,67 @@
                 step1_flag: true,
                 step2_flag: false,
                 step3: false,
+                step3_flag: false,
                 current: 0,
-                formValidate: {
+                ruleValidate: {
                     title: [{required: true}],
                     type: [{required: true}],
                 },
             }
         },
         methods: {
-            uploadData: function () {
-                console.log('hi');
-                this.current += 1;
-                this.step1_flag = false;
-                this.step2_flag = true;
+            uploadData(name) {
+                this.$refs[name].validate((valid) => {
+                    if (valid) {
+                        this.$Message.success('填写信息成功');
+
+                        this.current += 1;
+                        this.step1_flag = false;
+                        this.step2_flag = true;
+                    } else {
+                        this.$Message.error('输入必要信息');
+                    }
+                })
 
                 // self.upload_tile = "/api/upload_file/" + self.uploadItem.title;
                 // console.log(self.uploadItem.title);
                 // console.log(self.upload_title);
             },
             step2to3: function () {
-                this.current += 1;
-                this.step2_flag = false;
                 var self = this;
-                var params = new URLSearchParams();
-                params.append('title', this.uploadItem.title);
-                params.append('subtitle', this.uploadItem.subtitle);
-                params.append('type', this.uploadItem.type);
-                params.append('brief_introduction', this.uploadItem.brief_introduction);
-                axios.post('upload', params).then(function (response) {
-                    console.log(response);
-                    self = response.uploadItem;
-                })
-                location.href = 'torrent';
-            },
+                if (self.step3_flag == false) {
+                    this.current += 1;
+                    this.step2_flag = false;
+                    var params = new URLSearchParams();
+                    params.append('title', this.uploadItem.title);
+                    // params.append('subtitle', this.uploadItem.subtitle);
+                    params.append('type', this.uploadItem.type);
+                    params.append('brief_introduction', this.uploadItem.brief_introduction);
+                    axios.post('upload', params).then(function (response) {
+                        console.log(response);
+                        self = response.uploadItem;
+                    })
+                    console.log('hi');
+                    self.$Message.success('上传成功快去看看');
+                    self.step3_flag = true;
+                }
+                else {
+                    location.href = 'torrent';
+                }
+            }
+            ,
             handleFormatError(file) {
                 this.$Notice.warning({
                     title: '格式不对！',
                     desc: '一定要torrent文件哦！'
                 });
-            },
+            }
+            ,
             handleSuccess() {
+                this.$Notice.succ
                 this.step3 = true;
-            },
+            }
+            ,
         }
     }
 </script>

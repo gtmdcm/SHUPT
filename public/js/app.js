@@ -85429,7 +85429,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85510,7 +85510,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             uploadItem: {
                 title: '',
-                subtitle: '',
+                // subtitle: '',
                 type: '',
                 brief_introduction: ''
             },
@@ -85518,39 +85518,57 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             step1_flag: true,
             step2_flag: false,
             step3: false,
+            step3_flag: false,
             current: 0,
-            formValidate: {
+            ruleValidate: {
                 title: [{ required: true }],
                 type: [{ required: true }]
             }
         };
     },
     methods: {
-        uploadData: function uploadData() {
-            console.log('hi');
-            this.current += 1;
-            this.step1_flag = false;
-            this.step2_flag = true;
+        uploadData: function uploadData(name) {
+            var _this = this;
+
+            this.$refs[name].validate(function (valid) {
+                if (valid) {
+                    _this.$Message.success('填写信息成功');
+
+                    _this.current += 1;
+                    _this.step1_flag = false;
+                    _this.step2_flag = true;
+                } else {
+                    _this.$Message.error('输入必要信息');
+                }
+            });
 
             // self.upload_tile = "/api/upload_file/" + self.uploadItem.title;
             // console.log(self.uploadItem.title);
             // console.log(self.upload_title);
         },
+
         step2to3: function step2to3() {
-            this.current += 1;
-            this.step2_flag = false;
             var self = this;
-            var params = new URLSearchParams();
-            params.append('title', this.uploadItem.title);
-            params.append('subtitle', this.uploadItem.subtitle);
-            params.append('type', this.uploadItem.type);
-            params.append('brief_introduction', this.uploadItem.brief_introduction);
-            axios.post('upload', params).then(function (response) {
-                console.log(response);
-                self = response.uploadItem;
-            });
-            location.href = 'torrent';
+            if (self.step3_flag == false) {
+                this.current += 1;
+                this.step2_flag = false;
+                var params = new URLSearchParams();
+                params.append('title', this.uploadItem.title);
+                // params.append('subtitle', this.uploadItem.subtitle);
+                params.append('type', this.uploadItem.type);
+                params.append('brief_introduction', this.uploadItem.brief_introduction);
+                axios.post('upload', params).then(function (response) {
+                    console.log(response);
+                    self = response.uploadItem;
+                });
+                console.log('hi');
+                self.$Message.success('上传成功快去看看');
+                self.step3_flag = true;
+            } else {
+                location.href = 'torrent';
+            }
         },
+
         handleFormatError: function handleFormatError(file) {
             this.$Notice.warning({
                 title: '格式不对！',
@@ -85558,6 +85576,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         handleSuccess: function handleSuccess() {
+            this.$Notice.succ;
             this.step3 = true;
         }
     }
@@ -85612,10 +85631,11 @@ var render = function() {
                 expression: "step1_flag"
               }
             ],
+            ref: "uploadItem",
             attrs: {
               model: _vm.uploadItem,
               "label-width": 80,
-              rules: _vm.formValidate
+              rules: _vm.ruleValidate
             }
           },
           [
@@ -85748,7 +85768,11 @@ var render = function() {
               }
             ],
             attrs: { type: "primary" },
-            on: { click: _vm.uploadData }
+            on: {
+              click: function($event) {
+                _vm.uploadData("uploadItem")
+              }
+            }
           },
           [_vm._v("确认")]
         ),
