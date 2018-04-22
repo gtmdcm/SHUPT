@@ -97,6 +97,7 @@
     @endif
     {{--logo栏--}}
     @guest
+        <div style="height: 20%;"></div>
         @yield('content')
         @show
     @else

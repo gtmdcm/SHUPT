@@ -85429,7 +85429,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85440,6 +85440,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -85540,6 +85542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             params.append('type', this.uploadItem.type);
             params.append('brief_introduction', this.uploadItem.brief_introduction);
             axios.post('upload', params).then(function (response) {
+                console.log(response);
                 self = response.uploadItem;
             });
             location.href = 'torrent';
@@ -85588,6 +85591,8 @@ var render = function() {
       ],
       1
     ),
+    _vm._v(" "),
+    _c("div", { staticStyle: { height: "10px" } }),
     _vm._v(" "),
     _c(
       "div",
@@ -85738,23 +85743,6 @@ var render = function() {
             on: { click: _vm.uploadData }
           },
           [_vm._v("确认")]
-        ),
-        _vm._v(" "),
-        _c(
-          "Button",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.step1_flag,
-                expression: "step1_flag"
-              }
-            ],
-            staticStyle: { "margin-left": "8px" },
-            attrs: { type: "ghost" }
-          },
-          [_vm._v("取消")]
         ),
         _vm._v(" "),
         _c(

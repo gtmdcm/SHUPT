@@ -7,6 +7,8 @@
             <Step title="完成" content="感谢你的上传"></Step>
         </Steps>
     </div>
+    <div style="height: 10px">
+    </div>
     <div>
         <Form v-show="step1_flag" :model="uploadItem" :label-width="80">
             <FormItem label="标题">
@@ -46,8 +48,8 @@
             <!--<Button type="ghost" style="margin-left: 8px">取消</Button>-->
             <!--</FormItem>-->
         </Form>
-        <Button v-show="step1_flag" type="primary" @click="uploadData">确认</Button>
-        <Button v-show="step1_flag" type="ghost" style="margin-left: 8px">取消</Button>
+        <Button v-show="step1_flag" type="primary" @click="uploadData" style="">确认</Button>
+        <!--<Button v-show="step1_flag" type="ghost" style="margin-left: 8px">取消</Button>-->
         <!--<Button type="primary" @click="next">Next step</Button>-->
         <Upload v-show="step2_flag" name="upload_file" :action="upload_title+uploadItem.title" method="POST"
                 :format="['torrent']"
@@ -98,9 +100,10 @@
                 params.append('type', this.uploadItem.type);
                 params.append('brief_introduction', this.uploadItem.brief_introduction);
                 axios.post('upload', params).then(function (response) {
+                    console.log(response);
                     self = response.uploadItem;
                 })
-                location.href='torrent';
+                location.href = 'torrent';
             },
             handleFormatError(file) {
                 this.$Notice.warning({
