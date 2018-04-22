@@ -85429,7 +85429,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85511,14 +85511,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             uploadItem: {
                 title: '',
                 subtitle: '',
-                type: '0012',
+                type: '',
                 brief_introduction: ''
             },
             upload_title: '/api/upload_file/',
             step1_flag: true,
             step2_flag: false,
             step3: false,
-            current: 0
+            current: 0,
+            formValidate: {
+                title: [{ required: true }],
+                type: [{ required: true }]
+            }
         };
     },
     methods: {
@@ -85608,12 +85612,16 @@ var render = function() {
                 expression: "step1_flag"
               }
             ],
-            attrs: { model: _vm.uploadItem, "label-width": 80 }
+            attrs: {
+              model: _vm.uploadItem,
+              "label-width": 80,
+              rules: _vm.formValidate
+            }
           },
           [
             _c(
               "FormItem",
-              { attrs: { label: "标题" } },
+              { attrs: { label: "标题", prop: "title" } },
               [
                 _c("Input", {
                   staticStyle: { width: "500px" },
@@ -85632,7 +85640,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "FormItem",
-              { attrs: { label: "类型" } },
+              { attrs: { label: "类型", prop: "type" } },
               [
                 _c(
                   "Select",

@@ -10,14 +10,14 @@
     <div style="height: 10px">
     </div>
     <div>
-        <Form v-show="step1_flag" :model="uploadItem" :label-width="80">
-            <FormItem label="标题">
+        <Form v-show="step1_flag" :model="uploadItem" :label-width="80" :rules="formValidate">
+            <FormItem label="标题" prop="title">
                 <Input v-model="uploadItem.title" clearable style="width:500px" placeholder="请输入标题"></Input>
             </FormItem>
             <!--<FormItem label="副标题">-->
             <!--<Input v-model="uploadItem.subtitle" clearable style="width:500px" placeholder="请输入副标题"></Input>-->
             <!--</FormItem>-->
-            <FormItem label="类型">
+            <FormItem label="类型" prop="type">
                 <Select v-model="uploadItem.type" style="width:200px">
                     <Option value="0000">资料</Option>
                     <Option value="0001">电影</Option>
@@ -69,7 +69,7 @@
                 uploadItem: {
                     title: '',
                     subtitle: '',
-                    type: '0012',
+                    type: '',
                     brief_introduction: '',
                 },
                 upload_title: '/api/upload_file/',
@@ -77,6 +77,10 @@
                 step2_flag: false,
                 step3: false,
                 current: 0,
+                formValidate: {
+                    title: [{required: true}],
+                    type: [{required: true}],
+                },
             }
         },
         methods: {
