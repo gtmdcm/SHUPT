@@ -8,7 +8,8 @@
             <a href="edit_profile">
                 <!--<Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>-->
                 <!--{{image}}-->
-                <Avatar :src="image"/>
+                <Avatar v-show="customAvatarFlag" :src="image"/>
+                <Avatar v-show="normalAvatarFlag" style="background-color: #5cadff" icon="person"/>
                 {{name}}
             </a>
             <a href="logout">
@@ -67,6 +68,9 @@
                 ip_status: 'IPv6',
                 contribute: 0,
                 image: '',
+                normalAvatarFlag: false,
+                customAvatarFlag: false,
+
             }
         },
         methods: {
@@ -77,12 +81,20 @@
         },
         mounted: function () {
             var self = this;
+
             axios.get('/userinfo').then(function (userinfo) {
                 let obj = userinfo.data[0];
                 self.up = obj.up;
                 self.down = obj.down;
                 self.name = obj.name;
-
+                // axios.get('/api/ifAvatar/'+self.name).then(function (avatarflag) {
+                //     if (avatarflag){
+                //         self.customAvatarFlag = true;
+                //     } else{
+                //         self.normalAvatarFlag = true;
+                //     }
+                // })
+                console.log(location.href = "'/api/ifAvatar/' + self.name");
             })
             axios.get('/contribute').then(function (contribute) {
                 self.contribute = contribute.data;

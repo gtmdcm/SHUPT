@@ -83606,10 +83606,10 @@ var render = function() {
             [
               _c("Icon", {
                 staticStyle: { color: "#3399ff" },
-                attrs: { type: "ios-cloud-upload", size: "52" }
+                attrs: { type: "ios-cloud-upload", size: "30" }
               }),
               _vm._v(" "),
-              _c("p", [_vm._v("拖拽或点击上传")])
+              _c("p", [_vm._v("拖拽或点击上传头像")])
             ],
             1
           )
@@ -85631,7 +85631,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params.append('type', this.uploadItem.type);
                 params.append('brief_introduction', this.uploadItem.brief_introduction);
                 axios.post('upload', params).then(function (response) {
-                    console.log(response);
+                    // console.log(response);
                     self = response.uploadItem;
                 });
                 console.log('hi');
@@ -86134,6 +86134,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -86147,7 +86148,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             user_ip: '192.168.0.0',
             ip_status: 'IPv6',
             contribute: 0,
-            image: ''
+            image: '',
+            normalAvatarFlag: false,
+            customAvatarFlag: false
+
         };
     },
     methods: {
@@ -86158,11 +86162,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         var self = this;
+
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/userinfo').then(function (userinfo) {
             var obj = userinfo.data[0];
             self.up = obj.up;
             self.down = obj.down;
             self.name = obj.name;
+            // axios.get('/api/ifAvatar/'+self.name).then(function (avatarflag) {
+            //     if (avatarflag){
+            //         self.customAvatarFlag = true;
+            //     } else{
+            //         self.normalAvatarFlag = true;
+            //     }
+            // })
+            console.log(location.href = "'/api/ifAvatar/' + self.name");
         });
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/contribute').then(function (contribute) {
             self.contribute = contribute.data;
@@ -86207,7 +86220,30 @@ var render = function() {
           "a",
           { attrs: { href: "edit_profile" } },
           [
-            _c("Avatar", { attrs: { src: _vm.image } }),
+            _c("Avatar", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.customAvatarFlag,
+                  expression: "customAvatarFlag"
+                }
+              ],
+              attrs: { src: _vm.image }
+            }),
+            _vm._v(" "),
+            _c("Avatar", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.normalAvatarFlag,
+                  expression: "normalAvatarFlag"
+                }
+              ],
+              staticStyle: { "background-color": "#5cadff" },
+              attrs: { icon: "person" }
+            }),
             _vm._v("\n            " + _vm._s(_vm.name) + "\n        ")
           ],
           1

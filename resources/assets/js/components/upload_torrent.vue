@@ -113,7 +113,7 @@
                     params.append('type', this.uploadItem.type);
                     params.append('brief_introduction', this.uploadItem.brief_introduction);
                     axios.post('upload', params).then(function (response) {
-                        console.log(response);
+                        // console.log(response);
                         self = response.uploadItem;
                     })
                     console.log('hi');
