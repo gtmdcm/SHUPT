@@ -83544,8 +83544,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/school');
         },
 
-        returnToMain: function returnToMain() {}
-
+        handleFormatError: function handleFormatError(file) {
+            this.$Notice.warning({
+                title: '格式不对！',
+                desc: '一定要png文件哦！'
+            });
+        },
+        handleSuccess: function handleSuccess() {
+            this.$Notice.success({
+                title: '成功',
+                desc: '点击确认发布吧！'
+            });
+            this.step3 = true;
+        }
     },
     mounted: function mounted() {
         var self = this;
@@ -83557,6 +83568,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/userinfo').then(function (userinfo) {
             var obj = userinfo.data[0];
             self.formItem = obj;
+            console.log(self.formItem.name);
         });
     }
 });
@@ -83582,7 +83594,9 @@ var render = function() {
             method: "POST",
             format: ["png"],
             multiple: "",
-            type: "drag"
+            type: "drag",
+            "on-format-error": _vm.handleFormatError,
+            "on-success": _vm.handleSuccess
           }
         },
         [
@@ -84576,7 +84590,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -84587,6 +84601,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -84887,19 +84903,25 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-                        _vm._v(" 来而不往非礼也。大家都是成年人咯。————Python")
+                        _vm._v("  来而不往非礼也。大家都是成年人咯。————Python")
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-                        _vm._v(" 分享率过低将失去下载权。")
+                        _vm._v("  分享率过低将失去下载权。")
                       ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }, [
+                        _vm._v("0.生成")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { attrs: { slot: "content" }, slot: "content" }),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
                         _vm._v("1·发布")
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-                        _vm._v(" 填好相关信息点击确认就可以。")
+                        _vm._v("  填好相关信息点击确认就可以。")
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
@@ -84907,7 +84929,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("p", { attrs: { slot: "content" }, slot: "content" }, [
-                        _vm._v(" 下载完成后，链接这规定网络保持上传就可以咯!")
+                        _vm._v("  上传完成后，链接这规定网络保持上传就可以咯!")
                       ])
                     ]),
                     _vm._v(" "),
@@ -85480,7 +85502,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85627,7 +85649,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         handleSuccess: function handleSuccess() {
-            this.$Notice.succ;
+            this.$Notice.success({
+                title: '成功',
+                desc: '点击确认发布吧！'
+            });
             this.step3 = true;
         }
     }

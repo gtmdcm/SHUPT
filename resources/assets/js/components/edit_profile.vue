@@ -1,7 +1,7 @@
 <template>
     <Form :model="formItem" :label-width="80">
         <Upload name="avatar" :action="'/api/Avatar/'+formItem.name" method="POST"
-                :format="['png']" multiple type="drag">
+                :format="['png']" multiple type="drag" :on-format-error="handleFormatError" :on-success="handleSuccess">
             <div style="padding: 20px 0">
                 <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
                 <p>拖拽或点击上传</p>
@@ -90,10 +90,21 @@
                     axios.get('/api/school');
                 },
 
-                returnToMain: function () {
-
-                },
-
+                handleFormatError(file) {
+                    this.$Notice.warning({
+                        title: '格式不对！',
+                        desc: '一定要png文件哦！'
+                    });
+                }
+                ,
+                handleSuccess() {
+                    this.$Notice.success({
+                        title: '成功',
+                        desc: '点击确认发布吧！'
+                    })
+                    this.step3 = true;
+                }
+                ,
 
             },
         mounted: function () {
@@ -106,7 +117,7 @@
             axios.get('/userinfo',).then(function (userinfo) {
                 let obj = userinfo.data[0];
                 self.formItem = obj;
-
+                console.log(self.formItem.name);
             })
         }
     }

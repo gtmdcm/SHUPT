@@ -26,12 +26,14 @@
                     <Panel name="basic-3">
                         如何上传
                         <p slot="content">前话</p>
-                        <p slot="content"> 来而不往非礼也。大家都是成年人咯。————Python</p>
-                        <p slot="content"> 分享率过低将失去下载权。</p>
+                        <p slot="content">  来而不往非礼也。大家都是成年人咯。————Python</p>
+                        <p slot="content">  分享率过低将失去下载权。</p>
+                        <p slot="content">0.生成</p>
+                        <p slot="content">  </p>
                         <p slot="content">1·发布</p>
-                        <p slot="content"> 填好相关信息点击确认就可以。</p>
+                        <p slot="content">  填好相关信息点击确认就可以。</p>
                         <p slot="content">2·保种</p>
-                        <p slot="content"> 下载完成后，链接这规定网络保持上传就可以咯!</p>
+                        <p slot="content">  上传完成后，链接这规定网络保持上传就可以咯!</p>
                     </Panel>
                     <Panel name="basic-4">
                         流量？

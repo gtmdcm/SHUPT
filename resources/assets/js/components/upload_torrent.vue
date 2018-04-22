@@ -133,7 +133,10 @@
             }
             ,
             handleSuccess() {
-                this.$Notice.succ
+                this.$Notice.success({
+                    title:'成功',
+                    desc:'点击确认发布吧！'
+                })
                 this.step3 = true;
             }
             ,

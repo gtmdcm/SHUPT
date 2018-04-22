@@ -45,17 +45,10 @@ class UserInfoController extends Controller
         return $contents;
     }
 
-
-    public function uploadAvatar(Request $request)
+    public function ifAvatar(Request $request,$name)
     {
-//        $id = Auth::id();
-//        dd($id);
-//        $name = DB::select("select name from users where id = $id")[0]->name;
-//        dd($name);
-//        Storage::putFileAs("public/user/sk/", $request->file('avatar'), "avatar.png");
-//        dd($request->file('avatar'));
-//        Storage::putFileAs('public/seed/', $request->file('avatar'), "avatar.png");
 
+        return $exists = Storage::disk('local')->exists("public/user/{$name}/avatar.png") ? 'true' : 'false';
     }
 
 }
