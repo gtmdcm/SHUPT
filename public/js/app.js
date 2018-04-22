@@ -85590,138 +85590,194 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("Col", { attrs: { span: "18" } }, [
-    _c(
-      "div",
-      { staticStyle: { "justify-content": "center" } },
-      [
+  return _c(
+    "Row",
+    { attrs: { span: "24" } },
+    [
+      _c("Col", { attrs: { span: "24" } }, [
         _c(
-          "Steps",
-          { attrs: { current: _vm.current } },
-          [
-            _c("Step", {
-              attrs: { title: "种子信息", content: "填写种子相关信息" }
-            }),
-            _vm._v(" "),
-            _c("Step", {
-              attrs: { title: "种子文件", content: "上传种子到服务器" }
-            }),
-            _vm._v(" "),
-            _c("Step", { attrs: { title: "完成", content: "感谢你的上传" } })
-          ],
-          1
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", { staticStyle: { height: "10px" } }),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c(
-          "Form",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.step1_flag,
-                expression: "step1_flag"
-              }
-            ],
-            ref: "uploadItem",
-            attrs: {
-              model: _vm.uploadItem,
-              "label-width": 80,
-              rules: _vm.ruleValidate
-            }
-          },
+          "div",
           [
             _c(
-              "FormItem",
-              { attrs: { label: "标题", prop: "title" } },
-              [
-                _c("Input", {
-                  staticStyle: { width: "500px" },
-                  attrs: { clearable: "", placeholder: "请输入标题" },
-                  model: {
-                    value: _vm.uploadItem.title,
-                    callback: function($$v) {
-                      _vm.$set(_vm.uploadItem, "title", $$v)
-                    },
-                    expression: "uploadItem.title"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "FormItem",
-              { attrs: { label: "类型", prop: "type" } },
+              "Row",
+              { attrs: { span: "24" } },
               [
                 _c(
-                  "Select",
-                  {
-                    staticStyle: { width: "200px" },
-                    model: {
-                      value: _vm.uploadItem.type,
-                      callback: function($$v) {
-                        _vm.$set(_vm.uploadItem, "type", $$v)
-                      },
-                      expression: "uploadItem.type"
-                    }
-                  },
+                  "Col",
+                  { attrs: { type: "flex", justify: "center", span: "24" } },
                   [
-                    _c("Option", { attrs: { value: "0000" } }, [
-                      _vm._v("资料")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0001" } }, [
-                      _vm._v("电影")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0002" } }, [
-                      _vm._v("动漫")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0003" } }, [
-                      _vm._v("剧集")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0004" } }, [
-                      _vm._v("综艺")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0005" } }, [
-                      _vm._v("体育")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0006" } }, [
-                      _vm._v("记录")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0007" } }, [
-                      _vm._v("音乐")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0008" } }, [_vm._v("MV")]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0009" } }, [
-                      _vm._v("软件")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0010" } }, [
-                      _vm._v("游戏")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0011" } }, [
-                      _vm._v("校园")
-                    ]),
-                    _vm._v(" "),
-                    _c("Option", { attrs: { value: "0012" } }, [_vm._v("其他")])
+                    _c(
+                      "Steps",
+                      { attrs: { current: _vm.current } },
+                      [
+                        _c("Step", {
+                          attrs: {
+                            title: "种子信息",
+                            content: "填写种子相关信息"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("Step", {
+                          attrs: {
+                            title: "种子文件",
+                            content: "上传种子到服务器"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("Step", {
+                          attrs: { title: "完成", content: "感谢你的上传" }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticStyle: { height: "10px" } }),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            _c(
+              "Form",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.step1_flag,
+                    expression: "step1_flag"
+                  }
+                ],
+                ref: "uploadItem",
+                attrs: {
+                  model: _vm.uploadItem,
+                  "label-width": 80,
+                  rules: _vm.ruleValidate
+                }
+              },
+              [
+                _c(
+                  "FormItem",
+                  { attrs: { label: "标题", prop: "title" } },
+                  [
+                    _c("Input", {
+                      staticStyle: { width: "500px" },
+                      attrs: { clearable: "", placeholder: "请输入标题" },
+                      model: {
+                        value: _vm.uploadItem.title,
+                        callback: function($$v) {
+                          _vm.$set(_vm.uploadItem, "title", $$v)
+                        },
+                        expression: "uploadItem.title"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "FormItem",
+                  { attrs: { label: "类型", prop: "type" } },
+                  [
+                    _c(
+                      "Select",
+                      {
+                        staticStyle: { width: "200px" },
+                        model: {
+                          value: _vm.uploadItem.type,
+                          callback: function($$v) {
+                            _vm.$set(_vm.uploadItem, "type", $$v)
+                          },
+                          expression: "uploadItem.type"
+                        }
+                      },
+                      [
+                        _c("Option", { attrs: { value: "0000" } }, [
+                          _vm._v("资料")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0001" } }, [
+                          _vm._v("电影")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0002" } }, [
+                          _vm._v("动漫")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0003" } }, [
+                          _vm._v("剧集")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0004" } }, [
+                          _vm._v("综艺")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0005" } }, [
+                          _vm._v("体育")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0006" } }, [
+                          _vm._v("记录")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0007" } }, [
+                          _vm._v("音乐")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0008" } }, [
+                          _vm._v("MV")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0009" } }, [
+                          _vm._v("软件")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0010" } }, [
+                          _vm._v("游戏")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0011" } }, [
+                          _vm._v("校园")
+                        ]),
+                        _vm._v(" "),
+                        _c("Option", { attrs: { value: "0012" } }, [
+                          _vm._v("其他")
+                        ])
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "FormItem",
+                  { attrs: { label: "简介" } },
+                  [
+                    _c("Input", {
+                      staticStyle: { width: "500px" },
+                      attrs: {
+                        clearable: "",
+                        type: "textarea",
+                        autosize: { minRows: 2, maxRows: 5 },
+                        placeholder: "请输入简介"
+                      },
+                      model: {
+                        value: _vm.uploadItem.brief_introduction,
+                        callback: function($$v) {
+                          _vm.$set(_vm.uploadItem, "brief_introduction", $$v)
+                        },
+                        expression: "uploadItem.brief_introduction"
+                      }
+                    })
                   ],
                   1
                 )
@@ -85730,113 +85786,113 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
-              "FormItem",
-              { attrs: { label: "简介" } },
+              "Row",
+              { attrs: { type: "flex", justify: "center" } },
               [
-                _c("Input", {
-                  staticStyle: { width: "500px" },
-                  attrs: {
-                    clearable: "",
-                    type: "textarea",
-                    autosize: { minRows: 2, maxRows: 5 },
-                    placeholder: "请输入简介"
+                _c(
+                  "Button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.step1_flag,
+                        expression: "step1_flag"
+                      }
+                    ],
+                    attrs: { type: "primary" },
+                    on: {
+                      click: function($event) {
+                        _vm.uploadData("uploadItem")
+                      }
+                    }
                   },
-                  model: {
-                    value: _vm.uploadItem.brief_introduction,
-                    callback: function($$v) {
-                      _vm.$set(_vm.uploadItem, "brief_introduction", $$v)
-                    },
-                    expression: "uploadItem.brief_introduction"
-                  }
-                })
+                  [_vm._v("确认")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "Row",
+              { attrs: { type: "flex", justify: "center" } },
+              [
+                _c(
+                  "Upload",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.step2_flag,
+                        expression: "step2_flag"
+                      }
+                    ],
+                    attrs: {
+                      name: "upload_file",
+                      action: _vm.upload_title + _vm.uploadItem.title,
+                      method: "POST",
+                      format: ["torrent"],
+                      "on-format-error": _vm.handleFormatError,
+                      "on-success": _vm.handleSuccess
+                    }
+                  },
+                  [
+                    _c(
+                      "Button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.step2_flag,
+                            expression: "step2_flag"
+                          }
+                        ],
+                        attrs: {
+                          type: "ghost",
+                          icon: "ios-cloud-upload-outline"
+                        }
+                      },
+                      [_vm._v("上传种子")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "Row",
+              { attrs: { type: "flex", justify: "center" } },
+              [
+                _c(
+                  "Button",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.step3,
+                        expression: "step3"
+                      }
+                    ],
+                    attrs: { type: "primary" },
+                    on: { click: _vm.step2to3 }
+                  },
+                  [_vm._v("确认")]
+                )
               ],
               1
             )
           ],
           1
-        ),
-        _vm._v(" "),
-        _c(
-          "Button",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.step1_flag,
-                expression: "step1_flag"
-              }
-            ],
-            attrs: { type: "primary" },
-            on: {
-              click: function($event) {
-                _vm.uploadData("uploadItem")
-              }
-            }
-          },
-          [_vm._v("确认")]
-        ),
-        _vm._v(" "),
-        _c(
-          "Upload",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.step2_flag,
-                expression: "step2_flag"
-              }
-            ],
-            attrs: {
-              name: "upload_file",
-              action: _vm.upload_title + _vm.uploadItem.title,
-              method: "POST",
-              format: ["torrent"],
-              "on-format-error": _vm.handleFormatError,
-              "on-success": _vm.handleSuccess
-            }
-          },
-          [
-            _c(
-              "Button",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.step2_flag,
-                    expression: "step2_flag"
-                  }
-                ],
-                attrs: { type: "ghost", icon: "ios-cloud-upload-outline" }
-              },
-              [_vm._v("上传种子")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "Button",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.step3,
-                expression: "step3"
-              }
-            ],
-            attrs: { type: "primary" },
-            on: { click: _vm.step2to3 }
-          },
-          [_vm._v("确认")]
         )
-      ],
-      1
-    )
-  ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

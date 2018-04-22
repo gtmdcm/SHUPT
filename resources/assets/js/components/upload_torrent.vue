@@ -1,11 +1,16 @@
 <template>
-    <Col span="18">
-    <div style="justify-content: center;">
+    <Row span="24">
+    <Col span="24">
+    <div>
+        <Row span="24">
+        <Col type="flex" justify="center" span="24">
         <Steps :current="current">
             <Step title="种子信息" content="填写种子相关信息"></Step>
             <Step title="种子文件" content="上传种子到服务器"></Step>
             <Step title="完成" content="感谢你的上传"></Step>
         </Steps>
+        </Col>
+        </Row>
     </div>
     <div style="height: 10px">
     </div>
@@ -14,9 +19,6 @@
             <FormItem label="标题" prop="title">
                 <Input v-model="uploadItem.title" clearable style="width:500px" placeholder="请输入标题"></Input>
             </FormItem>
-            <!--<FormItem label="副标题">-->
-            <!--<Input v-model="uploadItem.subtitle" clearable style="width:500px" placeholder="请输入副标题"></Input>-->
-            <!--</FormItem>-->
             <FormItem label="类型" prop="type">
                 <Select v-model="uploadItem.type" style="width:200px">
                     <Option value="0000">资料</Option>
@@ -40,25 +42,23 @@
                        :autosize="{minRows: 2,maxRows: 5}"
                        placeholder="请输入简介"></Input>
             </FormItem>
-            <!--<Upload name="upload_file" action="upload_file" method="POST">-->
-            <!--<Button type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>-->
-            <!--</Upload>-->
-            <!--<FormItem>-->
-            <!--<Button type="primary" @click="uploadData">发布</Button>-->
-            <!--<Button type="ghost" style="margin-left: 8px">取消</Button>-->
-            <!--</FormItem>-->
         </Form>
+        <Row type="flex" justify="center" >
         <Button v-show="step1_flag" type="primary" @click="uploadData('uploadItem')" style="">确认</Button>
-        <!--<Button v-show="step1_flag" type="ghost" style="margin-left: 8px">取消</Button>-->
-        <!--<Button type="primary" @click="next">Next step</Button>-->
+        </Row>
+        <Row type="flex" justify="center" >
         <Upload v-show="step2_flag" name="upload_file" :action="upload_title+uploadItem.title" method="POST"
                 :format="['torrent']"
                 :on-format-error="handleFormatError" :on-success="handleSuccess">
             <Button v-show="step2_flag" type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
         </Upload>
+        </Row>
+        <Row type="flex" justify="center">
         <Button v-show="step3" type="primary" @click="step2to3">确认</Button>
+        </Row>
     </div>
-    </Col>
+</Col>
+    </Row>
 </template>
 
 <script>
