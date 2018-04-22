@@ -87,14 +87,14 @@
                 self.up = obj.up;
                 self.down = obj.down;
                 self.name = obj.name;
-                // axios.get('/api/ifAvatar/'+self.name).then(function (avatarflag) {
-                //     if (avatarflag){
-                //         self.customAvatarFlag = true;
-                //     } else{
-                //         self.normalAvatarFlag = true;
-                //     }
-                // })
-                console.log(location.href = "'/api/ifAvatar/' + self.name");
+                axios.get('/api/ifAvatar/'+self.name).then(function (avatarflag) {
+                    if (avatarflag.data){
+                        self.customAvatarFlag = true;
+                    } else{
+                        self.normalAvatarFlag = true;
+                    }
+                })
+
             })
             axios.get('/contribute').then(function (contribute) {
                 self.contribute = contribute.data;

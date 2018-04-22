@@ -86168,14 +86168,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             self.up = obj.up;
             self.down = obj.down;
             self.name = obj.name;
-            // axios.get('/api/ifAvatar/'+self.name).then(function (avatarflag) {
-            //     if (avatarflag){
-            //         self.customAvatarFlag = true;
-            //     } else{
-            //         self.normalAvatarFlag = true;
-            //     }
-            // })
-            console.log(location.href = "'/api/ifAvatar/' + self.name");
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/ifAvatar/' + self.name).then(function (avatarflag) {
+                if (avatarflag.data) {
+                    self.customAvatarFlag = true;
+                } else {
+                    self.normalAvatarFlag = true;
+                }
+            });
         });
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/contribute').then(function (contribute) {
             self.contribute = contribute.data;
