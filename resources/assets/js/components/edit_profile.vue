@@ -1,5 +1,22 @@
 <template>
     <Form :model="formItem" :label-width="80">
+        <Upload name="avatar" :action="'/api/Avatar/'+formItem.name" method="POST"
+                :format="['png']" multiple type="drag">
+            <div style="padding: 20px 0">
+                <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
+                <p>拖拽或点击上传</p>
+            </div>
+        </Upload>
+        <!--<Upload-->
+        <!--name="Avatar"-->
+        <!--multiple-->
+        <!--type="drag"-->
+        <!--action="/api/uploadAvatar">-->
+        <!--<div style="padding: 20px 0">-->
+        <!--<Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>-->
+        <!--<p>拖拽或点击上传</p>-->
+        <!--</div>-->
+        <!--</Upload>-->
         <FormItem label="生日">
             <Row>
                 <Col span="11">
@@ -40,6 +57,7 @@
             return {
                 id: '',
                 formItem: {
+                    name: '',
                     gender: 'secret',
                     birthday: '',
                     school: '',
@@ -61,6 +79,10 @@
                         self = response.formItem;
                     })
                     this.$Message.success('成功啦(๑•̀ω•́๑)');
+                    this.$Notice.warning({
+                        title: '注意',
+                        desc: '头像上传有一定网络延迟，刷新下页面就好了'
+                    });
                 },
 
                 downloadData: function () {

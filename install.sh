@@ -1,10 +1,11 @@
-composer install
-npm install
-cp .env.example .env
-php artisan key:generate >> key
-str=$(cat key | cut -b 18-68)
-sed -i "s/examplekey/$str/" .env
-php artisan migrate:fresh
-rm key
-npm run dev
-php artisan serve
+su
+git clone https://github.com/gtmdcm/SHUPT.git
+yum install php
+curl -sS https://getcomposer.org/install | php
+composer update
+yum install postgresql-server.i686
+./install_mac.sh
+yum install nginx.i686
+cd /etc/nginx/conf.d
+#default.conf
+service nginx restart

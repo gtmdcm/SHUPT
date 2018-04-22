@@ -31,6 +31,8 @@ Route::get('ip', 'ApiController@showIP')->name('ip');
 
 Route::post('upload_file/{name}', 'UploadController@uploadSeeds');
 
+Route::post('Avatar/{name}', 'UploadController@uploadAvatar');
+
 Route::get('download/{pub}/{seed}/{index}', 'ResourceController@downloadSeeds');
 
 Route::post('test', function () {

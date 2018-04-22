@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+
 
 class UserInfoController extends Controller
 {
@@ -39,8 +41,21 @@ class UserInfoController extends Controller
 
 //        $contents = Storage::url("user/$name/head.png");
 //  上线后修改
-        $contents = Storage::url("user/zhou/head.png");
+        $contents = Storage::url("user/$name/avatar.png");
         return $contents;
+    }
+
+
+    public function uploadAvatar(Request $request)
+    {
+//        $id = Auth::id();
+//        dd($id);
+//        $name = DB::select("select name from users where id = $id")[0]->name;
+//        dd($name);
+//        Storage::putFileAs("public/user/sk/", $request->file('avatar'), "avatar.png");
+//        dd($request->file('avatar'));
+//        Storage::putFileAs('public/seed/', $request->file('avatar'), "avatar.png");
+
     }
 
 }

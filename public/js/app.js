@@ -83486,6 +83486,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -83495,6 +83512,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             id: '',
             formItem: {
+                name: '',
                 gender: 'secret',
                 birthday: '',
                 school: '',
@@ -83515,6 +83533,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self = response.formItem;
             });
             this.$Message.success('成功啦(๑•̀ω•́๑)');
+            this.$Notice.warning({
+                title: '注意',
+                desc: '头像上传有一定网络延迟，刷新下页面就好了'
+            });
         },
 
         downloadData: function downloadData() {
@@ -83551,6 +83573,35 @@ var render = function() {
     "Form",
     { attrs: { model: _vm.formItem, "label-width": 80 } },
     [
+      _c(
+        "Upload",
+        {
+          attrs: {
+            name: "avatar",
+            action: "/api/Avatar/" + _vm.formItem.name,
+            method: "POST",
+            format: ["png"],
+            multiple: "",
+            type: "drag"
+          }
+        },
+        [
+          _c(
+            "div",
+            { staticStyle: { padding: "20px 0" } },
+            [
+              _c("Icon", {
+                staticStyle: { color: "#3399ff" },
+                attrs: { type: "ios-cloud-upload", size: "52" }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v("拖拽或点击上传")])
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
       _c(
         "FormItem",
         { attrs: { label: "生日" } },
@@ -86127,18 +86178,23 @@ var render = function() {
         staticStyle: { flex: "4", "text-align": "center" }
       },
       [
-        _c("div", [
-          _c("a", { attrs: { href: "edit_profile" } }, [
-            _c("img", {
-              attrs: { src: _vm.image, alt: "", height: "50", width: "50" }
-            }),
-            _vm._v("\n                " + _vm._s(_vm.name) + "\n            ")
-          ])
-        ]),
+        _c(
+          "a",
+          { attrs: { href: "edit_profile" } },
+          [
+            _c("Avatar", { attrs: { src: _vm.image } }),
+            _vm._v("\n            " + _vm._s(_vm.name) + "\n        ")
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("a", { attrs: { href: "logout" } }, [
           _vm._v("\n            退出登陆\n        ")
-        ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("span", [_vm._v("©shupt")])
       ]
     ),
     _vm._v(" "),

@@ -149,9 +149,9 @@
     {{--内容--}}
     {{--脚注--}}
 
-    <div class="shupt-logo">
-        ©2018 SHUPT
-    </div>
+    {{--<div class="shupt-logo">--}}
+        {{--©2018 SHUPT--}}
+    {{--</div>--}}
 </div>
 </body>
 </html>

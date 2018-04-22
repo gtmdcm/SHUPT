@@ -5,17 +5,17 @@
             <div>网络: {{ip_status}}</div>
         </div>
         <div class="profile-avator" style="flex: 4;text-align:  center;">
-            <div>
-                <a href="edit_profile">
-                    <!--<Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>-->
-                    <!--{{image}}-->
-                    <img v-bind:src="image" alt="" height="50" width="50">
-                    {{name}}
-                </a>
-            </div>
+            <a href="edit_profile">
+                <!--<Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg">users</Avatar>-->
+                <!--{{image}}-->
+                <Avatar :src="image"/>
+                {{name}}
+            </a>
             <a href="logout">
                 退出登陆
             </a>
+            <br>
+            <span>©shupt</span>
         </div>
         <div style="text-align:  right;flex: 2;">
             <p>
