@@ -41,8 +41,8 @@ class UserInfoController extends Controller
 
 //        $contents = Storage::url("user/$name/head.png");
 //  上线后修改
-        $contents = Storage::url("user/$name/avatar.png");
-        return $contents;
+        return "storage/user/$name/avatar.png";
+
     }
 
     public function ifAvatar(Request $request,$name)

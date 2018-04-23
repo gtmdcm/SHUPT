@@ -38,5 +38,5 @@ Route::get('download/{pub}/{seed}/{index}', 'ResourceController@downloadSeeds');
 Route::post('test', function () {
     print(Input::all());
 });
-Route::get('ifAvatar/{name}', 'UserinfoController@ifAvatar');
+Route::get('ifAvatar/{name}', 'UserInfoController@ifAvatar');
 
