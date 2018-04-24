@@ -16,7 +16,7 @@ class CreateResourcesTable extends Migration
         Schema::create('resources', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',80);
-            $table->char('seed',16)->nullable();
+            $table->string('seed',100);
             $table->enum('visible',['yes','no']);
             $table->enum('banned',['yes','no']);
             $table->enum('down50',['yes','no']);

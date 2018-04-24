@@ -61,7 +61,11 @@ class ResourceController extends Controller
     public function downloadSeeds(Request $request, $pub, $seed, $index)
     {
 
-        $result = DB::select("select seed from resources where id = $index+1")[0]->seed;
+        $resource = Resource::find(intval($index+1));
+
+        $result = $resource -> seed;
+
+        //$result = DB::select("select seed from resources where id = $index+1")[0]->seed;
 
 
         return Storage::download("/$pub/$seed/$result");
