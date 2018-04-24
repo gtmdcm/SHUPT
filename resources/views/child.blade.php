@@ -1,20 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.reapp')
 
 @section('title','测试页面0v0')
 
-@section('vues')
+@section('reapp')
+    <Layout>
+        <Header>
+            <renav></renav>
+        </Header>
+        <Content>
+            <email-error></email-error>
+        </Content>
+        <Footer>
 
-    {{--<edit_profile></edit_profile>--}}
-    {{--<s-status></s-status>--}}
-    {{--<div>--}}
-    {{--<upload_torrent></upload_torrent>--}}
-    {{--</div>--}}
-    <style>
-
-    </style>
+        </Footer>
+    </Layout>
 @stop
-
-
-@section('iflogin')
-    @parent
-@endsection

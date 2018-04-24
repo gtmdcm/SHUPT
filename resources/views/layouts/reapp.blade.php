@@ -84,25 +84,10 @@
     <canvas id="canvas"></canvas>
 </div>
 <div id="app">
-    {{--注册--}}
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/') }}">Home</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-            @endauth
-        </div>
-    @endif
-    {{--登录&注册界面--}}
-    @guest
-        <div style="height: 20%;"></div>
-        @yield('content')
-        @show
-    @else
-        {{--app层--}}
-    @endguest
+    {{--走马灯--}}
+    {{--logo栏--}}
+    @yield('reapp')
+    @show
 </div>
 </body>
 </html>

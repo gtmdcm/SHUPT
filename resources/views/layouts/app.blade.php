@@ -150,7 +150,7 @@
     {{--脚注--}}
 
     {{--<div class="shupt-logo">--}}
-        {{--©2018 SHUPT--}}
+    {{--©2018 SHUPT--}}
     {{--</div>--}}
 </div>
 </body>
