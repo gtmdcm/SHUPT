@@ -71,4 +71,9 @@ class ResourceController extends Controller
         return Storage::download("/$pub/$seed/$result");
     }
 
+    public function ifExists(Request $request,$name)
+    {
+
+        return $exists = Storage::disk('local')->exists("public/seed/{$name}.torrent") ? 'true' : 'false';
+    }
 }

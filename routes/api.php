@@ -40,3 +40,4 @@ Route::post('test', function () {
 });
 Route::get('ifAvatar/{name}', 'UserInfoController@ifAvatar');
 
+Route::get('ifExists/{name}', 'ResourceController@ifExists');

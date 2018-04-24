@@ -85502,7 +85502,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -85601,18 +85601,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         uploadData: function uploadData(name) {
-            var _this = this;
-
+            var self = this;
             this.$refs[name].validate(function (valid) {
-                if (valid) {
-                    _this.$Message.success('填写信息成功');
+                axios.get('/api/ifExists/' + self.uploadItem.title).then(function (avatarflag) {
+                    if (avatarflag.data) {
+                        self.$Message.error('这个种子重名了哦');
+                    } else {
+                        if (valid) {
+                            self.$Message.success('填写信息成功');
 
-                    _this.current += 1;
-                    _this.step1_flag = false;
-                    _this.step2_flag = true;
-                } else {
-                    _this.$Message.error('输入必要信息');
-                }
+                            self.current += 1;
+                            self.step1_flag = false;
+                            self.step2_flag = true;
+                        } else {
+                            self.$Message.error('输入必要信息');
+                        }
+                    }
+                });
             });
 
             // self.upload_tile = "/api/upload_file/" + self.uploadItem.title;
