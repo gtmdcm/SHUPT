@@ -87,10 +87,10 @@
                 self.up = obj.up;
                 self.down = obj.down;
                 self.name = obj.name;
-                axios.get('/api/ifAvatar/'+self.name).then(function (avatarflag) {
-                    if (avatarflag.data){
+                axios.get('/api/ifAvatar/' + self.name).then(function (avatarflag) {
+                    if (avatarflag.data) {
                         self.customAvatarFlag = true;
-                    } else{
+                    } else {
                         self.normalAvatarFlag = true;
                     }
                 })
