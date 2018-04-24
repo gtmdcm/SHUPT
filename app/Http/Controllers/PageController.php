@@ -66,4 +66,9 @@ class PageController extends Controller
     {
         return view('pages/todo');
     }
+
+    public function identifyemail()
+    {
+        return view('pages/identifyemail');
+    }
 }

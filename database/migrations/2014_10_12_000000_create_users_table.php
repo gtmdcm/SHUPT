@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name',20);
             $table->string('email',50)->unique();
             $table->string('passkey');
+            $table->string('token',40);
+            $table->enum('mailchecked',['yes','no']);
             $table->string('password');
 
             //Profiles

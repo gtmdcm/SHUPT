@@ -47,4 +47,11 @@ class ApiController extends Controller
         $ip = $_SERVER["REMOTE_ADDR"];
         return $ip;
     }
+
+    public function showEMail()
+    {
+        $id = Auth::id();
+        $result = DB::select("select email from users where id = $id");
+        return $result;
+    }
 }
