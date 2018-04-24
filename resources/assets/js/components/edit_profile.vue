@@ -1,7 +1,8 @@
 <template>
     <Form :model="formItem" :label-width="80">
         <Upload name="avatar" :action="'/api/Avatar/'+formItem.name" method="POST"
-                :format="['png']" multiple type="drag" :on-format-error="handleFormatError" :on-success="handleSuccess">
+                :format="['png']" multiple type="drag" :on-format-error="handleFormatError" :on-success="handleSuccess"
+                :max-size="2048">
             <div style="padding: 20px 0">
                 <Icon type="ios-cloud-upload" size="30" style="color: #3399ff"></Icon>
                 <p>拖拽或点击上传头像</p>

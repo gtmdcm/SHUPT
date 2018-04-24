@@ -49,7 +49,7 @@
             <Row type="flex" justify="center">
                 <Upload v-show="step2_flag" name="upload_file" :action="upload_title+uploadItem.title" method="POST"
                         :format="['torrent']"
-                        :on-format-error="handleFormatError" :on-success="handleSuccess">
+                        :on-format-error="handleFormatError" :on-success="handleSuccess" :max-size="2048">
                     <Button v-show="step2_flag" type="ghost" icon="ios-cloud-upload-outline">上传种子</Button>
                 </Upload>
             </Row>
