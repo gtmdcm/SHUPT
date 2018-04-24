@@ -87083,7 +87083,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -87094,6 +87094,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -87117,28 +87120,40 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "Card",
-    {
-      staticStyle: {
-        width: "320px",
-        "margin-left": "auto",
-        "margin-right": "auto"
-      }
-    },
+    "div",
     [
+      _c("div", { staticStyle: { height: "40%" } }),
+      _vm._v(" "),
       _c(
-        "div",
-        { staticStyle: { "text-align": "center" } },
+        "Card",
+        {
+          staticStyle: {
+            width: "320px",
+            "margin-left": "auto",
+            "margin-right": "auto"
+          }
+        },
         [
-          _c("Avatar", {
-            attrs: { shape: "square", src: "images/logo.png", size: "large" }
-          }),
-          _vm._v(" "),
-          _c("h3", [_vm._v("请先认证邮箱哦!")])
-        ],
-        1
+          _c(
+            "div",
+            { staticStyle: { "text-align": "center" } },
+            [
+              _c("Avatar", {
+                attrs: {
+                  shape: "square",
+                  src: "images/logo.png",
+                  size: "large"
+                }
+              }),
+              _vm._v(" "),
+              _c("h3", [_vm._v("请先认证邮箱哦!")])
+            ],
+            1
+          )
+        ]
       )
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = []
