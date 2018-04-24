@@ -86488,7 +86488,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         },
                         on: {
                             click: function click() {
-                                _this.download(params.index);
+                                _this.download(params.row.name);
                             }
                         }
                     }, '下载')]

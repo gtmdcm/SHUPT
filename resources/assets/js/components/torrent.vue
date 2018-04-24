@@ -55,7 +55,7 @@
                                     },
                                     on: {
                                         click: () => {
-                                            this.download(params.index)
+                                            this.download(params.row.name)
                                         }
                                     }
                                 }, '下载'),
