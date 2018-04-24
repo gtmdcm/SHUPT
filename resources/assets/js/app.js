@@ -20,11 +20,7 @@ import 'iview/dist/styles/iview.css';
 Vue.use(iView);
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-Vue.component('p-nav', require('./components/nav.vue'));
-
 Vue.component('edit_profile', require('./components/edit_profile.vue'));
-
-Vue.component('h-nav', require('./components/nav.vue'));
 
 Vue.component('s-nav', require('./components/s-nav.vue'));
 
@@ -36,11 +32,11 @@ Vue.component('help', require('./components/help'));
 
 Vue.component('z-main', require('./components/z-main'));
 
-Vue.component('upload_torrent',require('./components/upload_torrent.vue'));
+Vue.component('upload_torrent', require('./components/upload_torrent.vue'));
 
-Vue.component('s-status',require('./components/s-status.vue'));
+Vue.component('s-status', require('./components/s-status.vue'));
 
-Vue.component('torrent',require('./components/torrent'));
+Vue.component('torrent', require('./components/torrent'));
 
 Vue.component('identify_email',require('./components/identify_email.vue'));
 
