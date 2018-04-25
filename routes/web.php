@@ -53,6 +53,7 @@ Route::get('logout', 'UserController@getLogout')->name('logout')->middleware('au
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth')->middleware('mailcheck');
 
+Route::get('emailerror','PageController@emailerror')->name('emailerror');
 //zd test
 Route::get('/testapp', 'PageController@app')->name('app')->middleware('auth')->middleware('mailcheck');
 

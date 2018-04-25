@@ -1,6 +1,6 @@
 @extends('layouts.reapp')
 
 @section('reapp')
-    <search></search>
+<emailerror></emailerror>
 @stop
 

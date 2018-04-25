@@ -44,9 +44,10 @@ Vue.component('identify_email', require('./components/identify_email.vue'));
 // TODO zd re
 Vue.component('renav', require('./recomponents/renav'));
 
-Vue.component('emailError', require('./recomponents/emailError'));
+Vue.component('emailerror', require('./recomponents/emailError'));
 
 Vue.component('search', require('./recomponents/search'));
+
 
 const app = new Vue({
     el: '#app'

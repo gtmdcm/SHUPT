@@ -20,5 +20,6 @@
     "vue": "^2.5.7",
     "iview": "^2.11.0",
     "vue-calendar-component": "^2.4.3"
-  }
+  },
+  "dependencies": {}
 }

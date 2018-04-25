@@ -12,7 +12,7 @@
 
 <script>
     export default {
-        name: "email-error.vue"
+        name: "emailerror"
     }
 </script>
 

@@ -24,7 +24,7 @@
 
 <script>
     export default {
-        name: "search.vue",
+        name: "search",
         data: function () {
             return {
                 inputSearch: '',

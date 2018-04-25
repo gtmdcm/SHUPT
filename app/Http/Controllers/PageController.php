@@ -71,4 +71,9 @@ class PageController extends Controller
     {
         return view('pages/identifyemail');
     }
+
+    public function emailerror()
+    {
+        return view('pages/emailerror');
+    }
 }
