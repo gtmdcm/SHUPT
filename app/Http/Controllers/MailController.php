@@ -20,5 +20,6 @@ class MailController extends Controller
         //Mail::send('identification','key',)
         //Mail::to('1055335350@qq.com ')->send(new Identification());
         return redirect('/');
+
     }
 }
