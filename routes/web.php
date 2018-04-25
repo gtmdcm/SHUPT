@@ -69,5 +69,7 @@ Route::get('identifyemail','PageController@identifyemail')->name('identifyemail'
 
 Route::get('sendemail','MailController@ship')->name('sendemail')->middleware('auth');
 
+//Route::get('checkemail','PageController@checkemail')->name('checkemail');
+
 //Route::get('getImage', 'UserinfoController@getImage')->name('getImage')->middleware('auth');
 

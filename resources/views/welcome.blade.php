@@ -105,7 +105,9 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            <a href="/torrent">SHUPT</a>
+            <a href="/torrent">
+                <img src="images/logo-down.png" alt="" style="width:84px;height:100px;">
+                SHUPT</a>
         </div>
         <div class="links">
             <a href="{{url('help')}}?join=2">PT介绍</a>

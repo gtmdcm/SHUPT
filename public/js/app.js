@@ -83676,7 +83676,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -83720,6 +83720,7 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -83825,7 +83826,13 @@ var render = function() {
         _c(
           "span",
           { staticStyle: { "margin-bottom": "30px", color: "black" } },
-          [_vm._v("\n            SHUPT\n        ")]
+          [
+            _c("Avatar", {
+              attrs: { shape: "square", src: "images/logo.png", size: "small" }
+            }),
+            _vm._v("\n            SHUPT\n        ")
+          ],
+          1
         )
       ]),
       _vm._v(" "),
@@ -87081,7 +87088,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -87104,9 +87111,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "emailerror"
+    name: "emailerror",
+    data: function data() {
+        return {
+            email: ''
+        };
+    },
+    mounted: function mounted() {
+        var self = this;
+        axios.get('/mail').then(function (mail) {
+            console.log(mail);
+            self.email = mail.data[0].email;
+        });
+    }
 });
 
 /***/ }),
@@ -87132,22 +87154,26 @@ var render = function() {
           }
         },
         [
-          _c(
-            "div",
-            { staticStyle: { "text-align": "center" } },
-            [
-              _c("Avatar", {
-                attrs: {
-                  shape: "square",
-                  src: "images/logo.png",
-                  size: "large"
-                }
-              }),
-              _vm._v(" "),
-              _c("h3", [_vm._v("请先认证邮箱哦!")])
-            ],
-            1
-          )
+          _c("div", { staticStyle: { "text-align": "center" } }, [
+            _c(
+              "a",
+              { attrs: { href: "/" } },
+              [
+                _c("Avatar", {
+                  attrs: {
+                    shape: "square",
+                    src: "images/logo.png",
+                    size: "large"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("h3", [_vm._v("请先认证邮箱哦!")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("邮件已发送至" + _vm._s(_vm.email))])
+          ])
         ]
       )
     ],

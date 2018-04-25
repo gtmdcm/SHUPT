@@ -3,6 +3,7 @@
         <MenuItem name="logo">
             <span style="margin-bottom: 30px;
             color: black;">
+                    <Avatar shape="square" src="images/logo.png" size="small"></Avatar>
                 SHUPT
             </span>
         </MenuItem>
