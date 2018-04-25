@@ -38,13 +38,15 @@ Vue.component('s-status', require('./components/s-status.vue'));
 
 Vue.component('torrent', require('./components/torrent'));
 
-Vue.component('identify_email',require('./components/identify_email.vue'));
+Vue.component('identify_email', require('./components/identify_email.vue'));
 
 //    Vue.component('welcome2join', require('./message/welcome2join'))
 // TODO zd re
 Vue.component('renav', require('./recomponents/renav'));
 
-Vue.component('emailError',require('./recomponents/emailError'));
+Vue.component('emailError', require('./recomponents/emailError'));
+
+Vue.component('search', require('./recomponents/search'));
 
 const app = new Vue({
     el: '#app'

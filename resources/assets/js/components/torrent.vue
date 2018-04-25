@@ -1,6 +1,6 @@
 <template>
-    <div style="height: 59%; width:80%;">
-        <Table :columns="historyColumns" :data="historyData" height="450"></Table>
+    <div style="height: 50%; width:80%;">
+        <Table :columns="historyColumns" :data="historyData" :height="pageHeight"></Table>
         <Page :total="dataCount" :page-size="pageSize" size="small" show-elevator class="paging"
               @on-change="changepage"></Page>
 
@@ -17,6 +17,8 @@
     export default {
         data() {
             return {
+
+                pageHeight: 450,
 
                 username: 'error',
 
