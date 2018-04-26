@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('token',40);
             $table->enum('mailchecked',['yes','no']);
             $table->string('password');
+            $table->enum('mailsended',['yes','no']);
 
             //Profiles
             $table->double('up');

@@ -82,6 +82,7 @@ class RegisterController extends Controller
         $user->passkey = Hash::make($data['name'].$data['email'].$data['password']);
         $user->mailchecked = 'no';
         $user -> token = hash('md5',$data['name'].$data['password'].$data['email']);
+        $user -> mailsended = 'no';
 
         $user->up=10.0;
         $user->down=0.0;
@@ -103,6 +104,7 @@ class RegisterController extends Controller
         //DB::update("update idcontroller set uid = {$this->newId->uid}");
         /*$this->newUid=Id::find(1);
         $this->newUid->uid=$this->newId->uid+1;*/
+
 
         return $user;
     }

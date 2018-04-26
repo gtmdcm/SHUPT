@@ -76,4 +76,14 @@ class PageController extends Controller
     {
         return view('pages/emailerror');
     }
+
+    public function identifySuccess()
+    {
+        return view('pages/identifysuccess');
+    }
+
+    public function identifyFailed()
+    {
+        return view('pages/identifyfailed');
+    }
 }

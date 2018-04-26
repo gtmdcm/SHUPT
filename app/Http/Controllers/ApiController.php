@@ -54,4 +54,11 @@ class ApiController extends Controller
         $result = DB::select("select email from users where id = $id");
         return $result;
     }
+
+    public function showIdentification()
+    {
+        $id = Auth::id();
+        $result = DB::select("select id,token from users where id = $id");
+        return $result;
+    }
 }

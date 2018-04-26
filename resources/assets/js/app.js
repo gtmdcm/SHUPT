@@ -48,6 +48,10 @@ Vue.component('emailerror', require('./recomponents/emailError'));
 
 Vue.component('search', require('./recomponents/search'));
 
+Vue.component('identify_success',require('./recomponents/identify_success.vue'));
+
+Vue.component('identify_failed',require('./recomponents/identify_failed.vue'));
+
 
 const app = new Vue({
     el: '#app'

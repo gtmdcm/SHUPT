@@ -53,7 +53,7 @@ Route::get('logout', 'UserController@getLogout')->name('logout')->middleware('au
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth')->middleware('mailcheck');
 
-Route::get('emailerror','PageController@emailerror')->name('emailerror');
+Route::get('emailerror','PageController@emailerror')->name('emailerror')->middleware('sendedcheck');
 //zd test
 Route::get('/testapp', 'PageController@app')->name('app')->middleware('auth')->middleware('mailcheck');
 
@@ -68,6 +68,14 @@ Route::get('mail','ApiController@showEMail');
 Route::get('identifyemail','PageController@identifyemail')->name('identifyemail')->middleware('auth');
 
 Route::get('sendemail','MailController@ship')->name('sendemail')->middleware('auth');
+
+Route::get('identify','IdentifyController@identifyEmail')->name('identify')->middleware('auth');
+
+Route::get('identifysuccess','PageController@identifySuccess');
+
+Route::get('identifyfailed','PageController@identifyFailed');
+
+//Route::get('identification','ApiController@showIdentification');
 
 //Route::get('checkemail','PageController@checkemail')->name('checkemail');
 
