@@ -80,9 +80,9 @@ class RegisterController extends Controller
         $user->email=$data['email'];
         $user->password=Hash::make($data['password']);
         $user->passkey = Hash::make($data['name'].$data['email'].$data['password']);
-        $user->mailchecked = 'no';
+        $user->mailchecked = 'yes';
         $user -> token = hash('md5',$data['name'].$data['password'].$data['email']);
-        $user -> mailsended = 'no';
+        $user -> mailsended = 'yes';
 
         $user->up=10.0;
         $user->down=0.0;
