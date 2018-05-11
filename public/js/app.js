@@ -25313,7 +25313,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('torrent', __webpack_requi
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('identify_email', __webpack_require__(99));
 
 //    Vue.component('welcome2join', require('./message/welcome2join'))
-// TODO zd re
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('renav', __webpack_require__(104));
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('emailerror', __webpack_require__(109));
@@ -86809,7 +86808,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -86867,7 +86866,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         onClick: function onClick(name) {
             switch (name) {
-                // TODO 删除所有re
                 case 'main':
                     {
                         location.href = '/re';
