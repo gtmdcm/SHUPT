@@ -45,7 +45,6 @@
         methods: {
             onClick: function (name) {
                 switch (name) {
-                    // TODO 删除所有re
                     case 'main' : {
                         location.href = '/re';
                         break;
